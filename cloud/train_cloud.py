@@ -146,9 +146,14 @@ def load_model(config: dict, num_labels: int = 2):
     gpu_vram = config["gpu"]["vram_gb"]
     model_params = config["model"]["params"]
     
-    # Check if we need quantization (not needed for MI300X 192GB)
-    if "70B" in model_params and gpu_vram < 150:
-        print("Using 4-bit quantization for 70B model...")
+    # Use 4-bit quantization for large models to save VRAM
+    # This reduces memory by ~75% (120B: 188GB -> ~50GB)
+    large_model_keywords = ["70B", "72B", "120B", "405B"]
+    needs_quantization = any(kw in model_params for kw in large_model_keywords)
+    
+    if needs_quantization:
+        print(f"⚡ Using 4-bit quantization for {model_params} model...")
+        print("   Memory reduction: ~75% (allows training with gradients)")
         quantization_config = BitsAndBytesConfig(
             load_in_4bit=True,
             bnb_4bit_compute_dtype=torch.bfloat16,
