@@ -24,13 +24,17 @@ git clone https://github.com/kprsnt2/drug-discovery-chemberta.git
 cd drug-discovery-chemberta
 ```
 
-### Step 3: Install Project Dependencies
+### Step 3: Create Virtual Environment & Install Dependencies
 
 ```bash
-# Only project dependencies (ROCm/PyTorch already installed)
+# Create virtual environment (required for Python 3.12+)
+python3 -m venv venv
+source venv/bin/activate
+
+# Install project dependencies
 pip install transformers datasets accelerate deepspeed peft
 pip install pandas scikit-learn rdkit matplotlib seaborn tqdm wandb
-pip install chembl-webresource-client requests
+pip install chembl-webresource-client requests huggingface_hub
 ```
 
 ### Step 4: Download Drug Datasets

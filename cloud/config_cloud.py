@@ -181,6 +181,16 @@ MODELS: Dict[str, ModelConfig] = {
         is_causal_lm=True,
         supports_flash_attention=True
     ),
+    "qwen-2.5-7b": ModelConfig(
+        name="Qwen 2.5 7B",
+        hf_name="Qwen/Qwen2.5-7B",
+        params="7B",
+        size=ModelSize.MEDIUM,
+        min_vram_gb=20,
+        max_length=131072,
+        is_causal_lm=True,
+        supports_flash_attention=True
+    ),
     "mistral-7b": ModelConfig(
         name="Mistral 7B",
         hf_name="mistralai/Mistral-7B-v0.3",
@@ -197,6 +207,16 @@ MODELS: Dict[str, ModelConfig] = {
         params="8B",
         size=ModelSize.MEDIUM,
         min_vram_gb=24,
+        max_length=131072,
+        is_causal_lm=True,
+        supports_flash_attention=True
+    ),
+    "qwen-2.5-14b": ModelConfig(
+        name="Qwen 2.5 14B",
+        hf_name="Qwen/Qwen2.5-14B",
+        params="14B",
+        size=ModelSize.MEDIUM,
+        min_vram_gb=35,
         max_length=131072,
         is_causal_lm=True,
         supports_flash_attention=True

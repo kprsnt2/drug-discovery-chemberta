@@ -133,13 +133,21 @@ def load_dataset_for_training(tokenizer, max_length: int = 512, max_samples: int
     return train_dataset, val_dataset
 
 
-def load_model(config: dict, num_labels: int = 2):
-    """Load model based on configuration."""
+def load_model(config: dict, num_labels: int = 2, use_lora: bool = False):
+    """Load model based on configuration.
+    
+    Args:
+        config: Training configuration
+        num_labels: Number of classification labels
+        use_lora: If True, apply LoRA for memory-efficient training
+    """
     model_name = config["model"]["hf_name"]
     is_causal = config["model"]["is_causal_lm"]
     
     print(f"\nLoading model: {model_name}")
     print(f"Model type: {'Causal LM' if is_causal else 'Encoder'}")
+    if use_lora:
+        print("🔧 Using LoRA for memory-efficient training")
     
     # Quantization config for large models
     quantization_config = None
