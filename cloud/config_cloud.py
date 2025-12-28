@@ -203,6 +203,16 @@ MODELS: Dict[str, ModelConfig] = {
     ),
     
     # Large models (requires 80GB+)
+    "qwen-2.5-32b": ModelConfig(
+        name="Qwen 2.5 32B",
+        hf_name="Qwen/Qwen2.5-32B",
+        params="32B",
+        size=ModelSize.LARGE,
+        min_vram_gb=65,
+        max_length=131072,
+        is_causal_lm=True,
+        supports_flash_attention=True
+    ),
     "llama-3.1-70b": ModelConfig(
         name="Llama 3.1 70B",
         hf_name="meta-llama/Llama-3.1-70B",
