@@ -65,24 +65,55 @@ class BenchmarkRunner:
         return metrics
     
     def benchmark_finetuned(self, test_dataset, model_path: str = None):
-        """Benchmark finetuned model."""
+        """Benchmark finetuned model.
+        
+        Supports both:
+        - PyTorch .pt format (from train.py)
+        - HuggingFace format (from train_cloud.py)
+        """
         print("\n" + "-"*40)
         print("Benchmarking Finetuned Model")
         print("-"*40)
         
         if model_path is None:
             model_path = CHECKPOINT_DIR / "best_model.pt"
+        else:
+            model_path = Path(model_path)
         
-        if not Path(model_path).exists():
+        if not model_path.exists():
             print(f"  WARNING: Finetuned model not found at {model_path}")
-            print("  Skipping finetuned benchmark. Run train.py first.")
+            print("  Skipping finetuned benchmark.")
+            print("  For local training: run train.py first.")
+            print("  For cloud training: use --model_path checkpoints/cloud_*/final_model")
             return None
         
-        model = DrugDiscoveryModel(use_gradient_checkpointing=False)
-        checkpoint = torch.load(model_path, map_location=self.device)
-        model.load_state_dict(checkpoint['model_state_dict'])
-        model = model.to(self.device)
-        model.eval()
+        # Check if it's HuggingFace format (from train_cloud.py)
+        # HF format: directory containing config.json and model files
+        is_hf_format = (
+            model_path.is_dir() and (model_path / "config.json").exists()
+        ) or (
+            model_path.suffix == "" and model_path.is_dir()
+        )
+        
+        if is_hf_format:
+            from transformers import AutoModelForSequenceClassification
+            print(f"  Loading HuggingFace format model from: {model_path}")
+            model = AutoModelForSequenceClassification.from_pretrained(
+                str(model_path),
+                trust_remote_code=True,
+            )
+            model = model.to(self.device)
+            model.eval()
+            # Set flag for HF model to use different evaluation
+            model._is_hf_model = True
+        else:
+            model = DrugDiscoveryModel(use_gradient_checkpointing=False)
+            # Use weights_only=False to avoid security check (trusted local files)
+            checkpoint = torch.load(model_path, map_location=self.device, weights_only=False)
+            model.load_state_dict(checkpoint['model_state_dict'])
+            model = model.to(self.device)
+            model.eval()
+            model._is_hf_model = False
         
         metrics = self._evaluate(model, test_dataset)
         self.results['finetuned'] = metrics
@@ -170,7 +201,11 @@ class BenchmarkRunner:
             labels = batch['labels']
             
             outputs = model(input_ids, attention_mask)
-            logits = outputs['logits']
+            # Handle both HuggingFace models and custom models
+            if hasattr(outputs, 'logits'):
+                logits = outputs.logits  # HuggingFace format
+            else:
+                logits = outputs['logits']  # Custom model format
             probs = torch.softmax(logits, dim=-1)
             preds = torch.argmax(probs, dim=-1)
             

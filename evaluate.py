@@ -37,21 +37,51 @@ from torch.utils.data import DataLoader
 
 
 def load_model(model_path: str = None, device: torch.device = None):
-    """Load trained model."""
+    """Load trained model.
+    
+    Supports both:
+    - PyTorch .pt format (from train.py)
+    - HuggingFace format (from train_cloud.py)
+    """
     if model_path is None:
         model_path = CHECKPOINT_DIR / "best_model.pt"
+    else:
+        model_path = Path(model_path)
     
-    model = DrugDiscoveryModel(use_gradient_checkpointing=False)
+    # Check if it's a HuggingFace format directory (from train_cloud.py)
+    # HF format: directory containing config.json and model files
+    is_hf_format = (
+        model_path.is_dir() and (model_path / "config.json").exists()
+    ) or (
+        model_path.suffix == "" and model_path.is_dir()  # Directory without extension
+    )
     
-    checkpoint = torch.load(model_path, map_location=device)
-    model.load_state_dict(checkpoint['model_state_dict'])
-    model = model.to(device)
-    model.eval()
-    
-    print(f"Loaded model from: {model_path}")
-    print(f"Trained for {checkpoint.get('epoch', 'unknown')} epochs")
-    
-    return model
+    if is_hf_format:
+        # Load HuggingFace format model
+        from transformers import AutoModelForSequenceClassification
+        print(f"Loading HuggingFace format model from: {model_path}")
+        model = AutoModelForSequenceClassification.from_pretrained(
+            str(model_path),
+            trust_remote_code=True,
+        )
+        model = model.to(device)
+        model.eval()
+        print("Loaded HuggingFace format model (from train_cloud.py)")
+        return model
+    else:
+        # Load PyTorch .pt format
+        model = DrugDiscoveryModel(use_gradient_checkpointing=False)
+        
+        # Use weights_only=False to avoid security check (trusted local files)
+        checkpoint = torch.load(model_path, map_location=device, weights_only=False)
+        model.load_state_dict(checkpoint['model_state_dict'])
+        model = model.to(device)
+        model.eval()
+        
+        print(f"Loaded model from: {model_path}")
+        print(f"Trained for {checkpoint.get('epoch', 'unknown')} epochs")
+        
+        return model
 
 
 @torch.no_grad()
@@ -67,7 +97,11 @@ def get_predictions(model, dataloader, device):
         labels = batch['labels']
         
         outputs = model(input_ids, attention_mask)
-        logits = outputs['logits']
+        # Handle both HuggingFace models and custom models
+        if hasattr(outputs, 'logits'):
+            logits = outputs.logits  # HuggingFace format
+        else:
+            logits = outputs['logits']  # Custom model format
         probs = torch.softmax(logits, dim=-1)
         preds = torch.argmax(probs, dim=-1)
         
@@ -185,7 +219,10 @@ def main(args):
     model_path = Path(args.model_path) if args.model_path else CHECKPOINT_DIR / "best_model.pt"
     if not model_path.exists():
         print(f"\nError: Model not found at {model_path}")
-        print("Please run 'python train.py' first.")
+        print("\nFor local training: run 'python train.py' first.")
+        print("For cloud training: use --model_path to specify the model location:")
+        print("  python evaluate.py --model_path checkpoints/cloud_<model_name>_<timestamp>/final_model")
+        print("\nList available cloud models with: ls checkpoints/cloud_*/final_model")
         return
     
     # Load model
