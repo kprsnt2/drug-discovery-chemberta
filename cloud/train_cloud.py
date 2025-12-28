@@ -247,7 +247,9 @@ def load_model(config: dict, num_labels: int = 2):
                     loss_fn = nn.CrossEntropyLoss()
                     loss = loss_fn(logits, labels)
                 
-                return type('Output', (), {'loss': loss, 'logits': logits})()
+                # Return dict for Trainer compatibility
+                from transformers.modeling_outputs import SequenceClassifierOutput
+                return SequenceClassifierOutput(loss=loss, logits=logits)
             
             def gradient_checkpointing_enable(self, gradient_checkpointing_kwargs=None):
                 """Enable gradient checkpointing on base model."""
