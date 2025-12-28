@@ -1,0 +1,57 @@
+# Cloud Training Requirements for Large Models
+# Supports AMD MI300X (ROCm) and NVIDIA GPUs (CUDA)
+
+# Core ML
+torch>=2.2.0
+transformers>=4.40.0
+datasets>=2.18.0
+tokenizers>=0.15.0
+accelerate>=0.28.0
+
+# DeepSpeed for distributed training
+deepspeed>=0.14.0
+
+# Flash Attention (for supported GPUs)
+flash-attn>=2.5.0; platform_system != "Windows"
+
+# PEFT for LoRA (optional, for comparison)
+peft>=0.10.0
+
+# Data processing
+pandas>=2.2.0
+numpy>=1.26.0
+scikit-learn>=1.4.0
+rdkit>=2023.9.1
+
+# Visualization
+matplotlib>=3.8.0
+seaborn>=0.13.0
+plotly>=5.20.0
+
+# Weights & Biases for experiment tracking
+wandb>=0.16.0
+
+# Dataset APIs
+chembl-webresource-client>=0.10.8
+requests>=2.31.0
+tqdm>=4.66.0
+
+# Metrics
+scipy>=1.12.0
+evaluate>=0.4.0
+
+# Model quantization
+bitsandbytes>=0.43.0
+auto-gptq>=0.7.0; platform_system != "Windows"
+
+# Hugging Face Hub
+huggingface_hub>=0.22.0
+
+# Utilities
+pyyaml>=6.0
+python-dotenv>=1.0.0
+rich>=13.7.0  # Better logging
+
+# ROCm specific (for AMD GPUs)
+# Pre-installed on one-click ROCm 7 + GPT-OSS instances
+# Or install via: pip install torch --index-url https://download.pytorch.org/whl/rocm6.2
