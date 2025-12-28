@@ -224,6 +224,7 @@ def load_model(config: dict, num_labels: int = 2):
                 self.base_model = base_model
                 self.classifier = nn.Linear(hidden_size, num_labels)
                 self.num_labels = num_labels
+                self._classifier_moved = False
                 
             def forward(self, input_ids, attention_mask=None, labels=None, **kwargs):
                 outputs = self.base_model(input_ids, attention_mask=attention_mask, **kwargs)
@@ -232,10 +233,17 @@ def load_model(config: dict, num_labels: int = 2):
                     hidden = outputs.last_hidden_state[:, -1, :]  # Last token
                 else:
                     hidden = outputs[0][:, -1, :]
+                
+                # Move classifier to same device as hidden states (once)
+                if not self._classifier_moved:
+                    self.classifier = self.classifier.to(hidden.device).to(hidden.dtype)
+                    self._classifier_moved = True
+                
                 logits = self.classifier(hidden)
                 
                 loss = None
                 if labels is not None:
+                    labels = labels.to(logits.device)
                     loss_fn = nn.CrossEntropyLoss()
                     loss = loss_fn(logits, labels)
                 
