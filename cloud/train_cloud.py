@@ -253,6 +253,9 @@ def load_model(config: dict, num_labels: int = 2):
     print(f"Total parameters: {total_params:,}")
     print(f"Trainable parameters: {trainable_params:,}")
     
+    # Track if using device_map
+    model._uses_device_map = True
+    
     return model, tokenizer
 
 
@@ -407,15 +410,36 @@ def main(args):
     print("Starting Training")
     print("-"*50)
     
-    trainer = Trainer(
-        model=model,
-        args=training_args,
-        train_dataset=train_dataset,
-        eval_dataset=val_dataset,
-        tokenizer=tokenizer,
-        data_collator=data_collator,
-        compute_metrics=compute_metrics,
-    )
+    # Check if model uses device_map (already on GPU)
+    uses_device_map = getattr(model, '_uses_device_map', False)
+    
+    if uses_device_map:
+        # Don't let Trainer move the model - it's already on device
+        from accelerate import Accelerator
+        accelerator = Accelerator()
+        
+        # Use accelerate's Trainer-compatible approach
+        trainer = Trainer(
+            model=model,
+            args=training_args,
+            train_dataset=train_dataset,
+            eval_dataset=val_dataset,
+            processing_class=tokenizer,
+            data_collator=data_collator,
+            compute_metrics=compute_metrics,
+        )
+        # Monkey-patch to skip device movement
+        trainer.place_model_on_device = False
+    else:
+        trainer = Trainer(
+            model=model,
+            args=training_args,
+            train_dataset=train_dataset,
+            eval_dataset=val_dataset,
+            processing_class=tokenizer,
+            data_collator=data_collator,
+            compute_metrics=compute_metrics,
+        )
     
     # Train
     start_time = time.time()
