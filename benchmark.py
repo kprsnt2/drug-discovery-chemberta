@@ -51,9 +51,14 @@ class BenchmarkRunner:
         print("Benchmarking Pretrained Model (No Finetuning)")
         print("-"*40)
         
-        model = DrugDiscoveryModel(use_gradient_checkpointing=False)
-        model = model.to(self.device)
-        model.eval()
+        try:
+            model = DrugDiscoveryModel(use_gradient_checkpointing=False)
+            model = model.to(self.device)
+            model.eval()
+        except Exception as e:
+            print(f"  WARNING: Could not load pretrained model: {e}")
+            print("  Skipping pretrained benchmark.")
+            return None
         
         metrics = self._evaluate(model, test_dataset)
         self.results['pretrained'] = metrics
@@ -206,12 +211,23 @@ class BenchmarkRunner:
                 logits = outputs.logits  # HuggingFace format
             else:
                 logits = outputs['logits']  # Custom model format
+            
+            # Convert to float32 for numerical stability
+            logits = logits.float()
+            logits = torch.nan_to_num(logits, nan=0.0, posinf=100.0, neginf=-100.0)
+            
             probs = torch.softmax(logits, dim=-1)
             preds = torch.argmax(probs, dim=-1)
             
+            # Get probability of positive class
+            if probs.shape[-1] >= 2:
+                pos_probs = probs[:, 1].cpu().numpy()
+            else:
+                pos_probs = probs[:, 0].cpu().numpy()
+            
             all_labels.extend(labels.cpu().numpy())
             all_preds.extend(preds.cpu().numpy())
-            all_probs.extend(probs[:, 1].cpu().numpy())
+            all_probs.extend(pos_probs)
         
         labels = np.array(all_labels)
         preds = np.array(all_preds)
