@@ -235,6 +235,16 @@ def load_model(config: dict, num_labels: int = 2):
                     loss = loss_fn(logits, labels)
                 
                 return type('Output', (), {'loss': loss, 'logits': logits})()
+            
+            def gradient_checkpointing_enable(self, gradient_checkpointing_kwargs=None):
+                """Enable gradient checkpointing on base model."""
+                if hasattr(self.base_model, 'gradient_checkpointing_enable'):
+                    self.base_model.gradient_checkpointing_enable(gradient_checkpointing_kwargs=gradient_checkpointing_kwargs)
+            
+            def gradient_checkpointing_disable(self):
+                """Disable gradient checkpointing on base model."""
+                if hasattr(self.base_model, 'gradient_checkpointing_disable'):
+                    self.base_model.gradient_checkpointing_disable()
         
         hidden_size = base_model.config.hidden_size
         model = ModelWithClassifier(base_model, num_labels, hidden_size)
