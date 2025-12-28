@@ -15,7 +15,7 @@ MODEL_DIR = Path("checkpoints/cloud_Qwen_2.5_14B_20251228_1607/final_model")
 RESULTS_FILE = Path("results/benchmark_results.json")
 EVAL_RESULTS_FILE = Path("results/evaluation_metrics.json")
 REPORT_FILE = Path("results/benchmark_report.html")
-REPO_ID = "kprsnt2/drug-discovery-qwen-14b"
+REPO_ID = "kprsnt/drug-discovery-qwen-14b"
 
 
 def load_results():
@@ -131,7 +131,7 @@ from transformers import AutoModelForSequenceClassification, AutoTokenizer
 import torch
 
 # Load model and tokenizer
-model_name = "kprsnt2/drug-discovery-qwen-14b"
+model_name = "kprsnt/drug-discovery-qwen-14b"
 tokenizer = AutoTokenizer.from_pretrained(model_name)
 model = AutoModelForSequenceClassification.from_pretrained(model_name)
 
