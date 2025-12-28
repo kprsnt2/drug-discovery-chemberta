@@ -110,12 +110,12 @@ GPU_CONFIGS: Dict[GPUProfile, GPUConfig] = {
         name="AMD MI300X 192GB",
         vram_gb=192,
         backend="rocm",
-        max_batch_size=256,
-        gradient_checkpointing=False,  # Not needed with 192GB
+        max_batch_size=4,  # Small batch - 120B model uses ~188GB
+        gradient_checkpointing=True,  # Needed for training 120B
         fp16=True,
         bf16=True,
         deepspeed_stage=2,
-        recommended_model="openai/gpt-oss-120b",  # GPT-OSS-120B fits perfectly!
+        recommended_model="openai/gpt-oss-120b",
         max_model_params="120B"
     ),
 }
