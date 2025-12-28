@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Drug Discovery Model Benchmark Report</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; background: #f5f5f5; }
+        .container { max-width: 1000px; margin: auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        h1 { color: #2c3e50; border-bottom: 3px solid #3498db; padding-bottom: 10px; }
+        h2 { color: #34495e; }
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+        th, td { padding: 12px; text-align: left; border-bottom: 1px solid #ddd; }
+        th { background: #3498db; color: white; }
+        tr:nth-child(even) { background: #f9f9f9; }
+        .highlight { background: #d4edda !important; font-weight: bold; }
+        .metric-card { display: inline-block; width: 22%; margin: 1%; padding: 15px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 10px; text-align: center; }
+        .metric-value { font-size: 24px; font-weight: bold; }
+        .metric-label { font-size: 12px; opacity: 0.9; }
+        img { max-width: 100%; margin: 20px 0; }
+        .timestamp { color: #7f8c8d; font-size: 12px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🧬 Drug Discovery Model Benchmark Report</h1>
+        <p class="timestamp">Generated: 2025-12-28 16:45:34</p>
+        
+        <h2>Summary</h2>
+        <div style="text-align: center;">
+
+            <div class="metric-card">
+                <div class="metric-value">69.6%</div>
+                <div class="metric-label">Accuracy</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">48.8%</div>
+                <div class="metric-label">F1 Score</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">70.8%</div>
+                <div class="metric-label">ROC-AUC</div>
+            </div>
+            <div class="metric-card">
+                <div class="metric-value">65.1%</div>
+                <div class="metric-label">PR-AUC</div>
+            </div>
+
+        </div>
+        
+        <h2>Model Comparison</h2>
+        <table>
+            <tr>
+                <th>Model</th>
+                <th>Accuracy</th>
+                <th>F1 Score</th>
+                <th>ROC-AUC</th>
+                <th>PR-AUC</th>
+            </tr>
+<tr><td><strong>Random</strong></td><td class=''>0.5235</td><td class=''>0.4698</td><td class=''>0.5000</td><td class=''>0.3815</td></tr><tr><td><strong>Majority</strong></td><td class=''>0.6185</td><td class=''>0.0000</td><td class=''>0.5000</td><td class=''>0.6185</td></tr><tr><td><strong>Pretrained</strong></td><td class=''>0.4420</td><td class=''>0.4084</td><td class=''>0.4294</td><td class=''>0.3381</td></tr><tr><td><strong>Finetuned</strong></td><td class='highlight'>0.6963</td><td class=''>0.4875</td><td class='highlight'>0.7082</td><td class='highlight'>0.6511</td></tr>
+        </table>
+        
+        <h2>Visualizations</h2>
+        <img src="comparison_plot.png" alt="Model Comparison">
+        <img src="improvement_plot.png" alt="Improvement Analysis">
+        
+        <h2>Interpretation</h2>
+        <ul>
+<li>Finetuning improved accuracy by <strong>+25.4%</strong></li><li>ROC-AUC increased by <strong>+27.9%</strong> after finetuning</li><li>The model shows <strong>good discriminative ability</strong> (AUC > 0.7)</li>
+        </ul>
+        
+        <h2>Methodology</h2>
+        <p>
+            This benchmark compares model performance on drug success prediction task:
+            <ul>
+                <li><strong>Pretrained</strong>: ChemBERTa model without any finetuning</li>
+                <li><strong>Finetuned</strong>: ChemBERTa after full finetuning on drug dataset</li>
+                <li><strong>Random</strong>: Random predictions baseline</li>
+                <li><strong>Majority</strong>: Always predicting the majority class</li>
+            </ul>
+        </p>
+    </div>
+</body>
+</html>

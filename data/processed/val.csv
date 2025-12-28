@@ -1,0 +1,810 @@
+smiles,name,status,source,label
+COc1c(OCCCN2CCOCC2)ccc2c1N=C(NC(=O)c1cnc(N)nc1)N1CCN=C21.Cl.Cl,COPANLISIB HYDROCHLORIDE,approved,chembl,1
+COc1ccc2c(c1)C13CCCCC1C(C2)N(C)CC3,RACEMETHORPHAN,failed,chembl,0
+CC(O)C(=O)O.Nc1cc(-c2ccncc2)c[nH]c1=O,INAMRINONE LACTATE,approved,chembl,1
+CCCc1nn(C)c2c(=O)[nH]c(-c3cc(S(=O)(=O)N4CCN(C)CC4)ccc3OCC)nc12.O=C(O)CC(O)(CC(=O)O)C(=O)O,SILDENAFIL CITRATE,approved,chembl,1
+CN1C2CCCC1CC(NC(=O)c1nn(C)c3ccccc13)C2.Cl,GRANISETRON HYDROCHLORIDE,approved,chembl,1
+CC1(C)[C@H](C(=O)O)N2C(=O)C[C@H]2S1(=O)=O,SULBACTAM,approved,chembl,1
+CN(C)CCC(c1ccccc1)c1ccccn1,PHENIRAMINE,approved,chembl,1
+Cc1ncc2n1-c1ccc(Cl)cc1C(c1ccccc1F)=NC2,MIDAZOLAM,approved,chembl,1
+CCCCCOc1ccccc1C(N)=O,PENTALAMIDE,failed,chembl,0
+O=C1c2ccccc2C(=O)C1(CN1CCOCC1)c1ccccc1,OXAZIDIONE,failed,chembl,0
+Cc1cc(-n2nc3ccc(Cl)cc3n2)c(O)c(C(C)(C)C)c1,BUMETRIZOLE,failed,chembl,0
+O=[Si]([O-])O[Si]([O-])([O-])O[Si](=O)[O-].[Mg+2].[Mg+2],MAGNESIUM TRISILICATE,approved,chembl,1
+CN1CCN(c2c(F)cc3c(=O)c(C(=O)O)cn(CCF)c3c2F)CC1,FLEROXACIN,failed,chembl,0
+O=P(O)(O)C(Cl)(Cl)P(=O)(O)O,CLODRONIC ACID,failed,chembl,0
+Oc1ccc2c(c1)CC[N+]1=C2CCC2CCCC21,QUINDONIUM,failed,chembl,0
+NC(CO)(CO)CO.NC(CO)(CO)CO.Nc1nc(=O)c2c(CCc3ccc(C(=O)N[C@@H](CCC(=O)O)C(=O)O)cc3)c[nH]c2[nH]1.O.O,PEMETREXED TROMETHAMINE,approved,chembl,1
+CNCCCN1c2ccccc2CCc2ccccc21,DESIPRAMINE,approved,chembl,1
+C#C[C@]1(O)CC[C@H]2[C@@H]3CCC4=C/C(=N/O)CC[C@@H]4[C@H]3CC[C@@]21CC,NORELGESTROMIN,approved,chembl,1
+O=C(O)C(O)C(O)C(=O)O.Oc1ccc2c(c1)CC[C@H](c1ccccc1)[C@@H]2c1ccc(OCCN2CCCC2)cc1,LASOFOXIFENE TARTRATE,approved,chembl,1
+CC(C)(Cc1c[nH]c2ccccc12)NCC(O)COc1ccccc1C#N,BUCINDOLOL,failed,chembl,0
+CCC(C(=O)O)C1(O)CCC(c2ccccc2)CC1,FENCIBUTIROL,failed,chembl,0
+Cc1nc2ncnn2c2c1CCN2C(C)(C)C,BUMEPIDIL,failed,chembl,0
+CN(C)C(=S)SSC(=S)N(C)C,THIRAM,failed,chembl,0
+O=C(CCCN1CCC(O)(c2ccc(Cl)cc2)CC1)c1ccc(F)cc1,HALOPERIDOL,approved,chembl,1
+Cc1c(-c2ccc(O)cc2)n(Cc2ccc(OCCN3CCCCCC3)cc2)c2ccc(O)cc12,BAZEDOXIFENE,approved,chembl,1
+CCS(=O)(=O)CCn1c([N+](=O)[O-])cnc1C,TINIDAZOLE,approved,chembl,1
+C[C@H](Cc1cc2c(c(C(N)=O)c1)N(CCCO)CC2)NCCOc1ccccc1OCC(F)(F)F,SILODOSIN,approved,chembl,1
+CN1CCN2c3ncccc3Cc3ccccc3C2C1,MIRTAZAPINE,approved,chembl,1
+NC(Cc1ccc(Cl)cc1)C(=O)O,FENCLONINE,failed,chembl,0
+CC[C@H](Nc1cc(C)nc2c(-c3ccc(OC)cc3C)c(C)nn12)c1nc(C)no1,VERUCERFONT,failed,chembl,0
+CCOC(C)C(/C=N/NC(N)=S)=N\NC(N)=S,GLOXAZONE,failed,chembl,0
+CCOc1cc2c(c(F)c1OCC)C(=N)N(CC(=O)c1cc(N3CCOCC3)c(OC)c(C(C)(C)C)c1)C2,ATOPAXAR,failed,chembl,0
+Cc1noc(NS(=O)(=O)c2ccc(N)cc2)c1C,SULFISOXAZOLE,approved,chembl,1
+C[N+]1(C)[C@@H]2C[C@@H](OC(=O)[C@H](CO)c3ccccc3)C[C@H]1[C@@H]1O[C@@H]12.[Br-],METHSCOPOLAMINE BROMIDE,approved,chembl,1
+CCN(CC)C(=O)C1CN2CCc3cc(OC)c(OC)cc3C2CC1OC(C)=O,BENZQUINAMIDE,approved,chembl,1
+CC(CC(C#N)(c1ccccc1)C(C)C)N(C)C,ISOAMINILE,failed,chembl,0
+O=c1[nH]c(=O)n([C@H]2C[C@H](O)[C@@H](CO)O2)cc1C(F)(F)F,TRIFLURIDINE,approved,chembl,1
+CCN1C(=CC=CC=Cc2sc3ccccc3[n+]2CC)Sc2ccccc21,DITHIAZANINE,approved,chembl,1
+CCOC(=O)N1c2ccc(C(F)(F)F)cc2[C@@H](N(Cc2cc(C(F)(F)F)cc(C(F)(F)F)c2)C(=O)OC)C[C@H]1CC,TORCETRAPIB,failed,chembl,0
+CN(C)CCS,CAPTAMINE,failed,chembl,0
+COc1ccccc1OCCNCC(O)COc1cccc2[nH]c3ccccc3c12.O=P(O)(O)O,CARVEDILOL PHOSPHATE,approved,chembl,1
+CNC(=O)c1cc(Oc2ccc(NC(=O)Nc3ccc(Cl)c(C(F)(F)F)c3)c(F)c2)ccn1,REGORAFENIB,approved,chembl,1
+C[C@H]1NCc2cc(-c3ccc4c(=O)c(C(=O)O)cn(C5CC5)c4c3OC(F)F)ccc21,GARENOXACIN,approved,chembl,1
+CC(O)CN1CCN(CC(=O)O)CCN(CC(=O)O)CCN(CC(=O)O)CC1,CALTERIDOL,failed,chembl,0
+CCOC(=O)c1[nH]c2cc(OC)c(OC)cc2c1CCN1CCN(c2ccccc2)CC1,ALPERTINE,failed,chembl,0
+O=C(O)c1cc(=O)c2ccccc2[nH]1,TRANSTORINE,failed,chembl,0
+C[C@H]1CN(Cc2ccc(CC(=O)N3CCC(Nc4cccc(F)c4)CC3)cc2)CCN1,CAMICINAL,failed,chembl,0
+CC(=O)NC[C@H]1CN(c2ccc(N3CCN(C(=O)CO)CC3)c(F)c2)C(=O)O1,EPEREZOLID,failed,chembl,0
+CC(C)=CCOC(=O)c1ccccc1Nc1cccc(C(F)(F)F)c1,PREFENAMATE,failed,chembl,0
+Cl.O=C1CC[C@@]2(O)[C@H]3Cc4ccc(O)c5c4[C@@]2(CCN3CC2CC2)[C@H]1O5,NALTREXONE HYDROCHLORIDE,approved,chembl,1
+CN1CCCC(CN2c3ccccc3Sc3ccccc32)C1,MEPAZINE,approved,chembl,1
+O=C(/C=C/c1ccc(O)c(O)c1)OC1CC(OC(=O)/C=C/c2ccc(O)c(O)c2)(C(=O)O)CC(O)C1O,CYNARINE,failed,chembl,0
+CN(C)[C@@H]1C(O)=C(C(N)=O)C(=O)[C@@]2(O)C(O)=C3C(=O)c4c(O)c(NC(=O)CN5CCCC5)cc(F)c4C[C@H]3C[C@@H]12.Cl.Cl,ERAVACYCLINE DIHYDROCHLORIDE,approved,chembl,1
+CC(C)[C@H](N)C(=O)OCCOCn1cnc2c(=O)nc(N)[nH]c21.Cl,VALACYCLOVIR HYDROCHLORIDE,approved,chembl,1
+COc1cc2ncnc(Nc3ccc(O)cc3)c2cc1OC,WHI-P131,failed,chembl,0
+Cl.Cn1c(CCCC(=O)O)nc2cc(N(CCCl)CCCl)ccc21,BENDAMUSTINE HYDROCHLORIDE,approved,chembl,1
+CS(=O)(=O)c1ccc(-c2cnc(N)c(-c3ccc(C(F)(F)F)nc3)c2)cc1,MMV-048,failed,chembl,0
+CCOCn1c(Cc2ccccc2)c(C(C)C)c(=O)[nH]c1=O,EMIVIRINE,failed,chembl,0
+CC[C@@]1(O)C(=O)OCc2c1cc1n(c2=O)Cc2c-1nc1ccccc1c2/C=N/OC(C)(C)C,GIMATECAN,failed,chembl,0
+CCC(=O)OCC(=O)[C@@]1(OC(=O)CC)[C@H](C)C[C@H]2[C@H]3[C@H]([C@@H](O)C[C@@]21C)[C@@]1(C)C=CC(=O)C=C1C[C@H]3Cl,ALCLOMETASONE DIPROPIONATE,approved,chembl,1
+NS(=O)(=O)c1cc2c(cc1Cl)NC(C1CC3C=CC1C3)NS2(=O)=O,CYCLOTHIAZIDE,approved,chembl,1
+C/C=C/C1=C(C(=O)O)N2C(=O)[C@@H](NC(=O)[C@H](N)c3ccc(O)cc3)[C@H]2SC1,"CEFPROZIL ANHYDROUS, (E)-",approved,chembl,1
+CC1=CC(=O)[N-]S(=O)(=O)O1.[K+],ACESULFAME POTASSIUM,failed,chembl,0
+CN1C(C(=O)Nc2ccccn2)=C(O)c2ccccc2S1(=O)=O,PIROXICAM,approved,chembl,1
+Cc1oc(=O)oc1COC(=O)C1=C([C@H]2CCCO2)S[C@@H]2[C@@H]([C@@H](C)O)C(=O)N12,FAROPENEM MEDOXOMIL,failed,chembl,0
+CCC(CC)COC(C(=O)OCCN(C)C)(c1ccccc1)c1ccccc1,DENAVERINE,failed,chembl,0
+NC(=O)C1(N2CCCCC2)CCN(CCCC(=O)c2ccc(F)cc2)CC1,PIPAMPERONE,failed,chembl,0
+N#Cc1c(N2C[C@@H]3NCCO[C@H]3C2)c(F)cc2c(=O)c(C(=O)O)cn(C3CC3)c12,FINAFLOXACIN,approved,chembl,1
+Cc1ccc2c(c1)c1c(n2CCc2ccccc2)CCN(C)C1,MARITUPIRDINE,failed,chembl,0
+O=C(C(c1ccccc1)c1ccccc1)N1CCN(CC(O)COc2cccc3ncccc23)CC1,DOFEQUIDAR,failed,chembl,0
+O=C(/C=C/c1cccc(F)c1)NC1CC1,CINFLUMIDE,failed,chembl,0
+O=C(O)c1ccc2nc3ccccn3c(=O)c2c1,DOQUALAST,failed,chembl,0
+CC1CCN(CCCC(=O)c2ccc(F)cc2)CC1,MELPERONE,failed,chembl,0
+COC(=O)c1cncn1C(C)c1ccccc1,METOMIDATE,failed,chembl,0
+CC(C(=O)O)c1ccc(C(=O)c2cccs2)cc1,SUPROFEN,approved,chembl,1
+CN1CCCC1=O,METHYLPYRROLIDONE,failed,chembl,0
+CN(C)CCOC(=O)c1ccc2[nH]c3c(c2c1)CSCC3,TIPINDOLE,failed,chembl,0
+C1CCN2C[C@@H]3C[C@@H](CN4CCCC[C@@H]34)[C@H]2C1.O.O.O.O.O.O=S(=O)(O)O,SPARTEINE SULFATE,approved,chembl,1
+N#CN=C(NCCCCCCOc1ccc(Cl)cc1)Nc1ccncc1,CHS-828,failed,chembl,0
+C=CCOc1ccccc1OCC(O)CNC(C)C,OXPRENOLOL,approved,chembl,1
+COc1cc(OC)c(/C=C/S(=O)(=O)Cc2ccc(OC)c(OP(=O)(O)O)c2)c(OC)c1,BRICICLIB,failed,chembl,0
+CC(C)(C)NC[C@H](O)COc1cccc2c1CCCC2=O.Cl,LEVOBUNOLOL HYDROCHLORIDE,approved,chembl,1
+C[C@@H]1CCN(C(=O)CC#N)C[C@@H]1N(C)c1ncnc2[nH]ccc12,TOFACITINIB,approved,chembl,1
+O=C(Nc1ccc(Br)cc1)c1cc(Br)c(Br)s1,TIBROFAN,failed,chembl,0
+COc1ccc2c(c1)C(O)(CCCN(C)C)c1ccccc1S2,MEPROTIXOL,failed,chembl,0
+NC(=O)CC[C@H](N)C(=O)O,GLUTAMINE,approved,chembl,1
+CN(C)CCO[C@]1(c2ccccc2)C[C@H]2CC[C@]1(C)C2(C)C,DERAMCICLANE,failed,chembl,0
+Nc1ccc(S(=O)(=O)c2ccc(NCC(=O)O)cc2)cc1,ACEDIASULFONE,failed,chembl,0
+CN(CCN1CCC(OC(=O)Nc2ccccc2-c2ccccc2)CC1)C(=O)c1ccc(CN2CCC(C(N)=O)CC2)cc1,REVEFENACIN,approved,chembl,1
+[NH-]c1c[n+](N2CCOCC2)no1,LINSIDOMINE,failed,chembl,0
+CC(C)(Sc1cc(C(C)(C)C)c(O)c(C(C)(C)C)c1)Sc1cc(C(C)(C)C)c(OCC(=O)O)c(C(C)(C)C)c1,CAMOBUCOL,failed,chembl,0
+CCCNC(=O)c1cn(COC)c2ccccc2c1=O,TERBEQUINIL,failed,chembl,0
+Cc1ccsc1/C=C/C1=NCCCN1C,MORANTEL,failed,chembl,0
+Cc1[nH]cnc1CSCCNC(=N)NCCCc1c[nH]cn1,IMPROMIDINE,failed,chembl,0
+COc1cc(/C=C2\CCC/C(=C\c3ccc(O)c(OC)c3)C2=O)ccc1O,CYCLOVALONE,failed,chembl,0
+CCCN(CCC)C(=O)Cc1c(-c2ccc(Cl)cc2)nc2ccc(Cl)cn12,ALPIDEM,approved,chembl,1
+CC(C)NCC(O)c1ccc(N)c(C#N)c1,CIMATEROL,failed,chembl,0
+FC(F)(F)c1cccc(C2CNCCO2)c1,FLUMEXADOL,approved,chembl,1
+O=[N+]([O-])c1ccc(NN=C(c2ccc(O)cc2)c2ccc(O)cc2)c([N+](=O)[O-])c1,SIVIFENE,failed,chembl,0
+C[C@H]1COc2c(N3CCN(C)CC3)c(F)cc3c(=O)c(C(=O)O)cn1c23.C[C@H]1COc2c(N3CCN(C)CC3)c(F)cc3c(=O)c(C(=O)O)cn1c23.O,LEVOFLOXACIN,approved,chembl,1
+CC1(C)COC(N)=N1,XINOMILINE,failed,chembl,0
+CCNC1(c2ccccc2)CCCCC1,ETICYCLIDINE,failed,chembl,0
+CCOc1ccccc1C(N)=O,ETHENZAMIDE,failed,chembl,0
+COCc1c(C(C)C)nc(C(C)C)c(/C=C/[C@@H](O)C[C@@H](O)CC(=O)[O-])c1-c1ccc(F)cc1.[Na+],CERIVASTATIN SODIUM,approved,chembl,1
+COc1ccc(OC(=O)N(CC(=O)O)Cc2ccc(OCCc3nc(-c4ccccc4)oc3C)cc2)cc1,MURAGLITAZAR,failed,chembl,0
+FC(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)C(F)(F)Br,PERFLUBRON,approved,chembl,1
+CC(=O)S[C@@H]1CC2=CC(=O)CC[C@]2(C)[C@H]2CC[C@@]3(C)[C@@H](CC[C@@]34CCCO4)[C@H]12,SPIROXASONE,failed,chembl,0
+COc1cc(C(=O)NC2CCCNC2)cc(OC)c1OC,TROXIPIDE,failed,chembl,0
+CS(=O)(=O)OC[C@@H](OS(C)(=O)=O)[C@@H](O)[C@H](O)[C@@H](COS(C)(=O)=O)OS(C)(=O)=O,MANNOSULFAN,failed,chembl,0
+C[C@@H]1O[C@@H](O[C@H]2CC[C@@]3(C)[C@H](CC[C@@H]4[C@@H]3CC[C@]3(C)[C@@H](C5=CC(=O)OC5)CC[C@]43O)C2)CC[C@H]1O,RAMNODIGIN,failed,chembl,0
+Cc1ccc(C#Cc2ccc(S(=O)(=O)N[C@H](Cc3c[nH]c4ccccc34)C(=O)O)s2)cc1,S-3304,failed,chembl,0
+O=C(O)CCC1(Cc2ccccc2)CCCCC1=O,HEXACYPRONE,failed,chembl,0
+CCCn1cnc2c1c(=O)n(CCCCC(C)=O)c(=O)n2C,PROPENTOFYLLINE,failed,chembl,0
+Cc1cccc(C)c1N(CC(=O)Nc1ccc(-c2ncon2)cc1)C(=O)C1CCS(=O)(=O)CC1,AMENAMEVIR,approved,chembl,1
+O=P(O)(O)C(Cc1ccccn1)P(=O)(O)O,PIRIDRONIC ACID,failed,chembl,0
+O=[As][As+](=O)[O-],ARSENIC TRIOXIDE,approved,chembl,1
+Nc1nc2[nH]cc(CCc3ccc(C(=O)N[C@@H](CCC(=O)[O-])C(=O)[O-])cc3)c2c(=O)[nH]1.[Na+].[Na+],PEMETREXED DISODIUM,approved,chembl,1
+N[C@@H](Cc1ccc(O)c(O)c1)C(=O)O,LEVODOPA,approved,chembl,1
+O=C(CCCN1CCC(O)(c2ccc(Br)cc2)CC1)c1ccc(F)cc1,BROMPERIDOL,failed,chembl,0
+Cc1cc(C(C)(C)C)c(O)c(C)c1CC1=NCCN1,OXYMETAZOLINE,approved,chembl,1
+N=C(N)c1ccc(OCCCCCOc2ccc(C(=N)N)cc2)cc1.O=S(=O)(O)CCO.O=S(=O)(O)CCO,PENTAMIDINE ISETHIONATE,approved,chembl,1
+CC#CCC(C)[C@H](O)/C=C/[C@@H]1[C@H]2C/C(=C/CCCC(=O)O)C[C@H]2C[C@H]1O,ILOPROST,approved,chembl,1
+C/N=C(\NC)NCc1ccccc1.C/N=C(\NC)NCc1ccccc1.O=S(=O)(O)O,BETHANIDINE SULFATE,approved,chembl,1
+N=C(N)c1ccc(OCCCCCOc2ccc(C(=N)N)cc2)cc1,PENTAMIDINE,approved,chembl,1
+C[C@H]1C[C@H]2[C@@H]3CCC4=CC(=O)C=C[C@]4(C)[C@@]3(F)[C@@H](O)C[C@]2(C)[C@@]1(O)C(=O)CCl,CLOBETASOL,failed,chembl,0
+O=C(O)C(O)C(O)C(=O)O.Oc1ccc2c(c1)[C@@]13CCCC[C@@]1(O)[C@@H](C2)N(CC1CCC1)CC3,BUTORPHANOL TARTRATE,approved,chembl,1
+OC(c1ccccc1)(c1ccccc1)C12CC[N+](CCOCc3ccccc3)(CC1)CC2.[Br-],UMECLIDINIUM BROMIDE,approved,chembl,1
+O=C(O)CCC/C=C\C[C@@H]1[C@@H](/C=C/C(O)COc2ccsc2)[C@H](O)C[C@@H]1O,TIAPROST,failed,chembl,0
+CO/N=C(\C(=O)N[C@@H]1C(=O)N2C(C(=O)O)=C(CSc3nnnn3C)CS[C@H]12)c1csc(N)n1,CEFMENOXIME,approved,chembl,1
+CN(Cc1cc(Br)cc(Br)c1N)C1CCCCC1.Cl,BROMHEXINE HYDROCHLORIDE,failed,chembl,0
+COc1cc2cc(c1Cl)N(C)C(=O)C[C@H](OC(=O)[C@H](C)N(C)C(C)=O)[C@]1(C)O[C@H]1[C@H](C)[C@@H]1C[C@@](O)(NC(=O)O1)[C@H](OC)/C=C/C=C(\C)C2,MAYTANSINE,failed,chembl,0
+NS(=O)(=O)c1cc2c(cc1C(F)(F)F)NC(Cc1ccccc1)NS2(=O)=O,BENDROFLUMETHIAZIDE,approved,chembl,1
+NC(=O)N1CC(Oc2cccc(C(F)(F)F)c2)C1,DEZINAMIDE,failed,chembl,0
+NS(=O)(=O)c1ccc(-n2nc(C(F)(F)F)cc2-c2ccc(F)cc2)cc1,MAVACOXIB,failed,chembl,0
+CCCN1CCCC1CNC(=O)c1cc(S(N)(=O)=O)ccc1OC,PROSULPRIDE,failed,chembl,0
+O=C(O)CC(O)(CC(=O)O)C(=O)O,CITRIC ACID,approved,chembl,1
+COC(=O)N1CC2(CC2)C[C@H](C(=O)NO)[C@H]1C(=O)N1CCN(c2ccccc2)CC1,ADERBASIB,failed,chembl,0
+O=C(O)CN(CC(=O)O)Cc1cc2c(cc1O)Oc1cc(O)c(CN(CC(=O)O)CC(=O)O)cc1C21OC(=O)c2ccccc21,OFTASCEINE,failed,chembl,0
+Cc1oc(=O)oc1CN1CCN(c2cc3c(cc2F)c(=O)c(C(=O)O)c2n3C(C)S2)CC1,PRULIFLOXACIN,failed,chembl,0
+CN1C(=N)N(c2ccc(Cl)cc2)CC1=O,CLAZOLIMINE,failed,chembl,0
+S1SSSSSSS1,SULFUR,approved,chembl,1
+CCCCCCCC/C=C\CCCCCCCC(=O)OC[C@@H](O)[C@H]1OC[C@H](O)[C@H]1O,SORBITAN MONOOLEATE,failed,chembl,0
+CCCCNC(C)(C)[PH](=O)O,BUTAFOSFAN,failed,chembl,0
+CCCCCCCCN1CCc2c(C)c(CC(=O)O)c(C)c(NC(=O)C(C)(C)C)c21,PACTIMIBE,failed,chembl,0
+CN1CCN(C2=Nc3cc(Cl)ccc3Nc3ccccc32)CC1,CLOZAPINE,approved,chembl,1
+CN1CCc2cccc3c2[C@H]1Cc1ccc(O)c(O)c1-3,APOMORPHINE,approved,chembl,1
+CCC(=O)NS(=O)(=O)c1ccc(-c2c(-c3ccccc3)noc2C)cc1,PARECOXIB,approved,chembl,1
+NC(CO)(CO)CO.O=C(c1ccccc1)c1ccc2n1CCC2C(=O)O,KETOROLAC TROMETHAMINE,approved,chembl,1
+O=C(O)CN(CC(=O)O)CC(=O)Nc1ccc(Cl)cc1C(=O)c1ccccc1,ARCLOFENIN,failed,chembl,0
+Cc1ccc([C@@H]2O[C@H](CO)[C@@H](O)[C@H](O)[C@H]2O)cc1Cc1ccc(-c2ccc(F)cc2)s1.O,CANAGLIFLOZIN,approved,chembl,1
+CC(C)NCC(O)c1cccc(O)c1,METATEROL,failed,chembl,0
+C[C@]12C[C@H](O)[C@H]3[C@@H](CCC4=CC(=O)CC[C@@]43C)[C@@H]1CC[C@@H]2C(=O)CO,CORTICOSTERONE,failed,chembl,0
+Cc1cc(N)c2ccccc2[n+]1CCCCCCCCCC[n+]1c(C)cc(N)c2ccccc21,DEQUALINIUM,approved,chembl,1
+CCn1cc(C(=O)O)c(=O)c2cc(F)c(N3CCC(N)C3)nc21,ESAFLOXACIN,failed,chembl,0
+C[C@@H]1C[C@H]2[C@@H]3C[C@H](F)C4=CC(=O)C=C[C@]4(C)[C@@]3(F)[C@@H](O)C[C@]2(C)[C@@]1(O)C(=O)CO,FLUMETHASONE,failed,chembl,0
+O=C(O)CCN1C(=O)/C(=C/c2ccc(-c3ccc(Cl)cc3)o2)SC1=S,CLAFICAPAVIR,failed,chembl,0
+CC(=O)OCC/C(SC(C)=O)=C(/C)N(C=O)Cc1cnc(C)nc1N,ACETIAMINE,failed,chembl,0
+O=C(c1ccc2nonc2c1)N1CCCCC1,FARAMPATOR,failed,chembl,0
+CC(=O)NC[C@H]1CN(c2ccc(-c3ccc(CNCc4cnn[nH]4)cc3)c(F)c2)C(=O)O1,RADEZOLID,failed,chembl,0
+O=c1[nH]c(=O)n([C@H]2C[C@H](O)[C@@H](CO)O2)cc1F,FLOXURIDINE,approved,chembl,1
+C[C@]12CCC(=O)C[C@@H]1CC[C@@H]1[C@@H]2CC[C@@]2(C)[C@H]1CC[C@]2(C)O,MESTANOLONE,failed,chembl,0
+O=C(O)[C@@H]1C[C@@H](C2CCCCC2)CN1C(=O)CP(=O)(O)CCCCc1ccccc1,FOSINOPRILAT,failed,chembl,0
+C1CCC2(C1)C1CN(CC3CC3)CC2CN(CC2CC2)C1,TEDISAMIL,failed,chembl,0
+CN(C)C/C=C(/c1ccc(Br)cc1)c1cccnc1,ZIMELDINE,approved,chembl,1
+CC(C(=O)N1c2ccccc2Sc2ccccc21)[N+]1(C)CCCC1.[Br-],PROPYROMAZINE BROMIDE,failed,chembl,0
+COc1cccc(N2CCN(C3=Nc4c(F)cccc4[C@H](CC(=O)O)N3c3cc(C(F)(F)F)ccc3OC)CC2)c1,LETERMOVIR,approved,chembl,1
+CCCCOC(=O)c1ccc(N)cc1,BUTAMBEN,approved,chembl,1
+CC(=O)Nc1ccc(O)cc1,ACETAMINOPHEN,approved,chembl,1
+CN(C)CCOC(c1ccccc1)c1ccc(Br)cc1,BROMODIPHENHYDRAMINE,approved,chembl,1
+Cn1cc(CCN2CCN(c3ccccc3Cl)CC2)cn1,ENPIPRAZOLE,failed,chembl,0
+N=C(N)NCCN1CCCCCCC1.O=S(=O)(O)O,GUANETHIDINE MONOSULFATE,approved,chembl,1
+N=C(NCCC[C@H](N)C(=O)O)N[N+](=O)[O-],NITROARGININE,failed,chembl,0
+CCC(=O)[N-]S(=O)(=O)c1ccc(-c2c(-c3ccccc3)noc2C)cc1.[Na+],PARECOXIB SODIUM,approved,chembl,1
+O=C([O-])CCC(=O)OC[C@@H](NC(=O)C(Cl)Cl)[C@H](O)c1ccc([N+](=O)[O-])cc1.[Na+],CHLORAMPHENICOL SODIUM SUCCINATE,approved,chembl,1
+C[C@H](C(=O)O)c1ccc2oc(-c3ccc(F)cc3)nc2c1,FLUNOXAPROFEN,failed,chembl,0
+COC(=O)CCC[N+](C)(C)C,CARPRONIUM,failed,chembl,0
+COc1cc(C[C@@H](CO)[C@H](CO)Cc2ccc(O)c(OC)c2)ccc1O,(+)-SECOISOLARICIRESINOL,failed,chembl,0
+O=C1OC(OC(=O)c2cccnc2Nc2cccc(C(F)(F)F)c2)c2ccccc21,TALNIFLUMATE,failed,chembl,0
+c1ccc2nc(N3CCNCC3)ccc2c1,QUIPAZINE,failed,chembl,0
+CC(=O)O[C@]1(C(C)=O)CCC2[C@@H]3C[C@H](C)C4=CCCC[C@]4(C)[C@H]3CC[C@@]21C,ANAGESTONE ACETATE,approved,chembl,1
+CCN(C(C)=O)c1c(I)cc(I)c(OCCOC(C)C(=O)O)c1I,IOLIXANIC ACID,failed,chembl,0
+C=CCNc1nc(NCC=C)nc(N2CCN(C(c3ccc(F)cc3)c3ccc(F)cc3)CC2)n1,ALMITRINE,approved,chembl,1
+O=C(c1cc(O)c(O)c(O)c1)c1ccc(O)c(O)c1O,EXIFONE,approved,chembl,1
+O=c1[nH]cc(F)c(=O)[nH]1,FLUOROURACIL,approved,chembl,1
+COc1ccc(NC(=O)Nc2ccc(F)cc2F)cc1-c1c(Br)cnn1C,NELOTANSERIN,failed,chembl,0
+CC(C)OC(=O)CNc1cccc(CN(Cc2ccc(-n3cccn3)cc2)S(=O)(=O)c2cccnc2)n1,OMIDENEPAG ISOPROPYL,approved,chembl,1
+CC1=C(/C=C/C(C)=C/C=C/C(C)=C\C(=O)O)C(C)(C)CCC1,ISOTRETINOIN,approved,chembl,1
+Cl.Oc1ccc2c3c1O[C@H]1[C@@H](O)CC[C@@]4(O)[C@@H](C2)N(CC2CCC2)CC[C@]314,NALBUPHINE HYDROCHLORIDE,approved,chembl,1
+[Ag+],SILVER,failed,chembl,0
+CNC(=O)CNC(=O)c1c(I)c(NC(C)=O)c(I)c(C(=O)O)c1I,IOGLICIC ACID,failed,chembl,0
+O=C(O)CCCCc1ccc(CCCc2ccccc2)s1,EPROVAFEN,failed,chembl,0
+CC(C)NCC(O)COc1ccc(COCCOC(C)C)cc1,BISOPROLOL,approved,chembl,1
+CCOc1ccc(C(C)(C)COCc2cccc(Oc3ccccc3)c2)cc1,ETOFENPROX,failed,chembl,0
+C#C[C@]1(OC(C)=O)CC[C@H]2[C@@H]3CC=C4C=C(OC5CCCC5)CC[C@@H]4[C@H]3CC[C@@]21C,QUINGESTANOL ACETATE,failed,chembl,0
+CCCC(=O)N1CCCN(c2nc(N)c3cc(OC)c(OC)cc3n2)CC1,BUNAZOSIN,failed,chembl,0
+N[C@@H](CC(=O)N1CCn2c(nnc2C(F)(F)F)C1)Cc1cc(F)c(F)cc1F,SITAGLIPTIN,approved,chembl,1
+Cc1ccc(O)c([C@H](CCN(C(C)C)C(C)C)c2ccccc2)c1,TOLTERODINE,approved,chembl,1
+CC(=O)O[C@H]1CC[C@H]2[C@@H]3CC[C@H]4C/C(=N/Oc5ccc([N+](=O)[O-])cc5)[C@H](Cl)C[C@]4(C)[C@H]3CC[C@]12C,NISTERIME ACETATE,failed,chembl,0
+CC[C@@H](C)n1ncn(-c2ccc(N3CCN(c4ccc(OC[C@@H]5CO[C@@](CSc6nncn6C)(c6ccc(Cl)cc6)O5)cc4)CC3)cc2)c1=O,MITRATAPIDE,failed,chembl,0
+Cc1nnc(SCC2=C(C(=O)[O-])N3C(=O)[C@@H](NC(=O)Cn4cnnn4)[C@H]3SC2)s1.[Na+],CEFAZOLIN SODIUM,approved,chembl,1
+O=C(NC[C@H]1CN(c2ccc(N3CCOCC3=O)cc2)C(=O)O1)c1ccc(Cl)s1,RIVAROXABAN,approved,chembl,1
+CCOC(=O)N1CCC(=O)N(c2ccccc2)c2cc(Cl)ccc21,ARFENDAZAM,failed,chembl,0
+COC[C@H](O)Cn1c(=O)cnn(-c2ccc(Cl)c(C(=O)NCC3(O)CCCCCC3)c2)c1=O,CE-224535,failed,chembl,0
+C=CCN1CC[C@]23c4c5ccc(O)c4O[C@H]2C(=O)CC[C@@]3(O)[C@H]1C5,NALOXONE,approved,chembl,1
+CCOP(=O)(OCC)[C@H](NC(=O)[C@@]1(O)[C@H](O)[C@]2(CC)C=CCN3CC[C@@]4(c5cc([C@@]6(C(=O)OC)C[C@H]7CN(CCc8c6[nH]c6ccccc86)C[C@](O)(CC)C7)c(OC)cc5N(C)[C@@H]14)[C@@H]32)C(C)C,VINFOSILTINE,failed,chembl,0
+CC(CCN1CCOCC1)OC(=O)C1(c2ccccc2)CCOCC1,FEDRILATE,failed,chembl,0
+CC1(C)CSSC[C@@H](C(=O)O)NC1=O,LIMAZOCIC,failed,chembl,0
+CCCCCCCC(=O)CC[C@@H]1[C@@H](C/C=C\CCCC(=O)OC(C)C)[C@@H](O)C[C@H]1O,UNOPROSTONE ISOPROPYL,approved,chembl,1
+C[C@H](CN1CCCC1)C(=O)c1ccc(C(F)(F)F)cc1,LANPERISONE,failed,chembl,0
+CCS(=O)(=O)CCCC12CCC(c3nnc(-c4ccccc4C(F)(F)F)n3C)(CC1)CC2,MK-0736,failed,chembl,0
+CCC(Br)(CC)C(=O)NC(N)=O,CARBROMAL,failed,chembl,0
+O=C(O)C1C/C(=C2/CCN(c3ccccc3)C2=O)c2ccc(Cl)cc2N1,GW468816,failed,chembl,0
+CC(CN(C)C)CN1c2ccccc2Sc2ccc(C(F)(F)F)cc21,TRIFLUOMEPRAZINE,failed,chembl,0
+C[C@@H](CCc1ccc(O)cc1)NCCc1ccc(O)c(O)c1,LEVDOBUTAMINE,failed,chembl,0
+CN(C)CCOC(c1ccc(Cl)cc1)c1ccccn1,CARBINOXAMINE,approved,chembl,1
+CCCCCCCCCCCCCCCC(=O)Nc1ccn([C@@H]2O[C@H](CO)[C@@H](O)[C@@H]2C#N)c(=O)n1,SAPACITABINE,failed,chembl,0
+COC(=O)C1Nc2cc(Cl)c(S(N)(=O)=O)cc2S(=O)(=O)N1C,CARMETIZIDE,failed,chembl,0
+O=C(NCc1ccc(Br)cc1)c1cc(Br)cc(Br)c1O,BENSALAN,failed,chembl,0
+O=C(O)c1cc(=O)c2c(OCC(O)COc3cccc4oc(C(=O)O)cc(=O)c34)cccc2o1,CROMOLYN,approved,chembl,1
+COc1cccc(OC)c1-c1cc(C(=O)NC2(C(=O)O)C3CC4CC(C3)CC2C4)nn1-c1ccnc2cc(Cl)ccc12,REMINERTANT,failed,chembl,0
+CC(=O)N(CC(O)CO)c1c(I)c(C(=O)NCC(O)CO)c(I)c(C(=O)NCC(O)CO)c1I,IOHEXOL,approved,chembl,1
+C[C@]12CC[C@@H]3c4ccc(O)cc4CC[C@H]3[C@@H]1C[C@H](O)[C@@H]2O,EPIESTRIOL,failed,chembl,0
+C=CCC1=C(C)C(OC(=O)[C@@H]2[C@@H](C=C(C)C)C2(C)C)CC1=O,BIOALLETHRIN,approved,chembl,1
+CCCNC(C)(C)C(=O)Nc1ccccc1C,QUATACAINE,failed,chembl,0
+Oc1ccc([C@@H]2Oc3ccc(O)cc3[C@@H]3CCC[C@@H]32)cc1,ERTEBEREL,failed,chembl,0
+CC(=O)OCOC(=O)c1cscc1Nc1cccc(C)c1Cl,ACLANTATE,failed,chembl,0
+N[C@H](C(=O)O)c1ccc(O)cc1,OXFENICINE,failed,chembl,0
+CNC(=O)Nc1c(OCCN2CCCC2)c(OC)c2occc2c1OC,CAROCAINIDE,failed,chembl,0
+CN1CCN(CCCN2c3ccccc3Sc3ccccc32)CC1,PERAZINE,failed,chembl,0
+CC(C)NC(=N)NC(=N)Nc1ccc(Cl)cc1.Cl,PROGUANIL HYDROCHLORIDE,approved,chembl,1
+CCCCCNC(=N)NN=Cc1c[nH]c2ccc(OC)cc12,Tegaserod,withdrawn,drugbank,0
+CC(C)(C#Cc1ccc(-c2ccc(Cl)c3c([N-]S(C)(=O)=O)nn(CC(F)(F)F)c23)c([C@H](Cc2cc(F)cc(F)c2)NC(=O)Cn2nc(C(F)(F)F)c3c2C(F)(F)[C@@H]2C[C@H]32)n1)S(C)(=O)=O.[Na+],LENACAPAVIR SODIUM,approved,chembl,1
+CC(=O)O[C@H]1C[C@@]2(C)[C@@H](C[C@@H](O)[C@H]3[C@@]4(C)CC[C@@H](O)[C@@H](C)[C@@H]4CC[C@@]32C)/C1=C(\CCC=C(C)C)C(=O)[O-].[Na+],FUSIDATE SODIUM,failed,chembl,0
+O=C1NCCN1CCN1CCC(c2cn(-c3ccc(F)cc3)c3ccc(Cl)cc23)CC1,SERTINDOLE,approved,chembl,1
+COC[C@H]1CN(c2ccc(OCC[C@@H](O)C(F)(F)F)cc2)C(=O)O1,BEFLOXATONE,failed,chembl,0
+CN1CCC2=C(C1)c1ccccc1Cc1ccccc12,SETIPTILINE,failed,chembl,0
+Cc1cc(OP(=O)([O-])[O-])c2ccccc2c1OP(=O)([O-])[O-].O.O.O.O.O.O.[Na+].[Na+].[Na+].[Na+],MENADIOL SODIUM DIPHOSPHATE,approved,chembl,1
+C[C@H](Cc1c[nH]c2c(OCC(=O)O)cccc12)NC[C@H](O)c1cccc(Cl)c1,RAFABEGRON,failed,chembl,0
+CC[C@@H](C)Nc1nc(C)nc2c(-c3ccc(OC)nc3C)c(C)nn12,PEXACERFONT,failed,chembl,0
+[11CH3]Oc1ccc(-c2c(C#N)c(C(=O)NN3CCCCC3)nn2-c2ccc(Cl)cc2Cl)cc1,JHU-75528 C-11,failed,chembl,0
+CCCCCCCCOc1ccccc1C(=O)Nc1ccc(C(=O)OCC[N+](C)(CC)CC)cc1.[Br-],OTILONIUM BROMIDE,failed,chembl,0
+CC[C@@H]1C(=O)OC[C@@H]1Cc1cncn1C.Cl,PILOCARPINE HYDROCHLORIDE,approved,chembl,1
+CC(Oc1c(Cl)cccc1Cl)C1=NCCN1,LOFEXIDINE,approved,chembl,1
+Oc1ccc([C@H]2COc3cc(O)ccc3C2)cc1,AUS-131,failed,chembl,0
+CC(C)C[C@H](NC(=O)[C@H](Cc1ccccc1)NC(=O)c1cnccn1)B(O)O,BORTEZOMIB,failed,chembl,0
+CN[C@@H](C)[C@@H](O)c1ccccc1.Cl,PSEUDOEPHEDRINE HYDROCHLORIDE,approved,chembl,1
+CNC1(c2ccccc2Cl)CCCCC1=O.Cl,KETAMINE HYDROCHLORIDE,approved,chembl,1
+CCCCc1cc2c(=O)cc(C(=O)O)[nH]c2c2c(=O)cc(C(=O)O)[nH]c12,BUFROLIN,failed,chembl,0
+CNCCNc1ccc2c3c(nn2CCNCCO)-c2c(O)ccc(O)c2C(=O)c13,TELOXANTRONE,failed,chembl,0
+CC(C)=CCC/C(C)=C/CC/C(C)=C/CN1CCN(Cc2ccc3c(c2)OCO3)CC1,PIFARNINE,failed,chembl,0
+CCC(CC)[C@H](NC(C)=O)[C@@H]1[C@H](O)[C@@H](C(=O)O)C[C@H]1NC(=N)N,PERAMIVIR ANHYDROUS,approved,chembl,1
+c1ccc2c(c1)CCCC2C1=NCCN1,TETRAHYDROZOLINE,approved,chembl,1
+Clc1ccc(C(Cn2ccnc2)OCc2ccc(Sc3ccccc3)cc2)c(Cl)c1,FENTICONAZOLE,failed,chembl,0
+CCCC(C)C1(CCSC)C(=O)NC(=S)NC1=O,METHITURAL,failed,chembl,0
+CCC#CC[C@H](C)[C@H](O)C#C[C@@H]1[C@H]2C/C(=C/COCCCC(=O)O)C[C@H]2C[C@H]1O,EPTALOPROST,failed,chembl,0
+CC(=O)N1N=C(c2ccc(N)cc2)c2cc3c(cc2C[C@H]1C)OCO3,TALAMPANEL,failed,chembl,0
+COP(=S)(OC)Oc1ccc(Sc2ccc(OP(=S)(OC)OC)cc2)cc1,TEMEFOS,failed,chembl,0
+COc1ccc2c(c1)C1(C)CCCCC1NC2,TOFETRIDINE,failed,chembl,0
+NC/C(=C/F)CCc1ccc(F)cc1,MOFEGILINE,failed,chembl,0
+O=C(O)c1cc(/N=N/c2ccc(O)c(C(=O)O)c2)ccc1O,OLSALAZINE,approved,chembl,1
+COc1cc(C(=O)NCCCCCC(=O)O)cc(OC)c1OC,CAPOBENIC ACID,failed,chembl,0
+CC(OCCN1CCCCCC1)(c1ccccc1)c1ccc(Cl)cc1,SETASTINE,failed,chembl,0
+COc1cccc2c1C(=O)c1c(O)c3c(c(O)c1C2=O)C[C@@](O)(/C(C)=N/NC(=O)c1ccccc1)C[C@@H]3O[C@H]1C[C@H](N)[C@H](O)[C@H](C)O1,ZORUBICIN,failed,chembl,0
+O=C(NCCN1CCN(c2cccc3c2OC[C@H](CO)O3)CC1)c1ccc(F)cc1,FLESINOXAN,failed,chembl,0
+C=C(CC)C(=O)c1ccc(OCC(=O)[O-])c(Cl)c1Cl.[Na+],ETHACRYNATE SODIUM,approved,chembl,1
+C(=N/NC1=NCCN1)\c1c2ccccc2c(/C=N/NC2=NCCN2)c2ccccc12,BISANTRENE,failed,chembl,0
+Cn1cc(C2=C(c3cn(C4CCN(Cc5ccccn5)CC4)c4ccccc34)C(=O)NC2=O)c2ccccc21,ENZASTAURIN,failed,chembl,0
+CC(C)(C)[C@@H]1NC(=O)O[C@@H]2CCC[C@H]2OC/C=C/C(F)(F)c2nc3ccccc3nc2O[C@@H]2C[C@@H](C(=O)N[C@]3(C(=O)NS(=O)(=O)C4(C)CC4)C[C@H]3C(F)F)N(C2)C1=O,GLECAPREVIR,approved,chembl,1
+C=CCNc1c(O)cc2c(O)c1C[C@@H](C)C[C@H](OC)[C@H](O)[C@@H](C)/C=C(\C)[C@H](OC(N)=O)[C@@H](OC)/C=C\C=C(/C)C(=O)N2,RETASPIMYCIN,failed,chembl,0
+COc1ccc(C(=O)CCC(=O)O)c2ccccc12,MENBUTONE,failed,chembl,0
+C1CNCCN1.C1CNCCN1.C1CNCCN1.O=C(O)CC(O)(CC(=O)O)C(=O)O.O=C(O)CC(O)(CC(=O)O)C(=O)O,PIPERAZINE CITRATE ANHYDROUS,approved,chembl,1
+C=C[C@]1(C)C[C@@H](OC(=O)CS[C@@H]2CC[C@@H](N)C[C@H]2O)[C@]2(C)[C@H](C)CC[C@]3(CCC(=O)[C@H]32)[C@@H](C)[C@@H]1O.CC(=O)O,LEFAMULIN ACETATE,approved,chembl,1
+Cc1c(C)c2c(c(C)c1O)CCC(C)(COc1ccc(CC3SC(=O)NC3=O)cc1)O2,TROGLITAZONE,approved,chembl,1
+O=C(O)Cc1ccc(CCNS(=O)(=O)c2ccc(Cl)cc2)cc1,DALTROBAN,failed,chembl,0
+CC(CNC(=O)c1cccnc1)NC(=O)c1cccnc1,NICARAVEN,failed,chembl,0
+CCNCC[C@H](O)CNCCCCNC[C@@H](O)CCNCC,IVOSPEMIN,failed,chembl,0
+COc1c(NC(=O)C(=O)c2ccc(OCCN3CCOCC3)c3ccccc23)cc(C(C)(C)C)cc1NS(C)(=O)=O,ITX-5061 FREE BASE,failed,chembl,0
+C[C@H](CCC(=O)O)[C@H]1CC[C@@H]2[C@]1(C)[C@@H](O)C[C@@H]1[C@@]3(C)CC[C@@H](O)C[C@H]3C[C@@H](O)[C@@]21C,CHOLATE,failed,chembl,0
+CCC(=O)Nc1ccc(O)cc1,PARAPROPAMOL,failed,chembl,0
+Nc1nc2c(c(=O)[nH]1)N1CN(c3ccc(C(=O)N[C@@H](CCC(=O)O)C(=O)O)cc3)C[C@H]1CN2,ARFOLITIXORIN,failed,chembl,0
+CCn1c(=O)c(NC)nc2ccccc21,ATAQUIMAST,failed,chembl,0
+CS(=O)(=O)N1CCc2c(-c3cnc(N)nc3)nc(N3CCOCC3)nc21,IZORLISIB,failed,chembl,0
+CCCCOc1ccc(CC(=O)NO)cc1,BUFEXAMAC,approved,chembl,1
+CN[C@H]1CN(c2ccc3c(=O)c(C(=O)O)cn(-c4nccs4)c3n2)C[C@@H]1OC,VOSAROXIN,failed,chembl,0
+N=C(N)NCC1COc2ccccc2O1,GUANOXAN,failed,chembl,0
+c1ccc(OCc2ccc(CCCN3CCOCC3)cc2)cc1,FOMOCAINE,failed,chembl,0
+COc1ccc2[nH]c3ccc4cc[n+](CCN5CCC(C6CCN(CC[n+]7ccc8ccc9[nH]c%10ccc(OC)cc%10c9c8c7)CC6)CC5)cc4c3c2c1.[Cl-].[Cl-],DITERCALINIUM CHLORIDE,failed,chembl,0
+NC(=O)NC1NC(=O)NC1=O,ALLANTOIN,failed,chembl,0
+c1ccc(C(CC2=NCCN2)c2ccccn2)cc1,MIDAGLIZOLE,failed,chembl,0
+COc1ccc(C(C)(C)NC(=O)[C@H]2CC[C@H]3[C@@H]4CC[C@H]5NC(=O)C=C[C@]5(C)[C@H]4CC[C@]23C)cc1,LAPISTERIDE,failed,chembl,0
+O=C1CN(/N=C/c2ccc(-c3ccc([N+](=O)[O-])cc3)o2)C(=O)[N-]1.[Na+],DANTROLENE SODIUM,approved,chembl,1
+COc1ccc(CN(C(=O)[C@@H](N)Cc2c(C)cc(C(N)=O)cc2C)[C@@H](C)c2ncc(-c3ccccc3)[nH]2)cc1C(=O)O,ELUXADOLINE,approved,chembl,1
+CC(C)CCOc1ccc(NC(=S)Nc2ccc(OCCC(C)C)cc2)cc1,TIOCARLIDE,failed,chembl,0
+CCCc1c(OCCCCCOc2cc3c(cc2C(C)=O)CCC(C(=O)O)O3)ccc(C(C)=O)c1O,ABLUKAST,failed,chembl,0
+O=S(=O)([O-])Oc1ccc(C(c2ccc(OS(=O)(=O)[O-])cc2)c2ccccn2)cc1.[Na+].[Na+],SODIUM PICOSULFATE,approved,chembl,1
+O=C(N[C@H]1N=C(c2ccccc2F)c2cccc3c2N(CC3)C1=O)c1cc2ccccc2[nH]1,PRANAZEPIDE,failed,chembl,0
+COc1nc(C(Cl)(Cl)Cl)c(Cl)c(OC)c1Cl,PENCLOMEDINE,failed,chembl,0
+COc1ccc2c(c1)C=C1Cn3c-2c(C2CCCCC2)c2ccc(cc23)C(=O)NS(=O)(=O)N(C)CCOCCN(C)C1=O,TMC-647055,failed,chembl,0
+CC1(C)CC(=O)c2c(C(F)(F)F)nn(-c3ccc(C(N)=O)c(N[C@H]4CC[C@H](OC(=O)CN)CC4)c3)c2C1,SNX 5422,failed,chembl,0
+O=S(O)CNc1ccc(S(=O)(=O)c2ccc(NCS(=O)O)cc2)cc1,SULFOXONE,approved,chembl,1
+CC(C)(NC(=O)C1=C(O)[C@@H]2Oc3c(O)ccc4c3[C@@]23CCN(CC2CC2)[C@H](C4)[C@]3(O)C1)c1nc(-c2ccccc2)no1.Cc1ccc(S(=O)(=O)O)cc1,NALDEMEDINE TOSYLATE,approved,chembl,1
+CCN(CC)c1ccc2cc(C(=O)Nc3ccc4[nH]c(C(=O)N5C[C@@H](CCl)c6c5cc(OC(=O)Nc5ccccc5)c5[nH]cc(C)c65)cc4c3)oc2c1,CARZELESIN,failed,chembl,0
+COc1ccc(S(=O)(=O)Nc2nnc(CC(C)C)s2)cc1,GLYSOBUZOLE,failed,chembl,0
+C/N=C(/S)[C@]1(c2cccnc2)CCCC[S@@+]1[O-],APRIKALIM,failed,chembl,0
+CO[C@@]1(NC(=O)CSC(F)F)C(=O)N2C(C(=O)O)=C(CSc3nnnn3CCO)CO[C@@H]21,FLOMOXEF,failed,chembl,0
+COc1cc(N)c(Cl)cc1C(=O)N[C@@H]1CCN(CCCCCC(=O)O[C@H]2CN3CCC2CC3)C[C@@H]1OC,NARONAPRIDE,failed,chembl,0
+O=S(=O)(O)CC(S)CS,"2,3-DIMERCAPTO-1-PROPANESULFONIC ACID",failed,chembl,0
+Cc1ccc(NC(=O)c2ccc(CN3CC[C@H](N(C)C)C3)c(C(F)(F)F)c2)cc1Nc1nccc(-c2cncnc2)n1,BAFETINIB,failed,chembl,0
+Cc1oncc1C(=O)Nc1ccc(C(F)(F)F)cc1,LEFLUNOMIDE,approved,chembl,1
+C[S+](C)[O-],DIMETHYL SULFOXIDE,approved,chembl,1
+Cc1cc(N2CCN([C@@H]3CN[C@H](C(=O)N4CCSC4)C3)CC2)n(-c2ccccc2)n1,TENELIGLIPTIN,approved,chembl,1
+C=C(C#N)C(=O)OCCCCCCCC,OCRYLATE,failed,chembl,0
+CC(=O)Oc1ccc(-c2ccc(F)cc2)cc1C(=O)O,FLUFENISAL,failed,chembl,0
+CN(C)CCC=C1c2ccccc2CCc2ccccc21,AMITRIPTYLINE,approved,chembl,1
+N[C@]1(C(=O)O)C[C@@H](F)C1,FLUCICLOVINE,approved,chembl,1
+COc1cc(N)c(Cl)cc1C(=O)N1CCN(Cc2ccc3c(c2)OCO3)CC1,PERALOPRIDE,failed,chembl,0
+CCOC(=O)CCC(=O)O[C@H]1[C@H](O[C@@H]2[C@@H](C)[C@H](O[C@H]3C[C@@](C)(OC)[C@@H](O)[C@H](C)O3)[C@@H](C)C(=O)O[C@H](CC)[C@@](C)(O)[C@H](O)[C@@H](C)C(=O)[C@H](C)C[C@@]2(C)O)O[C@H](C)C[C@@H]1N(C)C,ERYTHROMYCIN ETHYLSUCCINATE,approved,chembl,1
+CC(=O)OCC1=C(C(=O)[O-])N2C(=O)[C@@H](NC(=O)Cc3cccs3)[C@H]2SC1.[Na+],CEPHALOTHIN SODIUM,approved,chembl,1
+NS(=O)(=O)c1cc2c(cc1C(F)(F)F)NCNS2(=O)=O,HYDROFLUMETHIAZIDE,approved,chembl,1
+Nc1nc(/C(=C/CC(=O)O)C(=O)N[C@@H]2C(=O)N3C(C(=O)O)=CCS[C@H]23)cs1.O.O,CEFTIBUTEN DIHYDRATE,approved,chembl,1
+COc1cc(C(C)C)c(Oc2cnc(N)nc2N)cc1S(N)(=O)=O,GEFAPIXANT,approved,chembl,1
+Br.O=C(CC1NCCCC1O)Cn1cnc2cc(Br)c(Cl)cc2c1=O,HALOFUGINONE HYDROBROMIDE,failed,chembl,0
+CN1[C@@H]2CC[C@H]1C[C@@H](OC1c3ccccc3CCc3ccccc31)C2,DEPTROPINE,failed,chembl,0
+O=c1[nH]c2ccc(C(F)(F)F)cc2c(-c2cc(Cl)ccc2O)c1CCO,BMS-223131,failed,chembl,0
+CC(C)c1c(CN(C)C(C)Cc2ccccc2)n(C)n(-c2ccccc2)c1=O,FAMPROFAZONE,failed,chembl,0
+CSc1c(Cl)nc(NC(C)C)nc1N1CCN(C)CC1,IPROZILAMINE,failed,chembl,0
+CNC1=Nc2ccc(Cl)cc2C(c2ccccc2)=[N+]([O-])C1,CHLORDIAZEPOXIDE,approved,chembl,1
+FC(F)c1nc2ccccc2n1-c1nc(N2CCOCC2)nc(N2CCOCC2)n1,ZSTK-474,failed,chembl,0
+Nc1nc(Cl)nc2c1ncn2[C@@H]1O[C@H](CO)[C@@H](O)[C@@H]1F,CLOFARABINE,approved,chembl,1
+O=S(=O)([O-])C(I)I.[Na+],DIMETHIODAL SODIUM,failed,chembl,0
+C[C@]12CC[C@@H]3c4ccc(OC(=O)N(CCCl)CCCl)cc4CC[C@H]3[C@@H]1CC[C@@H]2OP(=O)(O)O,ESTRAMUSTINE PHOSPHATE,approved,chembl,1
+CCOC(=O)[C@@]1(CCCCCCOc2ccc(Cl)cc2)CO1,ETOMOXIR,failed,chembl,0
+CN(C(=O)/C=C/c1ccoc1)[C@@H]1CC[C@@]2(O)[C@H]3Cc4ccc(O)c5c4[C@@]2(CCN3CC2CC2)[C@H]1O5,NALFURAFINE,approved,chembl,1
+COc1ccc(Cc2nccc3cc(OC)c(OC)cc23)cc1OC.Cl,PAPAVERINE HYDROCHLORIDE,failed,chembl,0
+Oc1ccc(OCc2ccccc2)cc1,MONOBENZONE,approved,chembl,1
+O=C1c2c(O)cccc2-c2nn(CCNCCO)c3ccc(NCCNCCO)c1c23,LOSOXANTRONE,failed,chembl,0
+C[C@H](N)C(=O)c1ccccc1,CATHINONE,failed,chembl,0
+Cc1ncc(CO)c(C=O)c1O,PYRIDOXAL,failed,chembl,0
+O=C1CC[C@H](NC(=O)Cc2ccccc2)C(=O)N1,ANTINEOPLASTON A10,failed,chembl,0
+COc1ccc(S(=O)(=O)n2cc(CCC(=O)O)c3cc(OC)ccc32)cc1,INDEGLITAZAR,failed,chembl,0
+CNC(=O)c1cccc(NCC(=O)NCCc2ccc(OC)c(OC)c2)c1,ECABAPIDE,failed,chembl,0
+Cc1c(CN2CCOC(c3ccccc3)C2C)c(=O)n(-c2ccccc2)n1C,MORAZONE,failed,chembl,0
+CC(C)N(CCC(C(N)=O)(c1ccccc1)c1ccccn1)C(C)C.O=P(O)(O)O,DISOPYRAMIDE PHOSPHATE,approved,chembl,1
+CCCCOC(=O)N[C@@H](CNC(=O)C[C@H]1CC(c2ccc(C(=N)N)cc2)=NO1)C(=O)OC,ROXIFIBAN,failed,chembl,0
+CC(C)(Cc1ccc(Cl)cc1)NCCO,ETOLOREX,failed,chembl,0
+O=C(O)COCCN1CCN([C@H](c2ccccc2)c2ccc(Cl)cc2)CC1,LEVOCETIRIZINE,approved,chembl,1
+N/C(=N\C(=O)c1nc(Cl)c(N)nc1N)NCCCCc1ccc(OCC(O)CO)cc1,552-02 FREE BASE,failed,chembl,0
+CC1(C)S[C@@H]2[C@H](NC(=O)Cc3ccccc3)C(=O)N2[C@H]1C(=O)[O-].[K+],PENICILLIN G POTASSIUM,approved,chembl,1
+C=CCNC1=C2C[C@@H](C)C[C@H](OC)[C@H](O)[C@@H](C)/C=C(\C)[C@H](OC(N)=O)[C@@H](OC)/C=C\C=C(/C)C(=O)NC(=CC1=O)C2=O,TANESPIMYCIN,failed,chembl,0
+O=C(O)CC[C@H](NC(=O)N[C@@H](CCCCNC(=O)c1ccc([18F])nc1)C(=O)O)C(=O)O,PIFLUFOLASTAT F18,approved,chembl,1
+NCCC(=O)N[C@@H](Cc1c[nH]cn1)C(=O)O,CARNOSINE,failed,chembl,0
+C[C@H]1C=C(c2csc(SC3=C(C(=O)O)N4C(=O)[C@H]([C@@H](C)O)[C@H]4[C@H]3C)n2)CN1,RAZUPENEM,failed,chembl,0
+COc1cnc(-n2cnc(C)n2)c2c1c(C(=O)C(=O)N1CCN(C(=O)c3ccccc3)CC1)cn2COP(=O)(O)O,FOSTEMSAVIR,approved,chembl,1
+CNC[C@@H]1CN(c2ccc(OCc3cccc(Cl)c3)cc2)C(=O)O1,ALMOXATONE,failed,chembl,0
+CCOc1ccc(Cc2cc([C@@H]3O[C@H](SC)[C@@H](O)[C@H](O)[C@H]3O)ccc2Cl)cc1,SOTAGLIFLOZIN,approved,chembl,1
+C[C@H]1Cc2c([nH]c3cc(Cl)c(F)cc23)[C@@]2(N1)C(=O)Nc1ccc(Cl)cc12,CIPARGAMIN,failed,chembl,0
+CN1CCC2=C(C1)C(c1ccccc1)c1ccccc12,PHENINDAMINE,failed,chembl,0
+O=C(C[S+]([O-])Cc1ccco1)NC/C=C\COc1cc(CN2CCCCC2)ccn1,LAFUTIDINE,failed,chembl,0
+C[C@@H]1CN(Cc2ccc(F)cc2)[C@@H](C)CN1C(=O)c1cc2c(C(=O)C(=O)N(C)C)cn(C)c2cc1Cl,TALMAPIMOD,failed,chembl,0
+CC1CC2Oc3ccc(Cl)cc3C(=O)N2O1,MESECLAZONE,failed,chembl,0
+C[N+]1(C)CCC(OC(=O)C(O)(c2ccccc2)C2CCCCC2)C1.[Br-],HEXOPYRRONIUM BROMIDE,failed,chembl,0
+OC[C@@H](O)[C@H](O)[C@@H](O)CO,XYLITOL,failed,chembl,0
+COc1ccc(S(=O)(=O)N2c3ccc(Cl)cc3[C@](O)(c3ccccc3Cl)[C@@H]2C(=O)N2CCC[C@H]2C(N)=O)cc1OC,RELCOVAPTAN,failed,chembl,0
+CC(C)(C)NC(=O)[C@H]1CC[C@H]2[C@@H]3CC=C4C=C(C(=O)O)CC[C@]4(C)[C@H]3CC[C@]12C,EPRISTERIDE,failed,chembl,0
+NCCCC(=O)O,GAMMA-AMINOBUTYRIC ACID,failed,chembl,0
+CCCCc1nc(CCCC)n(Cc2ccc(-c3ccccc3-c3nnn[nH]3)nc2)n1,FORASARTAN,failed,chembl,0
+CN(C)CC/C=C1/c2ccccc2Sc2ccc(Cl)cc21,CHLORPROTHIXENE,approved,chembl,1
+OC[C@@H](O)[C@H]1O[C@@H]2O[C@H](C(Cl)(Cl)Cl)O[C@@H]2[C@H]1O,CHLORALOSE,failed,chembl,0
+COc1ccc(NC(=O)c2ccc(C(=N)N(C)C)cc2)c(C(=O)Nc2ccc(Cl)cn2)c1,BETRIXABAN,approved,chembl,1
+COc1cc(Cc2cnc(N)nc2N)cc(OC)c1OC,TRIMETHOPRIM,approved,chembl,1
+CC(=O)Nc1c(I)c(C(=O)O)c(I)c(N(C)C(C)=O)c1I,METRIZOIC ACID,approved,chembl,1
+Nc1nc(N)c2nc(-c3ccccc3)c(N)nc2n1,TRIAMTERENE,approved,chembl,1
+N=C(NCCCc1c[nH]cn1)NCCC(c1ccc(F)cc1)c1ccccn1,ARPROMIDINE,failed,chembl,0
+Clc1ccccc1CN1CCc2sccc2C1,TICLOPIDINE,approved,chembl,1
+CN(C(=O)CN(CCO)CC(=O)N(C)C(C)(C)Cc1ccccc1)C(C)(C)Cc1ccccc1,OXETHAZAINE,failed,chembl,0
+CO[C@]12C[C@@H](COC(=O)c3cncc(Br)c3)CN(C)[C@@H]1Cc1cn(C)c3cccc2c13,NICERGOLINE,failed,chembl,0
+CC(C)[C@H](N)C(=O)OCCOCn1cnc2c(=O)nc(N)[nH]c21,VALACYCLOVIR,approved,chembl,1
+O=c1[nH]c(=O)n(C2CCCO2)cc1F,TEGAFUR,failed,chembl,0
+CCC(C)(C)NCC(O)COc1cc(CCC(=O)c2ccc(C)cc2)ccc1OC,ALPRAFENONE,failed,chembl,0
+O=C([O-])[O-].[Na+].[Na+],SODIUM CARBONATE,approved,chembl,1
+CCCCNC(=O)NS(=O)(=O)c1ccc(N)cc1,CARBUTAMIDE,failed,chembl,0
+CCN(CC)C(C)C(=O)c1ccccc1,DIETHYLPROPION,approved,chembl,1
+COc1cc(C)c(/C=C/C(C)=C/C=C/C(C)=C/C(=O)O)c(C)c1C,ACITRETIN,approved,chembl,1
+COc1ccc(-n2nc(C(N)=O)c3c2C(=O)N(c2ccc(N4CCCCC4=O)cc2)CC3)cc1,APIXABAN,approved,chembl,1
+COCC1CN=C(c2ccccc2Cl)c2cc(Br)ccc2N1C,METACLAZEPAM,failed,chembl,0
+CCCC1(CC(=O)O)OCCc2c1[nH]c1ccccc21,PRODOLIC ACID,failed,chembl,0
+CCn1cc(C(=O)O)c(=O)c2cc(F)c(N3CCNC(C)C3)c(F)c21.Cl,LOMEFLOXACIN HYDROCHLORIDE,approved,chembl,1
+OC(CCN1CCCCC1)(c1ccccc1)c1ccccc1,PRIDINOL,failed,chembl,0
+CC(=O)Oc1cc(C(C)C)c(OCCN(C)C)cc1C,MOXISYLYTE,approved,chembl,1
+Cc1ccccc1-n1c(C)nc2ccccc2c1=O,METHAQUALONE,approved,chembl,1
+C[C@H](C#Cc1ccc(Cc2ccc(F)cc2)s1)N(O)C(N)=O,ATRELEUTON,failed,chembl,0
+Cc1cccc(N(C)C(=S)Oc2ccc3c(c2)CCC3)c1,TOLINDATE,failed,chembl,0
+CC1=C[C@H](O)CC(C)(C)[C@H]1/C=C/C(C)=C/C=C/C(C)=C/C=C/C=C(C)/C=C/C=C(C)/C=C/C1=C(C)C[C@@H](O)CC1(C)C,LUTEIN,failed,chembl,0
+O=P(O)(O)OP(=O)(O)O,PYROPHOSPHORIC ACID,failed,chembl,0
+NC[C@H]1O[C@H](O[C@H]2[C@H](O[C@@H]3O[C@H](CO)[C@@H](O)[C@H]3O)[C@@H](O)[C@H](N)C[C@@H]2N)[C@H](N)[C@@H](O)[C@@H]1O,RIBOSTAMYCIN,failed,chembl,0
+CCCCCCNC(=O)n1cc(F)c(=O)[nH]c1=O,CARMOFUR,failed,chembl,0
+CC(C)NCC(O)c1ccc(O)c(NS(C)(=O)=O)c1,SOTERENOL,failed,chembl,0
+CC(=O)Oc1c(C)c(C)c2c(c1C)CC(CC(=O)O)O2,RAXOFELAST,failed,chembl,0
+CC(Oc1cccc(C(=O)c2ccccc2)c1)C(=O)O,BAKEPROFEN,failed,chembl,0
+O=C(O)CC(O)(CC(=O)O)C(=O)O.[O-][n+]1cccc(/C(Cl)=N/OC[C@H](O)CN2CCCCC2)c1,ARIMOCLOMOL CITRATE,approved,chembl,1
+Nc1ncnc2c1ncn2[C@@H]1O[C@H](COP(=O)(O)O)[C@@H](O)[C@H]1O,ADENOSINE PHOSPHATE,approved,chembl,1
+CC(=O)OCC1=C(C(=O)O)N2C(=O)[C@@H](NC(=O)Cc3cccs3)[C@H]2SC1,CEPHALOTHIN,approved,chembl,1
+O=C(CCCN1CCN(c2cc3ccccc3cn2)CC1)c1ccc(F)cc1,CINUPERONE,failed,chembl,0
+Cc1ccc2cc(C(=O)NC3(C(=O)N[C@H](Cc4ccccc4)C(=O)NCC4CCN(CC5CCOCC5)CC4)CCCC3)sc2c1,IBODUTANT,failed,chembl,0
+O=C(O)Cc1ccc(OCCNC[C@H](O)c2ccccc2)cc1,TALIBEGRON,failed,chembl,0
+CCC(=O)O[C@]1(C(=O)CCl)[C@@H](C)C[C@H]2[C@@H]3CCC4=CC(=O)C=C[C@]4(C)[C@@]3(F)[C@@H](O)C[C@@]21C,CLOBETASOL PROPIONATE,approved,chembl,1
+O=C(CCCN1CCN2Cc3[nH]c4ccccc4c3CC2C1)c1ccc(F)cc1,BIRIPERONE,failed,chembl,0
+COc1ccc(/C=C\c2cc(OC)c(OC)c(OC)c2)c(O)c1O,COMBRETASTATIN A-1,failed,chembl,0
+C#CCN(C)[C@H](C)Cc1ccccc1,SELEGILINE,approved,chembl,1
+COc1cc(NCCCC(C)N)c2ncccc2c1,QUINOCIDE,failed,chembl,0
+O=S(=O)(O)c1cc(O)c2c(/N=N/c3ccc(Nc4ccccc4)c4c(S(=O)(=O)O)cccc34)cc(S(=O)(=O)O)cc2c1,ANAZOLENE,failed,chembl,0
+CCOC(=O)[C@H](CCc1ccccc1)N[C@@H](C)C(=O)N1Cc2ccccc2C[C@H]1C(=O)O,QUINAPRIL,approved,chembl,1
+Cn1cc(C(=O)[C@@H]2CCc3[nH]cnc3C2)c2ccccc21,RAMOSETRON,approved,chembl,1
+CC(C)=CCNc1ncnc2c1ncn2[C@@H]1O[C@H](CO)[C@@H](O)[C@H]1O,RIBOPRINE,failed,chembl,0
+CCOC(=O)C1(c2ccccc2)CCN(CCC(N)=O)CC1,CARPERIDINE,failed,chembl,0
+CC(=O)Oc1cc(C(F)(F)F)ccc1C(=O)O,TRIFLUSAL,failed,chembl,0
+O=C1CN2C(=O)CCC2N1,DIMIRACETAM,failed,chembl,0
+CCOCCOc1ccccc1C(N)=O,ETOSALAMIDE,failed,chembl,0
+O=C(O[C@H]1C[C@H]2CC[C@@H](C1)[N+]21CCCC1)C(O)(c1ccccc1)c1ccccc1.[Cl-],TROSPIUM CHLORIDE,approved,chembl,1
+CCc1nn(CCCN2CCN(c3cccc(Cl)c3)CC2)c(=O)n1CC,ETOPERIDONE,failed,chembl,0
+CN(C)CCOC1=Cc2ccccc2Sc2ccc(Cl)cc21,ZOTEPINE,failed,chembl,0
+OC[C@H]1NC[C@H](O)[C@@H](O)[C@H]1O,MIGALASTAT,approved,chembl,1
+COC(=O)C1=C(C)NC(C)=C(C(=O)OC)C1c1ccccc1OC(F)F,RIODIPINE,failed,chembl,0
+CN(C)c1ccc2nc3ccc(=[N+](C)C)cc-3sc2c1,METHYLENE BLUE CATION,approved,chembl,1
+CCOC(=O)CC(SP(=S)(OC)OC)C(=O)OCC,MALATHION,approved,chembl,1
+CN1CCC2=C(CC1)c1ccccc1Oc1ccccc12,MAROXEPIN,failed,chembl,0
+C[C@]12CC[C@@H]3c4ccc(O)cc4CC[C@H]3[C@@H]1[C@@H](O)[C@@H](O)[C@@H]2O.O,ESTETROL,approved,chembl,1
+COc1ccc2c(c1)[C@]13CCCC[C@@H]1[C@H](C2)N(C)CC3,DEXTROMETHORPHAN,approved,chembl,1
+Cc1cc2c(C(C)C)c(O)c(O)c(C=O)c2c(O)c1-c1c(C)cc2c(C(C)C)c(O)c(O)c(C=O)c2c1O,GOSSYPOL,failed,chembl,0
+CN(C)Cc1ccc(CSCCNC(=O)c2ccc[n+]([O-])c2)o1,RAMIXOTIDINE,failed,chembl,0
+CCC[C@H](N[C@@H](C)C(=O)N1[C@H](C(=O)O)C[C@@H]2CCCC[C@@H]21)C(=O)O,PERINDOPRILAT,failed,chembl,0
+Clc1ccc(C(OCCN2CCCCC2)c2ccccc2)cc1,CLOPERASTINE,failed,chembl,0
+Nc1nc(=O)n([C@H]2C[C@H](O)[C@@H](CO)O2)cc1I,IBACITABINE,failed,chembl,0
+COCC(=O)NC/C=C/c1ccc2ncnc(Nc3ccc(Oc4ccc(C)nc4)c(C)c3)c2c1,CP-724714,failed,chembl,0
+CCNCC1CCN(c2c(F)cc3c(=O)c(C(=O)O)cn(CC)c3c2F)C1,MERAFLOXACIN,failed,chembl,0
+COC(=O)/C=C/C(=O)OC,DIMETHYL FUMARATE,approved,chembl,1
+CCC(C)(C)C(=O)OC1CC(C)C=C2C=CC(C)C(CCC3CC(O)CC(=O)O3)C21,Simvastatin,approved,drugbank,1
+O=c1c(O[C@@H]2O[C@H](CO)[C@@H](O)[C@H](O)[C@H]2O)c(-c2ccc(O)c(O)c2)oc2cc(O)cc(O)c12,ISOQUERCETIN,failed,chembl,0
+C/C=C/C1=C(C(=O)O)N2C(=O)[C@@H](NC(=O)[C@H](N)c3ccc(O)cc3)[C@H]2SC1.O,"CEFPROZIL, (E)-",approved,chembl,1
+CCCCC[C@H](O)c1ccc(N2C(=O)CC[C@@H]2COCc2ccc(C(=O)OC(C)C)s2)cc1,SIMENEPAG ISOPROPYL,failed,chembl,0
+O=C(O)CCNC(=O)c1ccc(/N=N/c2ccc(O)c(C(=O)O)c2)cc1,BALSALAZIDE,approved,chembl,1
+C[N+]1(C)CCC(=C(c2ccccc2)c2ccccc2)CC1,DIPHEMANIL,approved,chembl,1
+Nc1ccn([C@@H]2O[C@H](CO)[C@@H](O)[C@H]2O)c(=O)n1,CYTIDINE,failed,chembl,0
+CCCCC(CC)COC(=O)CC(C(=O)OCC(CC)CCCC)S(=O)(=O)O,DOCUSATE,failed,chembl,0
+COc1ccc(/C=C/C(=O)/C=C(O)/C=C/c2ccc(OC)c(OC)c2)cc1OC,DIMETHYLCURCUMIN,failed,chembl,0
+COCCOc1ccc(N2CCN(CCn3ncc4c3nc(N)n3nc(-c5ccco5)nc43)CC2)cc1,PRELADENANT,failed,chembl,0
+Cc1cccc(C)c1NC(=O)C1CCCCN1C,MEPIVACAINE,approved,chembl,1
+COc1ccc2c3c1O[C@H]1[C@@H](O)C=C[C@H]4[C@@H](C2)N(C)CC[C@@]341.COc1ccc2c3c1O[C@H]1[C@@H](O)C=C[C@H]4[C@@H](C2)N(C)CC[C@@]341.O.O=P(O)(O)O.O=P(O)(O)O,CODEINE PHOSPHATE,approved,chembl,1
+Cc1cn(-c2cc(NC(=O)c3ccc(C)c(Nc4nccc(-c5cccnc5)n4)c3)cc(C(F)(F)F)c2)cn1.Cl.O,NILOTINIB HYDROCHLORIDE MONOHYDRATE,approved,chembl,1
+CC[C@@]1(O)CC(=O)OCc2c1cc1n(c2=O)Cc2cc3cc(F)c(F)cc3nc2-1,DIFLOMOTECAN,failed,chembl,0
+CCN(CCO)CCCOc1ccc2c(Nc3cc(CC(=O)Nc4cccc(F)c4)[nH]n3)ncnc2c1,DEFOSBARASERTIB,failed,chembl,0
+Cc1cc(-c2ccccc2)n[n+](CCCC(=O)O)c1N.[Cl-],FAMIRAPRINIUM CHLORIDE,failed,chembl,0
+CC(=O)SCC(CC(=O)c1ccc(C)cc1)C(=O)O,ESONARIMOD,failed,chembl,0
+CC(C)Cn1ncc2cc(Oc3ccc(F)cc3F)c(C(=O)NCCN(C)C)cc21,ARRY-797,failed,chembl,0
+CN(C)c1cccc(F)c1C(=O)NC(=O)Nc1ccc(Cl)cc1,CLANFENUR,failed,chembl,0
+CCN(CC)CCn1c(-c2ccccc2)noc1=N,IMOLAMINE,failed,chembl,0
+CCOC(=O)[C@@](C)(N)Cc1ccc(O)c(O)c1,METHYLDOPATE,approved,chembl,1
+CC1CCC(NC(=O)NS(=O)(=O)c2ccc(CCNC(=O)N(C)c3ccccn3)cc2)CC1,GLISAMURIDE,failed,chembl,0
+O=c1c(-c2ccc(O)cc2)coc2c([C@@H]3O[C@H](CO)[C@@H](O)[C@H](O)[C@H]3O)c(O)ccc12,PUERARIN,failed,chembl,0
+COc1cc([C@@H]2c3cc4c(cc3[C@@H](O[C@@H]3O[C@@H]5CO[C@@H](c6cccs6)O[C@H]5[C@H](O)[C@H]3O)[C@H]3COC(=O)[C@H]23)OCO4)cc(OC)c1O,TENIPOSIDE,approved,chembl,1
+O=C(O)CCC/C=C\C[C@@H]1[C@@H](/C=C/C2(COc3cccc(Cl)c3)OCCO2)[C@H](O)C[C@@H]1O,LANPROSTON,failed,chembl,0
+C[C@@H](O)[C@H]1C(=O)N2C(C(=O)[O-])=C(S[C@@H]3CN[C@H](C(=O)Nc4cccc(C(=O)O)c4)C3)[C@H](C)[C@H]12.[Na+],ERTAPENEM SODIUM,approved,chembl,1
+NCc1cccnc1,PICOLAMINE,failed,chembl,0
+CO[C@@H]1[C@H](OP(=O)(OC[C@H]2O[C@@H](n3cnc4c(N)ncnc43)C[C@@H]2O)SCOC(=O)OC(C)C)[C@@H](CO)O[C@H]1n1ccc(=O)[nH]c1=O,INARIGIVIR SOPROXIL,failed,chembl,0
+Cc1cc(SCc2sc(-c3ccc(C(F)(F)F)cc3)nc2C)ccc1OCC(=O)O,GW501516,failed,chembl,0
+CO/N=C(\C(=O)N[C@@H]1C(=O)N2C(C(=O)O)=CCS[C@H]12)c1csc(N)n1,CEFTIZOXIME,approved,chembl,1
+CCS(=O)(=O)Oc1ccc2c(C)c(C)c(=O)oc2c1,ESUPRONE,failed,chembl,0
+CCCCCCCCNC(=N)NC(=N)NCc1ccc(Cl)c(Cl)c1,OLANEXIDINE,failed,chembl,0
+CC1(O)CCC(C(C)(C)O)CC1,TERPIN,failed,chembl,0
+CNC(=O)c1ccc(Cl)c(S(=O)(=O)NC)c1,DIAPAMIDE,failed,chembl,0
+CN(C)CC[C@@H](c1ccc(Br)cc1)c1ccccn1,DEXBROMPHENIRAMINE,approved,chembl,1
+CN(C(=O)Cc1ccc(Cl)c(Cl)c1)C1CCC2(CCCO2)CC1N1CCCC1,SPIRADOLINE,failed,chembl,0
+COc1cc(C(=O)OCCN2CCN(CCCN3c4ccccc4Sc4ccc(Cl)cc43)CC2)cc(OC)c1OC,METOFENAZATE,failed,chembl,0
+Nc1ccc(S(=O)(=O)Nc2nccs2)cc1,SULFATHIAZOLE,approved,chembl,1
+CN[C@@H]1[C@H](O)[C@H](NC)[C@H]2O[C@@]3(O)C(=O)C[C@@H](C)O[C@H]3O[C@@H]2[C@H]1O.Cl.Cl.O.O.O.O.O,SPECTINOMYCIN HYDROCHLORIDE,approved,chembl,1
+CN(C)CCCN1c2ccccc2Sc2ccc(Cl)cc21.Cl,CHLORPROMAZINE HYDROCHLORIDE,approved,chembl,1
+CN1C(=O)CC[C@H]1C(=O)NCc1cccc(C(F)(F)F)c1Cl,GSK1482160,failed,chembl,0
+CC(SC(=O)c1cccs1)C(=O)NC1CCSC1=O,MIDESTEINE,failed,chembl,0
+COc1ccc(C2CNC(=O)C2)cc1OCCCN1CCC(C(=O)c2ccc(F)cc2)CC1,LIDANSERIN,failed,chembl,0
+C[C@@H](O[C@H]1OCCN(Cc2nn(P(=O)(O)O)c(=O)[nH]2)[C@H]1c1ccc(F)cc1)c1cc(C(F)(F)F)cc(C(F)(F)F)c1,FOSAPREPITANT,approved,chembl,1
+CCCC[C@H](N[C@@H](C)C(=O)N1[C@H](C(=O)OCC)C[C@@H]2CCCC[C@@H]21)C(=O)O,ORBUTOPRIL,failed,chembl,0
+CCN(CC)CCn1c(=O)c(Cc2ccc(OC)cc2)nc2ccccc21,CAROVERINE,failed,chembl,0
+CCNCC(O)c1cccc(O)c1,ETILEFRINE,failed,chembl,0
+CCO[C@@H]1OC(=O)C[C@@H]1NC(=O)[C@@H]1CCCN2C(=O)CC[C@H](NC(=O)c3nccc4ccccc34)C(=O)N12,PRALNACASAN,failed,chembl,0
+Cc1cc(=O)c2c(O)c3ccoc3c(OCC(O)CNC(C)(C)C)c2o1,BUTOCROLOL,failed,chembl,0
+CCOc1ccc(Cc2cc([C@@H]3O[C@H](CO)[C@@H](O)[C@H](O)[C@H]3O)ccc2Cl)cc1.C[C@H](O)CO.O,DAPAGLIFLOZIN PROPANEDIOL,approved,chembl,1
+CCCS(=O)(=O)N[C@H]1C[C@@H](N(C)c2ncnc3[nH]ccc23)C1,ABROCITINIB,approved,chembl,1
+CCN(CC)CCOc1ccccc1O/C(=C/c1ccccc1)C(C)=O,ZOCAINONE,failed,chembl,0
+N#Cc1cc(Cl)cc(Oc2c(Cl)ccc3c2cnn3Cc2n[nH]c3ncccc23)c1,MK-6186,failed,chembl,0
+COC(=O)C1=C(C)NC(C)=C(C(=O)OCC(C)(C)CN(C)Cc2ccccc2)C1c1cc([N+](=O)[O-])ccc1F,PALONIDIPINE,failed,chembl,0
+COc1cc([C@@H]2c3cc4c(cc3[C@H](O)[C@H]3COC(=O)[C@@H]23)OCO4)cc(OC)c1OC,AXL-1717,failed,chembl,0
+CN(C)c1ccc(C(=C2C=CC(=[N+](C)C)C=C2)c2ccc(N(C)C)cc2)cc1,HEXAMETHYL PARAROSANILINE,approved,chembl,1
+NS(=O)(=O)c1ccc(C(=O)O)cc1,CARZENIDE,failed,chembl,0
+O=c1cc(CN2CCOCC2)c2cc(O)c(O)cc2o1,FOLESCUTOL,failed,chembl,0
+O=C(O)C(=O)c1cn(Cc2ccccc2)c2ccc(-c3ccc(OC(F)(F)F)cc3)cc12,TIPLASININ,failed,chembl,0
+COC(=O)[C@H]1[C@@H](OC(=O)c2ccccc2)C[C@@H]2CC[C@H]1N2C,COCAINE,approved,chembl,1
+Nn1cnnc1N/N=C/c1c(Cl)cccc1Cl,NEBIDRAZINE,failed,chembl,0
+CCC1(c2ccccc2)C(=O)N=C([O-])NC1=O.[Na+],PHENOBARBITAL SODIUM,approved,chembl,1
+CCCN(CC)C(CC)C(=O)Nc1c(C)cccc1C,ETIDOCAINE,approved,chembl,1
+CCCCCCCCCCCC[N+](C)(C)CCOc1ccccc1,DOMIPHEN,failed,chembl,0
+CCN(C(C)=O)c1cccc(-c2ccnc3c(C#N)cnn23)c1,ZALEPLON,approved,chembl,1
+[Mg+2].[OH-].[OH-],MAGNESIUM HYDROXIDE,approved,chembl,1
+CC(C)c1cn([C@H]2C[C@H](O)[C@@H](CO)O2)c(=O)[nH]c1=O,EPERVUDINE,failed,chembl,0
+CCc1nn(CCCN2CCN(c3cccc(Cl)c3)CC2)c(=O)n1CCOc1ccccc1,NEFAZODONE,approved,chembl,1
+N[C@H](CO)C(=O)O,(D)-SERINE,failed,chembl,0
+Nc1nc2c([nH]1)c(=O)n(CC1CC1)c(=O)n2CC1CC1,CIPAMFYLLINE,failed,chembl,0
+CC(=O)[O-].[K+],POTASSIUM ACETATE,approved,chembl,1
+Cc1ncc([N+](=O)[O-])n1C,DIMETRIDAZOLE,failed,chembl,0
+CN(C)CCC(c1ccc(Br)cc1)c1ccccn1,BROMPHENIRAMINE,approved,chembl,1
+COc1ccc(NC(=O)c2ccccc2)cc1,Drug_Candidate_002,failed,fda_failed,0
+CSCCNc1nc(SCCC(F)(F)F)nc2c1ncn2[C@@H]1O[C@H](COP(=O)(O)OP(=O)(O)C(Cl)(Cl)P(=O)(O)O)[C@@H](O)[C@H]1O,CANGRELOR,approved,chembl,1
+C/C(=C\c1csc(C)n1)[C@@H]1C[C@@H]2O[C@]2(C)CCC[C@H](C)[C@H](O)[C@@H](C)C(=O)C(C)(C)[C@@H](O)CC(=O)O1,PATUPILONE,failed,chembl,0
+CC(C)(N)Cc1ccccc1,PHENTERMINE,approved,chembl,1
+COC(=O)N(C)c1c(N)nc(-c2nn(Cc3ccccc3F)c3ncccc23)nc1N,RIOCIGUAT,approved,chembl,1
+CCOc1cc(N)c([N+](=O)[O-])cc1C(=O)NC1CCN(CC2CC=CCC2)CC1,CINITAPRIDE,failed,chembl,0
+CC[N+](CC)(CCNC(=O)C(=O)NCC[N+](CC)(CC)Cc1ccccc1Cl)Cc1ccccc1Cl.[Cl-].[Cl-],AMBENONIUM CHLORIDE,approved,chembl,1
+CC1=C(/C=C/C(C)=C/C=C/C(C)=C/C=C/C=C(C)/C=C/C=C(C)/C=C/C2=C(C)C(=O)[C@@H](O)CC2(C)C)C(C)(C)C[C@H](O)C1=O,ASTAXANTHIN,failed,chembl,0
+CCOC(=O)C1(c2ccccc2)CCCN(C)CC1C,METETHOHEPTAZINE,failed,chembl,0
+COC[C@H]1C[C@@H](c2nc(-c3ccc4c(c3)COc3cc5c(ccc6nc([C@@H]7CC[C@H](C)N7C(=O)[C@@H](NC(=O)OC)C(C)C)[nH]c65)cc3-4)c[nH]2)N(C(=O)[C@H](NC(=O)OC)c2ccccc2)C1,VELPATASVIR,approved,chembl,1
+C/C(=N\O)c1ccc(OCC(=O)N2CCOCC2)cc1,MOFOXIME,failed,chembl,0
+N#Cc1ccccc1OCC(O)CNCCNC(=O)Cc1ccc(O)cc1,EPANOLOL,failed,chembl,0
+CCOP(=O)(Cc1ccc(C(=O)Nc2ccc(Br)cc2C#N)cc1)OCC,IBROLIPIM,failed,chembl,0
+Fc1ccc2[nH]c3c(c2c1)CN(CCCc1cccnc1)CC3,GEVOTROLINE,failed,chembl,0
+NC(=O)c1ccc2c(c1O)[C@]13CCN(CC4CC4)[C@H](C2)[C@]1(O)CCC(=O)C3.O=C(O)C[C@H](O)C(=O)O,SAMIDORPHAN L-MALATE,approved,chembl,1
+CN(C)/C=N/c1c(I)cc(I)c(CCC(=O)[O-])c1I.CN(C)/C=N/c1c(I)cc(I)c(CCC(=O)[O-])c1I.[Ca+2],IPODATE CALCIUM,approved,chembl,1
+CCN(CC)CCCC(C)Nc1ccnc2cc(Cl)ccc12.Cl.Cl,CHLOROQUINE HYDROCHLORIDE,approved,chembl,1
+CCN(CC)C(=O)C1(c2ccccc2)CC1CN,MILNACIPRAN,approved,chembl,1
+C[C@@H]1CC(=O)NN=C1c1ccc(NN=C(C#N)C#N)cc1,LEVOSIMENDAN,failed,chembl,0
+C[C@]12CCC(=O)C=C1C=C[C@@H]1[C@@H]2CC[C@@]2(C)[C@H]1CC[C@@]2(O)CCC(=O)[O-].[K+],CANRENOATE POTASSIUM,failed,chembl,0
+C[n+]1cc2c3c(ccc2c2ccc4cc5c(cc4c21)OCO5)OCO3,SANGUINARIUM,failed,chembl,0
+CCOP(=O)(OCC)SCC[N+](C)(C)C.[I-],ECHOTHIOPHATE IODIDE,approved,chembl,1
+NC(=O)C1(N2CCCCC2)CCN(CCCN2c3ccccc3CCc3ccc(Cl)cc32)CC1,CLOCAPRAMINE,failed,chembl,0
+CC(=O)[C@H]1CC[C@H]2[C@@H]3CC=C4C=C(OC5CCCC5)CC[C@]4(C)[C@H]3CC[C@]12C,QUINGESTRONE,failed,chembl,0
+O=[N+]([O-])c1nccn1CC(O)CN1CCCCC1,PIMONIDAZOLE,failed,chembl,0
+CC[C@H]1OC(=O)C[C@@H](O)[C@H](C)[C@@H](O[C@@H]2O[C@H](C)C[C@H](N(C)C)[C@H]2O)[C@@H](CC=O)C[C@@H](C)C(=O)/C=C/[C@]2(C)O[C@H]2[C@@H]1C,ROSARAMICIN,failed,chembl,0
+CC(C)N1CCN(c2ccc(N3CCN(c4ccc(OC[C@H]5OC[C@](Cn6cncn6)(c6ccc(F)cc6F)O5)cc4)CC3)cc2)C1=O,PRAMICONAZOLE,failed,chembl,0
+C1CN(P2(N3CC3)=NP(N3CC3)(N3CC3)=NP(N3CC3)(N3CC3)=N2)CCO1,FOTRETAMINE,failed,chembl,0
+CNC(=O)c1c(I)c(C(=O)NCC(=O)Nc2c(I)c(C(=O)O)c(I)c(C(=O)NCCO)c2I)c(I)c(N(C)C(C)=O)c1I,IOXAGLIC ACID,approved,chembl,1
+O=C(CCCN1CCC(C(=O)c2ccc(F)cc2)CC1)c1ccc(F)cc1,LENPERONE,failed,chembl,0
+CN[C@@H]1[C@@H](O)[C@@H](O[C@@H]2[C@@H](O)[C@H](O[C@H]3O[C@H](CN)[C@@H](O)[C@H](O)[C@H]3O)[C@@H](N)C[C@H]2NC(=O)[C@@H](O)CN)OC[C@]1(C)O,ISEPAMICIN,failed,chembl,0
+C[C@H]1CNCCc2ccc(Cl)cc21,LORCASERIN,approved,chembl,1
+COc1cccc(OC(C)CNC(=N)Cc2cccc(C)c2)c1.Cc1ccc(S(=O)(=O)O)cc1,XYLAMIDINE TOSYLATE,failed,chembl,0
+CN(C)CCCC1(c2ccc(C#N)cc2)OCc2ccc(F)cc21,Escitalopram,approved,drugbank,1
+COc1ccc2c(c1)CCC(c1ccccc1)=C2c1ccc(OCCN2CCCC2)cc1,NAFOXIDINE,failed,chembl,0
+COc1cc2c(c(OC)c1OC)-c1ccc(OC)c(=O)cc1[C@@H](NC(C)=O)CC2,COLCHICINE,approved,chembl,1
+C[N+](C)(C)CCO.O=C([O-])[C@H](O)[C@@H](O)[C@H](O)[C@H](O)CO,CHOLINE GLUCONATE,failed,chembl,0
+CCCc1c2oc(C(=O)O)cc(=O)c2cc2c(=O)cc(C(=O)O)n(CC)c12,NEDOCROMIL,approved,chembl,1
+CC(N)C12CC3CC(CC(C3)C1)C2.Cl,RIMANTADINE HYDROCHLORIDE,approved,chembl,1
+C[C@H](C(=O)O)c1ccc(-c2ccccc2)c(F)c1,ESFLURBIPROFEN,approved,chembl,1
+N#CNc1nncs1,AMITIVIR,failed,chembl,0
+CC(C)(C)c1cc(C(C)(C)C)c2[nH]c(C(C)(C)C)c(C[C@H](NC(=O)[C@@H](N)CCCNC(=N)N)C(=O)N[C@@H](CCCNC(=N)N)C(=O)NCCc3ccccc3)c2c1,LTX-109,failed,chembl,0
+C[C@@H]1C[C@@]2(C)[C@@H](CC[C@@H]3[C@@H]2CC[C@@]2(C)[C@H]3CC[C@]2(C)O)C/C1=N\N=C1/C[C@@H]2CC[C@@H]3[C@H](CC[C@@]4(C)[C@H]3CC[C@]4(C)O)[C@@]2(C)C[C@H]1C,MEBOLAZINE,failed,chembl,0
+CC(=O)O.CN1CCN(c2nc(C3=C(c4c[nH]c5ccccc45)C(=O)NC3=O)c3ccccc3n2)CC1,SOTRASTAURIN ACETATE,failed,chembl,0
+CS(=O)(=O)O.Cc1ccc(NC(=O)c2ccc(CN3CCN(C)CC3)cc2)cc1Nc1nccc(-c2cccnc2)n1,IMATINIB MESYLATE,approved,chembl,1
+C[C@@H]1C[C@@H](OC(=O)c2cccnc2)CC(C)(C)C1,CICLONICATE,failed,chembl,0
+CCC[C@@](C)(O)[C@H]1C[C@@]23C=C[C@]1(OC)[C@@H]1Oc4c(O)ccc5c4[C@@]12CCN(C)[C@@H]3C5,ETORPHINE,failed,chembl,0
+C#C[C@]1(O)CC[C@H]2[C@@H]3CC[C@H]4Cc5nn(S(C)(=O)=O)cc5C[C@]4(C)[C@H]3CC[C@@]21C,ZANOTERONE,failed,chembl,0
+CCc1cc2c(cc1N1CCC(N3CCOCC3)CC1)C(C)(C)c1[nH]c3cc(C#N)ccc3c1C2=O,ALECTINIB,approved,chembl,1
+CC(=O)[C@H]1CC[C@H]2[C@@H]3CCC4=CC(=O)CC[C@]4(C)[C@H]3CC[C@]12C,PROGESTERONE,approved,chembl,1
+CC(=O)[C@H]1CC[C@H]2[C@@H]3CC[C@H]4C[C@H](O)CC[C@]4(C)[C@H]3C(=O)C[C@]12C,ALFAXALONE,failed,chembl,0
+C[N+](C)(C)CCOC(=O)CCC(=O)OCC[N+](C)(C)C,SUXAMETHONIUM,approved,chembl,1
+O=C1C(CC[S+]([O-])c2ccccc2)C(=O)N(c2ccccc2)N1c1ccccc1,SULFINPYRAZONE,approved,chembl,1
+O=C(O)/C=C/C(=O)O.O=C(c1ccc(F)c(F)c1Nc1ccc(I)cc1F)N1CC(O)([C@@H]2CCCCN2)C1.O=C(c1ccc(F)c(F)c1Nc1ccc(I)cc1F)N1CC(O)([C@@H]2CCCCN2)C1,COBIMETINIB FUMARATE,approved,chembl,1
+O=C([O-])C[C@H](O)C[C@H](O)/C=C/c1c(C2CC2)nc2ccccc2c1-c1ccc(F)cc1.O=C([O-])C[C@H](O)C[C@H](O)/C=C/c1c(C2CC2)nc2ccccc2c1-c1ccc(F)cc1.[Mg+2],PITAVASTATIN MAGNESIUM,approved,chembl,1
+Clc1ccc(C(c2ccccc2Cl)C(Cl)Cl)cc1,MITOTANE,approved,chembl,1
+CCC(CC)[C@H](NC(C)=O)[C@@H]1[C@H](O)[C@@H](C(=O)O)C[C@H]1NC(=N)N.O.O.O,PERAMIVIR,approved,chembl,1
+CC(C)Cc1sc(N)nc1-c1ccc(P(=O)(O)O)o1,MB-05032,failed,chembl,0
+Oc1ccc(Cl)cc1Sc1cc(Cl)ccc1O,FENTICLOR,failed,chembl,0
+C=CCN1CCCC1CNC(=O)c1cc(S(N)(=O)=O)cc(OC)c1OC,VERALIPRIDE,approved,chembl,1
+COc1ccc(C[C@]2(C)CN(C(c3ccccc3)c3ccccc3)CCN2C)cc1OC,BENDERIZINE,failed,chembl,0
+C[C@]12C/C(=C/O)C(=O)C[C@@H]1CC[C@@H]1[C@@H]2CC[C@@]2(C)[C@H]1CC[C@]2(C)O,OXYMETHOLONE,approved,chembl,1
+C/C1=C/C[C@@H](/C(C)=C/c2csc(C)n2)OC(=O)C[C@H](O)C(C)(C)C(=O)[C@H](C)[C@@H](O)[C@@H](C)CCC1,EPOTHILONE D,failed,chembl,0
+C[C@]12CCC(=O)C=C1CC[C@@H]1[C@@H]2[C@@H](O)C[C@]2(C=O)[C@@H](C(=O)CO)CC[C@@H]12,ALDOSTERONE,failed,chembl,0
+CC(C)=CCC/C(C)=C/CC/C(C)=C/CC[C@@](C)(O)CCC1=C(C)C(=O)C(C)=C(C)C1=O,VATIQUINONE,failed,chembl,0
+O=C(NN1C(=O)[C@@H]2[C@@H]3C=C[C@@H]([C@H]4C[C@@H]34)[C@@H]2C1=O)c1ccc(C(F)(F)F)cc1,TECOVIRIMAT,approved,chembl,1
+C[C@]12CC[C@@H]3c4ccc(O)cc4CC[C@H]3[C@@H]1C[C@@H](O)[C@@H]2O,ESTRIOL,approved,chembl,1
+OCC(O)CO,GLYCERIN,approved,chembl,1
+CCCCCCOC(=O)CCC(=O)CN.Cl,HEXAMINOLEVULINATE HYDROCHLORIDE,approved,chembl,1
+CCCC(C(=O)OCCN(CC)CC)(c1ccccc1)c1ccccc1,PROADIFEN,failed,chembl,0
+CCCCCc1cc(O)c2c(c1)OC(C)(C)c1ccc(C)cc1-2,CANNABINOL,failed,chembl,0
+Cc1ccc2nc(N)[nH]c(=O)c2c1Sc1ccncc1,NOLATREXED,failed,chembl,0
+Oc1ccc(Cl)c2cccnc12,CLOXYQUIN,failed,chembl,0
+C#CCN(Cc1cc2c(O)nc(C)nc2cc1C)c1ccc(C(=O)N[C@@H](CCc2nnn[nH]2)C(=O)O)c(F)c1,PLEVITREXED,failed,chembl,0
+CCC(C(=O)O)C1(O)CCCCC1,CYCLOBUTYROL,failed,chembl,0
+CC[N+]1(C)CCC(OC(=O)C(c2noc3ccccc23)N2CCCCCC2)CC1.[I-],BEPERIDIUM IODIDE,failed,chembl,0
+COc1cccc(-c2c(C)n(Cc3c(F)cccc3C(F)(F)F)c(=O)n(C[C@H](NCCCC(=O)[O-])c3ccccc3)c2=O)c1F.[Na+],ELAGOLIX SODIUM,approved,chembl,1
+COCCc1ccc(OCC(O)CNC(C)C)cc1.COCCc1ccc(OCC(O)CNC(C)C)cc1.O=C(O)C(O)C(O)C(=O)O,METOPROLOL TARTRATE,approved,chembl,1
+Clc1ccc2c(c1)C(c1ccccc1)=NCc1nncn1-2,ESTAZOLAM,approved,chembl,1
+CC(C)Cc1ccc(C(C)C(=O)O)cc1.NCCCC[C@H](N)C(=O)O,IBUPROFEN LYSINE,approved,chembl,1
+CC1(C)SCCN(S(=O)(=O)c2ccc(OCC#CCO)cc2)[C@H]1C(=O)NO,APRATASTAT,failed,chembl,0
+C=CCCCCCCCCC(=O)NCCC[N+](C)(C)C.[I-],OPRATONIUM IODIDE,failed,chembl,0
+NCCCC(N)(C(=O)O)C(F)F,EFLORNITHINE,approved,chembl,1
+O=C(O)CSC(SCC(=O)O)SCC(=O)O,RITIOMETAN,failed,chembl,0
+CCCS(=O)(=O)Nc1ccc(F)c(C(=O)c2c[nH]c3ncc(-c4ccc(Cl)cc4)cc23)c1F,VEMURAFENIB,approved,chembl,1
+COc1cc([C@@H]2c3cc4c(cc3[C@@H](O[C@@H]3O[C@@H]5CO[C@@H](C)O[C@H]5[C@H](O)[C@H]3O)[C@H]3COC(=O)[C@H]23)OCO4)cc(OC)c1OP(=O)(O)O,ETOPOSIDE PHOSPHATE,approved,chembl,1
+Cc1ccc2c([nH]c(=O)c3c(=O)cc(C(=O)OCCC(C)C)oc32)c1C,REPIRINAST,failed,chembl,0
+Cc1c(F)c(N2CCNC(C)C2)cc2c1c(=O)c(C(=O)O)cn2C1CC1.Cl,GREPAFLOXACIN HYDROCHLORIDE,approved,chembl,1
+Clc1ccc(C2(Cn3cncn3)OCCO2)c(Cl)c1,AZACONAZOLE,failed,chembl,0
+C[C@H](O)C(=O)C1=Nc2c(nc(N)[nH]c2=O)NC1,SEPIAPTERIN,failed,chembl,0
+CC(C)(C)NCC(O)COc1ccccc1C#N,BUNITROLOL,failed,chembl,0
+CC1(C)C2=CC[C@@H]3[C@H](CC[C@@]4(C)[C@H]3CC[C@]4(C)O)[C@@]2(C)Cc2cnoc21,AZASTENE,failed,chembl,0
+CC(C)NCC(O)COc1ccc(CCNC(=O)NC(C)C)cc1,PAFENOLOL,failed,chembl,0
+O=C(O)c1ccc(CCCc2c(CCNS(=O)(=O)Cc3ccc(Cl)c(Cl)c3)n(C(c3ccccc3)c3ccccc3)c3ccc(Cl)cc23)cc1,EFIPLADIB,failed,chembl,0
+c1ccc2c(c1)Sc1ccccc1N2CC1CN2CCC1CC2,MEQUITAZINE,failed,chembl,0
+CC(=O)Nc1cccc2c(=O)n(C)c3ccccc3c(=O)c12,ADOSOPINE,failed,chembl,0
+CN(C)N(C)C(=O)[C@@]1(Cc2ccccc2)CCCN(C(=O)[C@@H](Cc2c[nH]c3ccccc23)NC(=O)C(C)(C)N)C1.Cl,ANAMORELIN HYDROCHLORIDE,failed,chembl,0
+CC(C)(C)CC(C)(C)c1ccc(OCCOCCOCCOCCOCCOCCOCCO)cc1,OCTOXYNOL 9,failed,chembl,0
+CC1OCC(Br)([N+](=O)[O-])CO1,NIBROXANE,failed,chembl,0
+Cn1nc(CS(C)(=O)=O)nc1NCCCOc1cccc(CN2CCCCC2)c1,SUFOTIDINE,failed,chembl,0
+CCOc1ccccc1OCCN[C@H](C)Cc1ccc(OC)c(S(N)(=O)=O)c1,TAMSULOSIN,approved,chembl,1
+CCC1(CCC(C)C)C(=O)N=C([O-])NC1=O.[Na+],AMOBARBITAL SODIUM,approved,chembl,1
+C=CCc1cccc(/C=N/NC(=O)CN2CCN(Cc3ccccc3)CC2)c1O,PAC-1,failed,chembl,0
+O=C(O)/C(=C/c1ccccc1)c1ccccc1.OCc1cc([C@@H](O)CNCCCCCCOCCOCc2c(Cl)cccc2Cl)ccc1O,VILANTEROL .ALPHA.-PHENYL CINNAMATE,failed,chembl,0
+CC(C(=O)O)c1ccc(N2Cc3ccccc3C2=O)cc1,INDOPROFEN,approved,chembl,1
+Cc1ccc(OCC(O)C(C)NC(C)C)c2c1CCC2,ZENIDOLOL,failed,chembl,0
+C[C@@H]1CCO[C@H]2Cn3cc(C(=O)NCc4ccc(F)cc4F)c(=O)c([O-])c3C(=O)N12.[Na+],DOLUTEGRAVIR SODIUM,approved,chembl,1
+CC(=O)O.CNC(=N)NCCC[C@H](N)C(=O)O,TILARGININE ACETATE,failed,chembl,0
+CC(O)(CS(=O)(=O)c1ccc(F)cc1)C(=O)Nc1ccc(C#N)c(C(F)(F)F)c1,BICALUTAMIDE,approved,chembl,1
+CCN(CC)c1nc(=NN)nc(N(CC)CC)[nH]1,MELADRAZINE,failed,chembl,0
+CNC[C@H](O)[C@@H](O)[C@H](O)[C@H](O)CO.O=C(O)c1ccc2nc(-c3cc(Cl)cc(Cl)c3)oc2c1,TAFAMIDIS MEGLUMINE,approved,chembl,1
+CC(C)[N+](C)(CCC(C(N)=O)(c1ccccc1)c1ccccc1)C(C)C.[I-],ISOPROPAMIDE IODIDE,approved,chembl,1
+O=C(O)CCCC[C@@H]1SC[C@@H]2NC(=O)N[C@@H]21,BIOTIN,approved,chembl,1
+NC(=O)C(=O)N/N=C/c1ccc([N+](=O)[O-])o1,NIFURALDEZONE,failed,chembl,0
+CC(C(C(=O)C(C)(C)C)c1ccc(Cl)cc1)N(C)C,Sibutramine,withdrawn,drugbank,0
+COc1cc2nc(N3CCc4c(cccc4NS(C)(=O)=O)C3)nc(N)c2c(-c2ccccn2)c1OC,TAPRIZOSIN,failed,chembl,0
+Cc1cc(-c2ccccc2[C@@H](C)OC[C@H](O)CNC(C)(C)Cc2ccc(Cl)c(F)c2)ccc1C(=O)O.Cc1cc(-c2ccccc2[C@@H](C)OC[C@H](O)CNC(C)(C)Cc2ccc(Cl)c(F)c2)ccc1C(=O)O.O.O=S(=O)(O)O,ENCALERET SULFATE,failed,chembl,0
+CCN1CC(CCN2CCOCC2)C(c2ccccc2)(c2ccccc2)C1=O,DOXAPRAM,approved,chembl,1
+CC(CN(C)C)CN1c2ccccc2Sc2ccc(C#N)cc21,CYAMEMAZINE,failed,chembl,0
+CC(=O)S[C@@H]1CC2=CC(=O)CC[C@]2(C)[C@H]2CC[C@@]3(C)[C@@H](CC[C@@]34CCC(=O)O4)[C@H]12,SPIRONOLACTONE,approved,chembl,1
+CN1CCN(c2ccccc2Cc2ccccc2)CC1,SIFAPRAZINE,failed,chembl,0
+COc1ccccc1C(C(=O)O)=C(c1ccccc1)c1ccccc1,ANISACRIL,failed,chembl,0
+O=C(O)[C@H](O)[C@@H](O)C(=O)O.c1cnc2cc3c(cc2n1)[C@@H]1CNC[C@H]3C1,VARENICLINE TARTRATE,approved,chembl,1
+CNC(=O)c1c(C)oc2cc(Oc3ncnc4cc(OC)c(OC)cc34)ccc12,FRUQUINTINIB,approved,chembl,1
+O=C([O-])Cc1ccccc1Nc1c(Cl)cccc1Cl.[K+],DICLOFENAC POTASSIUM,approved,chembl,1
+Cl.OC(CCN1CCCCC1)(c1ccccc1)C1CCCCC1,TRIHEXYPHENIDYL HYDROCHLORIDE,approved,chembl,1
+O=S(=O)(N[C@H](CO)C(C(F)(F)F)C(F)(F)F)c1ccc(Cl)s1,BEGACESTAT,failed,chembl,0
+CN1c2ccccc2C(c2ccccc2F)=NCC1CNC(=O)c1ccsc1,TIFLUADOM,failed,chembl,0
+N#C[C@@]1(c2ccc3c(N)ncnn23)O[C@H](CO)[C@@H](O)[C@H]1O,GS-441524,failed,chembl,0
+CC[C@H](OC(C)=O)C(C[C@H](C)N(C)C)(c1ccccc1)c1ccccc1.Cl,LEVOMETHADYL ACETATE HYDROCHLORIDE,approved,chembl,1
+CCC1(C2=CCCCC2)C(=O)[N-]C(=O)NC1=O.CCC1(C2=CCCCC2)C(=O)[N-]C(=O)NC1=O.[Ca+2],CYCLOBARBITAL CALCIUM,approved,chembl,1
+CN1CCN(CC(=O)N/N=C/c2ccc([N+](=O)[O-])o2)CC1,NIFURPIPONE,failed,chembl,0
+NS(=O)(=O)c1cc2c(cc1C(F)(F)F)N=CNS2(=O)=O,FLUMETHIAZIDE,failed,chembl,0
+O=C(O)Cn1c(C(=O)Nc2nc(-c3ccccc3Cl)cs2)cc2ccccc21,LINTITRIPT,failed,chembl,0
+FC(F)(F)C(F)(F)C(F)(F)F,PERFLUTREN,approved,chembl,1
+O=[Se]([O-])[O-].[Na+].[Na+],SODIUM SELENITE,failed,chembl,0
+CC(C)(C)c1ccc2c(c1)CC[C@H]2NC(=O)Nc1cccc2[nH]ncc12,ABT-102,failed,chembl,0
+Cc1cn([C@H]2C[C@H](O)[C@@H](CO)O2)c(=O)[nH]c1=O,DOXRIBTIMINE,failed,chembl,0
+CS(=O)(=O)Oc1ccc2c(NC(N)=O)c(C(=O)c3ccc(Cl)cc3Cl)oc2c1,LIRIMILAST,failed,chembl,0
+CC(=O)NC(CC(C)C)C(=O)O,ACETYLLEUCINE,failed,chembl,0
+CCc1c(C)[nH]c2c1C(=O)C(CN1CCOCC1)CC2.Cl,MOLINDONE HYDROCHLORIDE,approved,chembl,1
+O=C(c1ccc(Cl)cc1)n1cc(Cc2nnn[nH]2)c2ccccc21,INTRAZOLE,failed,chembl,0
+CO/N=C(\C(=O)N[C@@H]1C(=O)N2C(C(=O)[O-])=C(C[n+]3cccc4c3CCCC4)CS[C@H]12)c1csc(N)n1,CEFQUINOME,failed,chembl,0
+Cc1ccc(C(=O)Nc2ccccc2)cc1,Drug_Candidate_001,failed,fda_failed,0
+CO[C@H]1O[C@H](CNC(=O)N(CCCl)N=O)[C@@H](O)[C@H](O)[C@H]1O,RANIMUSTINE,failed,chembl,0
+CCNC(=O)Nc1ncnc2c1ncn2[C@@H]1O[C@H](COP(=O)(O)O)[C@H]2O[C@H](/C=C/c3ccccc3)O[C@H]21,REGRELOR,failed,chembl,0
+O=C1CN(/N=C/c2ncc(-c3ccc(Br)cc3)o2)C(=O)N1,AZUMOLENE,failed,chembl,0
+CC1(C)CCC2=C(O1)c1ccccc1C(=O)C2=O,LAPACHONE,failed,chembl,0
+COCCCN1CCC(NC(=O)c2cc(Cl)c(N)c3c2OCC3)CC1,PRUCALOPRIDE,approved,chembl,1
+Cc1cc(/C=C/c2ccc(F)cc2)cc(C)c1O,ENOFELAST,failed,chembl,0
+COc1ccccc1N1CCN(CCCNc2cc(=O)n(C)c(=O)n2C)CC1.Cl,URAPIDIL HYDROCHLORIDE,failed,chembl,0
+Cn1c(=O)c2c(ncn2CCCCN2CCC(C(=O)c3ccc(F)cc3)CC2)n(C)c1=O,PERBUFYLLINE,failed,chembl,0
+Cn1ncnc1[C@H]1c2n[nH]c(=O)c3cc(F)cc(c23)N[C@@H]1c1ccc(F)cc1,TALAZOPARIB,approved,chembl,1
+CC(C)NC1CCC(c2ccccc2)(c2ccccc2)CC1,PRAMIVERINE,failed,chembl,0
+CN1CCC(OC2c3ccccc3CCc3ccccc32)CC1,HEPZIDINE,failed,chembl,0
+CCN1CCC[C@H]1CNC(=O)c1c(OC)ccc(Br)c1OC.Cl.O,REMOXIPRIDE HYDROCHLORIDE,approved,chembl,1
+Cc1ncc(C[n+]2csc(CCO)c2C)c(N)n1.[Cl-],THIAMINE,approved,chembl,1
+COc1cc2c(Oc3ccc4[nH]c(C)cc4c3F)ncnc2cc1OCCCN1CCCC1,CEDIRANIB,failed,chembl,0
+CNC(=O)Oc1ccccc1C(=O)Nc1ccccc1,ANILAMATE,failed,chembl,0
+Cc1c(C(=O)NN)[n+]([O-])c2ccccc2[n+]1[O-],DRAZIDOX,failed,chembl,0
+CC(C)Cn1cnc2c(N)nc3ccccc3c21,IMIQUIMOD,approved,chembl,1
+CCN(CCCOc1ccc2c(Nc3cc(CC(=O)Nc4cccc(F)c4)[nH]n3)ncnc2c1)CCOP(=O)(O)O,BARASERTIB,failed,chembl,0
+CCOC(=O)C1=C(COCCOCCN)NC(C)=C(C(=O)OC)C1c1cccc(Cl)c1Cl,OLRADIPINE,failed,chembl,0
+CC(C)(O/N=C(\C(=O)N[C@@H]1C(=O)N2C(C(=O)[O-])=C(C[n+]3ccccc3)CS[C@H]12)c1csc(N)n1)C(=O)[O-].[Na+],CEFTAZIDIME SODIUM,approved,chembl,1
+CCC(=O)OCC(=O)[C@@]1(OC(=O)CC)[C@@H](C)C[C@H]2[C@@H]3CCC4=CC(=O)C=C[C@]4(C)[C@@]3(Cl)[C@@H](O)C[C@@]21C,BECLOMETHASONE DIPROPIONATE,approved,chembl,1
+CC/C(=C(\c1ccccc1)c1ccc(OCCN(C)C)cc1)c1ccccc1,TAMOXIFEN,approved,chembl,1
+C[C@]1(C(=O)O)CSC(c2ccc(O)cc2O)=N1,DEFERITRIN,failed,chembl,0
+Fc1cccc2c1O[C@H]1CNC[C@@H]1O2,FLUPAROXAN,failed,chembl,0
+CC(=O)O[C@H]1C(=O)[C@@]2(C)[C@H]([C@H](OC(=O)c3ccccc3)[C@]34OC(=O)O[C@H]3[C@H](OC(=O)[C@H](O)[C@H](CC(C)C)NC(=O)OC(C)(C)C)C(C)=C1C4(C)C)[C@]1(OC(C)=O)CO[C@@H]1C[C@@H]2O,ORTATAXEL,failed,chembl,0
+CC(C)Cc1ccc(C(C)C(=O)OCCN2CCN(c3cccc(C(F)(F)F)c3)CC2)cc1,FRABUPROFEN,failed,chembl,0
+COc1cc(Nc2ncc(F)c(Nc3ccc4c(n3)NC(=O)C(C)(C)O4)n2)cc(OC)c1OC,R-406,failed,chembl,0
+CC[C@H]1C[C@H]2C[C@H]3c4[nH]c5ccc(OC)cc5c4CCN(C2)[C@@H]13,IBOGAINE,failed,chembl,0
+OC(c1cc(-c2ccc(C(F)(F)F)cc2)nc(C(F)(F)F)c1)C1CCCCN1,ENPIROLINE,failed,chembl,0
+NS(=O)(=O)Cc1noc2ccccc12,ZONISAMIDE,approved,chembl,1
+Fc1cc(-c2ccc(/N=C3\CCCN3)c(F)c2)ccc1/N=C1\CCCN1,LIROLDINE,failed,chembl,0
+CNCC(O)c1ccc(OC(=O)C(C)(C)C)c(OC(=O)C(C)(C)C)c1,DIPIVEFRIN,approved,chembl,1
+CCn1cc(C(=O)O)c(=O)c2cc(F)c(-n3cccc3)cc21,IRLOXACIN,failed,chembl,0
+COc1cc2c(cc1OC)CN(C(=O)[C@H](C)N[C@@H](CCc1ccccc1)C(=O)O)[C@H](C(=O)O)C2,MOEXIPRILAT,failed,chembl,0
+CCN1CCCC1CNS(=O)(=O)c1cc(Cl)c(N)cc1OC,LORAPRIDE,failed,chembl,0
+CCc1cc(Cl)c(OC)c(C(=O)NC[C@@H]2CCCN2CC)c1O,ETICLOPRIDE,failed,chembl,0
+CCCCC[C@H](O)c1ccc(N2C(=O)CC[C@@H]2CCCc2ccc(C(=O)OC(C)C)s2)cc1,AGANEPAG ISOPROPYL,failed,chembl,0
+C[N+]1(C)[C@@H]2CC[C@H]1C[C@@H](OC(=O)C(CO)c1ccccc1)C2.O=[N+]([O-])[O-],METHYLATROPINE NITRATE,failed,chembl,0
+OCc1cccc(Cc2c[nH]cn2)c1O,LEDAZEROL,failed,chembl,0
+CCCc1ccc(OCC(=O)N2CCN(C(=O)COc3ccc(CCC)cc3OC)CC2)c(OC)c1,SIMETRIDE,failed,chembl,0
+C[N+]1(C)[C@@H]2CC[C@H]1C[C@@H](OC(=O)C(O)c1ccccc1)C2.[Br-],HOMATROPINE METHYLBROMIDE,approved,chembl,1
+CCCCN(C(=O)C(C)C)c1nc(C)co1,ISAMOXOLE,failed,chembl,0
+C/C(=C\c1ccc(S(C)(=O)=O)cc1)c1ccc2c(c1)C(C)(C)CCC2(C)C,SUMAROTENE,failed,chembl,0
+NC(Cc1ccc(N(CCCl)CCCl)cc1)C(=O)O,SARCOLYSIN,failed,chembl,0
+Cc1cn2nc(-c3cc(=O)n4cc(N5CCNC6(CC6)C5)ccc4n3)cc(C)c2n1,RISDIPLAM,approved,chembl,1
+COC(=O)CCc1ccc(OCC(O)CNC(C)C)cc1,ESMOLOL,approved,chembl,1
+CN(C)CC(Oc1ccccc1)Oc1ccccc1,MEDIFOXAMINE,approved,chembl,1
+Cc1c(CN2CCN(C(=O)[C@H](C)O)CC2)sc2c(N3CCOCC3)nc(-c3cnc(N)nc3)nc12,APITOLISIB,failed,chembl,0
+CO[C@@H]1[C@H](OP(=O)(S)OC[C@H]2O[C@@H](n3cnc4c(N)ncnc43)C[C@@H]2O)[C@@H](CO)O[C@H]1n1ccc(=O)[nH]c1=O,INARIGIVIR,failed,chembl,0
+CC(=O)Nc1c(I)cc(I)c(C(=O)O)c1I,ACETRIZOIC ACID,approved,chembl,1
+COc1ccc(/C=C/C(=O)Nc2ccccc2C(=O)O)cc1OC,TRANILAST,failed,chembl,0
+CCN(CC)CCCN1c2ccccc2Sc2ccc(Cl)cc21,CHLORPROETHAZINE,failed,chembl,0
+CCCC(C(=O)c1ccc(C)cc1)N1CCCC1.Cl,PYROVALERONE HYDROCHLORIDE,approved,chembl,1
+OCC(CO)N[C@H]1C[C@](O)(CO)[C@@H](O)[C@H](O)[C@H]1O,VOGLIBOSE,approved,chembl,1
+CN1[C@@H]2CC[C@H]1C[C@@H](NC(=O)N1CC(C)(C)c3ccccc31)C2,RICASETRON,failed,chembl,0
+COc1ccc(NS(=O)(=O)c2ccc(N)cc2)nn1,SULFAMETHOXYPYRIDAZINE,approved,chembl,1
+O=C([O-])c1cc(/N=N/c2ccc(O)c(C(=O)[O-])c2)ccc1O.[Na+].[Na+],OLSALAZINE SODIUM,approved,chembl,1
+CC(Cc1ccccc1)N(C)C(=O)Cn1nc(-c2ccccc2)ccc1=O,ISAMFAZONE,failed,chembl,0
+Cc1cc2c(cc1CC(=O)c1sccc1S(=O)(=O)Nc1onc(C)c1Cl)OCO2,SITAXENTAN,approved,chembl,1
+c1ccc(C2CN3CCSC3=N2)cc1,TETRAMISOLE,failed,chembl,0
+CNC[C@H](O)c1cccc(O)c1,PHENYLEPHRINE,approved,chembl,1
+CC#C[C@]1(O)CC[C@H]2[C@@H]3CCC4=CC(=O)CCC4=C3[C@@H](c3ccc(N(C)C)cc3)C[C@@]21C,MIFEPRISTONE,approved,chembl,1
+NS(=O)(=O)c1ccc(Cl)c(S(N)(=O)=O)c1,CLOFENAMIDE,failed,chembl,0
+NC(=O)c1cccc2cn(-c3ccc([C@@H]4CCCNC4)cc3)nc12,NIRAPARIB,approved,chembl,1
+CC(C)(C)c1ccc(C(=O)CCCN2CCC(OC(c3ccccc3)c3ccccc3)CC2)cc1,EBASTINE,approved,chembl,1
+COC(=O)/C=C/c1ccccc1OCC(O)CNC(C)C,CINAMOLOL,failed,chembl,0
+CC1(C)S[C@@H]2[C@H](NC(=O)[C@H](NC(=O)N3CCNC3=O)c3ccccc3)C(=O)N2[C@H]1C(=O)[O-].[Na+],AZLOCILLIN SODIUM,approved,chembl,1
+O=C1CCc2ccc(OCCCCN3CCN(c4cccc(Cl)c4Cl)CC3)cc2N1,ARIPIPRAZOLE,approved,chembl,1
+Cn1c(=O)c2[nH]cnc2n(C)c1=O.NCC(=O)[O-].[Na+],THEOPHYLLINE SODIUM GLYCINATE,approved,chembl,1
+Cc1cnc(NCCCN(C)C)c2c1[nH]c1ccc3cc(O)ccc3c12,INTOPLICINE,failed,chembl,0
+NCCc1c[nH]cn1.O=P(O)(O)O.O=P(O)(O)O,HISTAMINE PHOSPHATE,approved,chembl,1
+CC(COc1ccccc1)N(CCCl)Cc1ccccc1.Cl,PHENOXYBENZAMINE HYDROCHLORIDE,approved,chembl,1
+O=C(O)C(Cc1cc(I)c(O)c(I)c1)c1ccccc1,IODOALPHIONIC ACID,failed,chembl,0
+COc1ccc2c(c1)c(CC(=O)N[C@@H](C=O)[C@@H](O)[C@H](O)[C@H](O)CO)c(C)n2C(=O)c1ccc(Cl)cc1,GLUCAMETACIN,failed,chembl,0
+COc1ccc(C[C@@H](C)NC[C@H](O)c2ccc(O)c(NC=O)c2)cc1.O=C(O)C(O)C(O)C(=O)O,ARFORMOTEROL TARTRATE,approved,chembl,1
+CC(C)(O)c1ccccc1CC[C@@H](SCC1(CC(=O)[O-])CC1)c1cccc(/C=C/c2ccc3ccc(Cl)cc3n2)c1.[Na+],MONTELUKAST SODIUM,approved,chembl,1
+COc1ccc(-n2nnnc2C(F)(F)F)cc1CN[C@H]1CCCN[C@H]1c1ccccc1,VOFOPITANT,failed,chembl,0
+CN1CCC(O)(c2ccc(F)cc2)C(C(=O)c2ccc(F)cc2)C1,FLAZALONE,failed,chembl,0
+O=C(O)CN(CCN(CC(=O)O)CC(=O)O)CCN(CC(=O)O)CC(=O)O,PENTETIC ACID,approved,chembl,1
+CC(C(=O)O)c1ccc2c(c1)[nH]c1ccc(Cl)cc12,CARPROFEN,approved,chembl,1
+O=C(O)[C@H](CCc1ccccc1)N[C@H]1CCCN2CCC[C@@H](C(=O)O)N2C1=O,CILAZAPRILAT,failed,chembl,0
+CC(C(=O)O)c1cccc(Oc2ccccc2)c1,FENOPROFEN,approved,chembl,1
+CCCCCCCCCCCCCCCC[N+](C)(C)C.[Br-],CETRIMONIUM BROMIDE,failed,chembl,0
+COc1cc(Br)c(C[N+]2(CCOCCC3CCC4CC3C4(C)C)CCOCC2)cc1OC,PINAVERIUM,failed,chembl,0
+C=C1/C(=C\C=C2/CCC[C@]3(C)[C@@H]([C@H](C)/C=C/[C@H](C)C(C)C)CC[C@@H]23)C[C@@H](O)C[C@@H]1O,DOXERCALCIFEROL,approved,chembl,1
+CC(=O)c1ccc2c(c1)N(CCCN1CCN(CCO)CC1)c1ccccc1S2.O=C(O)/C=C\C(=O)O.O=C(O)/C=C\C(=O)O,ACETOPHENAZINE MALEATE,approved,chembl,1
+CCn1cc(C(=O)O)c(=O)c2cnc(N3CCCC3)nc21,PIROMIDIC ACID,failed,chembl,0
+O=C(NO)c1cccnc1,NICOXAMAT,failed,chembl,0
+CN1CCC[C@@H]1CCO[C@](C)(c1ccccc1)c1ccc(Cl)cc1,CLEMASTINE,approved,chembl,1
+CCCCCCCCCCCCCCCC(=O)OCC(COC(=O)CCCCCCCCCCCCCCC)OC(=O)CCCCCCCCCCCCCCC,TRIPALMITIN,failed,chembl,0
+Cc1c(N)cccc1Cn1ccc(OCCc2cccs2)cc1=O,CG-400549,failed,chembl,0
+[18F]c1ccc(-c2ccc3c(c2)[nH]c2ccncc23)cn1,FLORTAUCIPIR F 18,approved,chembl,1
+OCc1cc(C(O)CNCCCCCCOCCCCc2ccccc2)ccc1O,SALMETEROL,approved,chembl,1
+COc1cc(NC(C)CCCN)c2ncccc2c1.O=P(O)(O)O.O=P(O)(O)O,PRIMAQUINE PHOSPHATE,approved,chembl,1
+O=C(O)COCCN1CCN(C(c2ccccc2)c2ccc(Cl)cc2)CC1,CETIRIZINE,approved,chembl,1
+CC(C)c1ncc([N+](=O)[O-])n1C,IPRONIDAZOLE,failed,chembl,0
+CN1CCC(OC(c2ccccc2)c2ccccc2)CC1.Cl,DIPHENYLPYRALINE HYDROCHLORIDE,approved,chembl,1
+Cc1ccc(S(=O)(=O)NC(=O)N[C@@H](C)Cc2ccccc2)cc1,TOSIFEN,failed,chembl,0
+CCCC(=O)c1ccc2c(c1)N(CCCN1CCN(C)CC1)c1ccccc1S2,BUTAPERAZINE,failed,chembl,0
+Cc1nn(C)c2c1N(C(=O)CN1CCN(C)CC1)c1ccccc1NC2=O,ZOLENZEPINE,failed,chembl,0
+CC(=O)O[C@H]1C[C@@H]2C(COC(=O)CC(C)C)=CO[C@@H](OC(=O)CC(C)C)[C@@H]2[C@@]12CO2,DIDROVALTRATE,failed,chembl,0
+Clc1ccc2c(N3CCN(CCCN4CCN(c5ccnc6cc(Cl)ccc56)CC4)CC3)ccnc2c1.O=P(O)(O)O,PIPERAQUINE PHOSPHATE,failed,chembl,0
+CNCCC(Oc1ccccc1OC)c1ccccc1,NISOXETINE,failed,chembl,0
+CCCn1c(=O)c2nc(C34CC5CC(CC3C5)C4)[nH]c2n(CCC)c1=O,ROLOFYLLINE,failed,chembl,0
+CC(C)(C)c1cnc(CSc2cnc(NC(=O)C3CCNCC3)s2)o1,BMS-387032,failed,chembl,0
+N=C(N)NCC1COC2(CCCCC2)O1,GUANADREL,approved,chembl,1
+CC(=O)[C@]1(O)Cc2c(O)c3c(c(O)c2[C@@H](O[C@H]2C[C@H](N)[C@H](O)[C@H](C)O2)C1)C(=O)c1ccccc1C3=O.Cl,IDARUBICIN HYDROCHLORIDE,approved,chembl,1
+OC1(c2ccc(Cl)cc2)c2ccccc2C2=NCCN21,MAZINDOL,approved,chembl,1
+N=C(N)NCCCCCCNC(=O)COC(=O)NCCCCNCCCN,TRESPERIMUS,failed,chembl,0
+O=C1CN=C(c2ccccc2)c2c(sc3c2CCCC3)N1,BENTAZEPAM,failed,chembl,0
+CCNC(C)Cc1cccc(C(F)(F)F)c1,FENFLURAMINE,approved,chembl,1
+C#CCN[C@@H]1CCc2ccccc21.CS(=O)(=O)O,RASAGILINE MESYLATE,approved,chembl,1
+CC(C)C[C@H](N)C(=O)O,LEUCINE,failed,chembl,0
+CS(=O)(=O)c1ccc([C@@H](C[C@H]2CCC(=O)C2)C(=O)Nc2cnccn2)cc1Cl,PIRAGLIATIN,failed,chembl,0
+N=C(N)NC(=O)c1nc(Cl)c(N)nc1N,AMILORIDE,approved,chembl,1
+CCC(=O)NS(=O)(=O)c1ccc(NC(=O)COc2ccc(Cl)cc2C(=O)c2cc(Cl)cc(C#N)c2)c(C)c1,GW-695634,failed,chembl,0
+CNc1ccc(-c2cc3cc(O)ccc3o2)c(F)n1,FLUTAFURANOL,failed,chembl,0
+Nc1c2c(nc3c1CCC3)CCCC2,IPIDACRINE,failed,chembl,0
+O=C(O)COc1ccccc1/C=N/NC(=O)c1ccncc1,ACONIAZIDE,failed,chembl,0
+FC(F)(F)COCC(F)(F)F,FLUROTHYL,failed,chembl,0
+O=C(O)Cc1cccc(-c2cc(CCCCCCc3ccc(O[C@H]4O[C@H](CO)[C@@H](O)[C@H](O)[C@@H]4O)c(-c4cccc(CC(=O)O)c4)c3)ccc2O[C@H]2O[C@H](CO)[C@@H](O)[C@H](O)[C@@H]2O)c1,BIMOSIAMOSE,failed,chembl,0
+CC(O)C(=O)O.O=C(CCCN1CCC(O)(c2ccc(Cl)cc2)CC1)c1ccc(F)cc1,HALOPERIDOL LACTATE,approved,chembl,1
+C[C@]12CC[C@@H]3c4ccc(O)cc4CC[C@H]3[C@@H]1CC[C@@H]2O,ESTRADIOL,approved,chembl,1
+Cc1[nH]c2ccccc2c1CCNCc1ccc(/C=C/C(=O)NO)cc1,PANOBINOSTAT,approved,chembl,1
+CN1CCN(C2=Nc3cc(Cl)ccc3Cc3sccc32)CC1,TILOZEPINE,failed,chembl,0
+CC(N/C(=N\C#N)Nc1ccncc1)C(C)(C)C.O,PINACIDIL,approved,chembl,1
+COc1ccc(C(CN(C)C)C2(O)CCCCC2)cc1,VENLAFAXINE,approved,chembl,1
+NC(=O)[C@H]1O[C@@H](O)[C@H](O)[C@@H](O)[C@@H]1O,GLUCURONAMIDE,failed,chembl,0
+OCCN1CCN(CCCN2c3cc(C(F)(F)F)ccc3Sc3sccc32)CC1,FLUTIZENOL,failed,chembl,0
+Cc1csc2ccc3[nH]c4c(c3c12)CN(C)CC4,TIENOCARBINE,failed,chembl,0
+CN(CC1(C)CCCO1)S(=O)(=O)c1ccc(Cl)c(S(N)(=O)=O)c1,MEFRUSIDE,failed,chembl,0
+O=C1c2c(O)cccc2Cc2cccc(O)c21,ANTHRALIN,failed,chembl,0
+O=C(O)c1cn2c(cnc3ccccc32)n1,DAZOQUINAST,failed,chembl,0
+Cc1c(C(=O)Nc2ccc(N3C[C@@H](C)O[C@@H](C)C3)nc2)cccc1-c1ccc(OC(F)(F)F)cc1,SONIDEGIB,approved,chembl,1
+CCCCC/C=C/C/C=C/CCCCCCCC(=O)NC(C)c1ccccc1,MELINAMIDE,failed,chembl,0
+O=C([O-])C1=C(CSc2nnnn2CS(=O)(=O)[O-])CS[C@@H]2[C@H](NC(=O)[C@H](O)c3ccccc3)C(=O)N12.[Na+].[Na+],CEFONICID SODIUM,approved,chembl,1
+CCC(=O)Nc1nnc(S(N)(=O)=O)s1,PROPAZOLAMIDE,failed,chembl,0
+CN1CCCN=C1/C=C/c1cccc(O)c1,OXANTEL,failed,chembl,0
+CN[C@@H](C)[C@@H](O)c1ccccc1.CN[C@@H](C)[C@@H](O)c1ccccc1.O=S(=O)(O)O,PSEUDOEPHEDRINE SULFATE,approved,chembl,1
+Cc1nnc2n1-c1sc(CCC(=O)N3CCOCC3)cc1C(c1ccccc1Cl)=NC2,APAFANT,failed,chembl,0
+O=Cc1ccc(CO)o1,AES-103,failed,chembl,0
+CN(C)[C@@H]1C(O)=C(C(N)=O)C(=O)[C@@]2(O)C(O)=C3C(=O)c4c(ccc(N)c4O)C[C@H]3C[C@@H]12,AMICYCLINE,failed,chembl,0
+CCOC(=O)[C@H](CCc1ccccc1)N[C@@H](C)C(=O)N1N=C(C(C)(C)C)S[C@H]1C(=O)O,UTIBAPRIL,failed,chembl,0
+CCN(CC)CCC1(c2ccccc2)C(=O)Oc2ccccc21,AMOLANONE,failed,chembl,0
+CCN(CC)S(=O)(=O)c1ccc(C(=O)O)cc1,ETEBENECID,failed,chembl,0
+CN1CCN(Cc2ccc(Nc3ncc(Cl)c(Nc4ccccc4S(=O)(=O)N(C)C)n3)cc2)CC1,DUBERMATINIB,failed,chembl,0
+C[C@]12CC[C@H](O)C[C@H]1CC[C@@H]1[C@@H]2CC[C@]2(C)[C@@](O)(c3ccoc3)CC[C@]12O,ROSTAFUROXIN,failed,chembl,0
+N[C@@H](CS)C(=O)O,CYSTEINE,approved,chembl,1
+[O-][n+]1cccc(CO)c1,MEPIROXOL,failed,chembl,0
+Nc1ccc(SC[C@@H]2CO[C@](CCc3ccc(Cl)cc3)(Cn3ccnc3)O2)cc1,AZALANSTAT,failed,chembl,0
+CCCCCC/C=C\CCCCCCCCCC(=O)N[C@H]1[C@H](OC[C@H]2O[C@H](OP(=O)(O)O)[C@H](NC(=O)CC(=O)CCCCCCCCCCC)[C@@H](OCCCCCCCCCC)[C@@H]2O)O[C@H](COC)[C@@H](OP(=O)(O)O)[C@@H]1OCC[C@@H](CCCCCCC)OC,ERITORAN,failed,chembl,0
+O=S1(=O)CCN(CN2CCS(=O)(=O)NC2)CN1,TAUROLIDINE,approved,chembl,1
+CCCCCCCCCCCCCCN1CCN(CCN2CCN(C(=O)N(CC)CC)CC2)C1=O,IMPACARZINE,failed,chembl,0
+CN1CCN(c2cc3c(cc2F)c(=O)c(C(=O)O)cn3-c2ccc(F)cc2)CC1,DIFLOXACIN,failed,chembl,0
+CN(C)CCC1c2ccc(Cl)cc2CCc2cccnc21,CLOSIRAMINE,failed,chembl,0
+Cn1c(=O)c(Oc2ccc(F)cc2F)cc2cnc(NC(CCO)CCO)nc21,PAMAPIMOD,failed,chembl,0

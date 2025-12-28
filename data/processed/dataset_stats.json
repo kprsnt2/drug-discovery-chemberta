@@ -1,0 +1,14 @@
+{
+  "total_samples": 8091,
+  "train_samples": 6472,
+  "val_samples": 809,
+  "test_samples": 810,
+  "approved_samples": 3088,
+  "failed_samples": 5003,
+  "sources": {
+    "chembl": 8050,
+    "drugbank": 21,
+    "fda_novel": 11,
+    "fda_failed": 9
+  }
+}
