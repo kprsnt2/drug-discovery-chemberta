@@ -259,7 +259,7 @@ def load_model(config: dict, num_labels: int = 2):
     return model, tokenizer
 
 
-def get_training_arguments(config: dict, output_dir: str) -> TrainingArguments:
+def get_training_arguments(config: dict, output_dir: str, uses_device_map: bool = False) -> TrainingArguments:
     """Create training arguments from config."""
     
     args = TrainingArguments(
@@ -302,6 +302,9 @@ def get_training_arguments(config: dict, output_dir: str) -> TrainingArguments:
         dataloader_num_workers=4,
         remove_unused_columns=False,
         push_to_hub=False,
+        
+        # CRITICAL: Disable device placement for models using device_map
+        use_cpu=False,
     )
     
     return args
@@ -413,13 +416,19 @@ def main(args):
     # Check if model uses device_map (already on GPU)
     uses_device_map = getattr(model, '_uses_device_map', False)
     
-    if uses_device_map:
-        # Don't let Trainer move the model - it's already on device
-        from accelerate import Accelerator
-        accelerator = Accelerator()
+    # Create a custom Trainer that handles device_map properly
+    class DeviceMapTrainer(Trainer):
+        def __init__(self, *args, **kwargs):
+            # Set place_model_on_device BEFORE calling super().__init__
+            super().__init__(*args, **kwargs)
         
-        # Use accelerate's Trainer-compatible approach
-        trainer = Trainer(
+        def _move_model_to_device(self, model, device):
+            # Skip moving - model already on device via device_map
+            pass
+    
+    if uses_device_map:
+        print("Using DeviceMapTrainer (model already on GPU via device_map)")
+        trainer = DeviceMapTrainer(
             model=model,
             args=training_args,
             train_dataset=train_dataset,
@@ -428,8 +437,6 @@ def main(args):
             data_collator=data_collator,
             compute_metrics=compute_metrics,
         )
-        # Monkey-patch to skip device movement
-        trainer.place_model_on_device = False
     else:
         trainer = Trainer(
             model=model,
