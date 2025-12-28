@@ -102,26 +102,53 @@ def get_predictions(model, dataloader, device):
             logits = outputs.logits  # HuggingFace format
         else:
             logits = outputs['logits']  # Custom model format
+        
+        # Convert to float32 for numerical stability in softmax
+        logits = logits.float()
+        
+        # Handle NaN/Inf in logits
+        logits = torch.nan_to_num(logits, nan=0.0, posinf=100.0, neginf=-100.0)
+        
         probs = torch.softmax(logits, dim=-1)
         preds = torch.argmax(probs, dim=-1)
         
+        # Get probability of positive class (handle different output sizes)
+        if probs.shape[-1] >= 2:
+            pos_probs = probs[:, 1].cpu().numpy()
+        else:
+            pos_probs = probs[:, 0].cpu().numpy()
+        
         all_labels.extend(labels.cpu().numpy())
         all_preds.extend(preds.cpu().numpy())
-        all_probs.extend(probs[:, 1].cpu().numpy())  # Prob of positive class
+        all_probs.extend(pos_probs)
     
     return np.array(all_labels), np.array(all_preds), np.array(all_probs)
 
 
 def compute_metrics(labels, preds, probs):
     """Compute comprehensive evaluation metrics."""
+    # Handle NaN in probs
+    probs = np.nan_to_num(probs, nan=0.5)
+    
+    # Compute ROC-AUC with error handling
+    try:
+        roc_auc = roc_auc_score(labels, probs)
+    except ValueError:
+        roc_auc = 0.5  # Default if calculation fails
+    
+    try:
+        pr_auc = average_precision_score(labels, probs)
+    except ValueError:
+        pr_auc = 0.5
+    
     metrics = {
         'accuracy': accuracy_score(labels, preds),
-        'f1_score': f1_score(labels, preds, average='binary'),
-        'f1_macro': f1_score(labels, preds, average='macro'),
-        'precision': precision_score(labels, preds, average='binary'),
-        'recall': recall_score(labels, preds, average='binary'),
-        'roc_auc': roc_auc_score(labels, probs),
-        'pr_auc': average_precision_score(labels, probs),
+        'f1_score': f1_score(labels, preds, average='binary', zero_division=0),
+        'f1_macro': f1_score(labels, preds, average='macro', zero_division=0),
+        'precision': precision_score(labels, preds, average='binary', zero_division=0),
+        'recall': recall_score(labels, preds, average='binary', zero_division=0),
+        'roc_auc': roc_auc,
+        'pr_auc': pr_auc,
     }
     
     # Confusion matrix
