@@ -146,7 +146,7 @@ def load_model(config: dict, num_labels: int = 2):
     gpu_vram = config["gpu"]["vram_gb"]
     model_params = config["model"]["params"]
     
-    # Check if we need quantization
+    # Check if we need quantization (not needed for MI300X 192GB)
     if "70B" in model_params and gpu_vram < 150:
         print("Using 4-bit quantization for 70B model...")
         quantization_config = BitsAndBytesConfig(
@@ -157,36 +157,95 @@ def load_model(config: dict, num_labels: int = 2):
         )
     
     # Load tokenizer
+    print("Loading tokenizer...")
     tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
     
     # Add padding token if needed
     if tokenizer.pad_token is None:
         tokenizer.pad_token = tokenizer.eos_token
     
-    # Load model
-    if is_causal:
-        # For causal LM, we add a classification head
-        model = AutoModelForSequenceClassification.from_pretrained(
-            model_name,
-            num_labels=num_labels,
-            quantization_config=quantization_config,
-            trust_remote_code=True,
-            torch_dtype=torch.bfloat16 if config["memory"]["bf16"] else torch.float16,
-            device_map="auto" if quantization_config else None,
-        )
-        model.config.pad_token_id = tokenizer.pad_token_id
+    # Determine dtype
+    if config["memory"]["bf16"]:
+        model_dtype = torch.bfloat16
+    elif config["memory"]["fp16"]:
+        model_dtype = torch.float16
     else:
-        # For encoder models (like ChemBERTa)
-        model = AutoModelForSequenceClassification.from_pretrained(
+        model_dtype = torch.float32
+    
+    print(f"Loading model with dtype: {model_dtype}")
+    
+    # Load model with error handling for different model types
+    try:
+        if is_causal:
+            # For causal LM, we add a classification head
+            print("Loading as sequence classification model...")
+            model = AutoModelForSequenceClassification.from_pretrained(
+                model_name,
+                num_labels=num_labels,
+                quantization_config=quantization_config,
+                trust_remote_code=True,
+                torch_dtype=model_dtype,
+                device_map="auto",
+                low_cpu_mem_usage=True,
+            )
+            model.config.pad_token_id = tokenizer.pad_token_id
+        else:
+            # For encoder models (like ChemBERTa)
+            model = AutoModelForSequenceClassification.from_pretrained(
+                model_name,
+                num_labels=num_labels,
+                trust_remote_code=True,
+            )
+    except Exception as e:
+        print(f"Error loading with AutoModelForSequenceClassification: {e}")
+        print("Trying to load base model and add classification head...")
+        
+        # Fallback: Load base model and add simple classifier
+        from transformers import AutoModel
+        import torch.nn as nn
+        
+        base_model = AutoModel.from_pretrained(
             model_name,
-            num_labels=num_labels,
             trust_remote_code=True,
+            torch_dtype=model_dtype,
+            device_map="auto",
+            low_cpu_mem_usage=True,
         )
+        
+        # Create a simple wrapper with classification head
+        class ModelWithClassifier(nn.Module):
+            def __init__(self, base_model, num_labels, hidden_size):
+                super().__init__()
+                self.base_model = base_model
+                self.classifier = nn.Linear(hidden_size, num_labels)
+                self.num_labels = num_labels
+                
+            def forward(self, input_ids, attention_mask=None, labels=None, **kwargs):
+                outputs = self.base_model(input_ids, attention_mask=attention_mask, **kwargs)
+                # Use last hidden state
+                if hasattr(outputs, 'last_hidden_state'):
+                    hidden = outputs.last_hidden_state[:, -1, :]  # Last token
+                else:
+                    hidden = outputs[0][:, -1, :]
+                logits = self.classifier(hidden)
+                
+                loss = None
+                if labels is not None:
+                    loss_fn = nn.CrossEntropyLoss()
+                    loss = loss_fn(logits, labels)
+                
+                return type('Output', (), {'loss': loss, 'logits': logits})()
+        
+        hidden_size = base_model.config.hidden_size
+        model = ModelWithClassifier(base_model, num_labels, hidden_size)
+        model.config = base_model.config
+        model.config.pad_token_id = tokenizer.pad_token_id
     
     # Enable gradient checkpointing if configured
     if config["memory"]["gradient_checkpointing"]:
-        model.gradient_checkpointing_enable()
-        print("Gradient checkpointing enabled")
+        if hasattr(model, 'gradient_checkpointing_enable'):
+            model.gradient_checkpointing_enable()
+            print("Gradient checkpointing enabled")
     
     # Print model size
     total_params = sum(p.numel() for p in model.parameters())
