@@ -163,7 +163,7 @@ print(f"Confidence: {{probs[0][prediction].item():.2%}}")
   title = {{Drug Discovery Model - Qwen 2.5 14B Finetuned}},
   year = {{2024}},
   publisher = {{HuggingFace}},
-  url = {{https://huggingface.co/kprsnt2/drug-discovery-qwen-14b}}
+  url = {{https://huggingface.co/kprsnt/drug-discovery-qwen-14b}}
 }}
 ```
 """
