@@ -47,11 +47,11 @@ except ImportError:
     from datasets import Dataset, load_dataset
 
 try:
-    from trl import SFTTrainer, SFTConfig, DataCollatorForCompletionOnlyLM
+    from trl import SFTTrainer, SFTConfig
 except ImportError:
     print("Installing trl...")
     os.system("pip install trl>=0.7.0")
-    from trl import SFTTrainer, SFTConfig, DataCollatorForCompletionOnlyLM
+    from trl import SFTTrainer, SFTConfig
 
 
 def setup_device():
@@ -284,13 +284,10 @@ def main(args):
     
     trainer = SFTTrainer(
         model=model.model,
-        tokenizer=tokenizer,
+        processing_class=tokenizer,
         train_dataset=train_dataset,
         eval_dataset=val_dataset,
         args=training_args,
-        dataset_text_field="text",
-        max_seq_length=TRAINING_CONFIG['max_seq_length'],
-        packing=TRAINING_CONFIG.get('packing', False),
         callbacks=[
             EarlyStoppingCallback(
                 early_stopping_patience=TRAINING_CONFIG['early_stopping_patience'],

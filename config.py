@@ -34,7 +34,7 @@ MODEL_CONFIG = {
     
     # Precision settings - AMD MI300X compatible
     "torch_dtype": "bfloat16",  # Use bfloat16 for training stability
-    "use_flash_attention": True,  # Flash attention 2 for efficiency
+    "use_flash_attention": False,  # Disabled - not available on ROCm
     
     # Quantization - NOT needed with 192GB VRAM
     "use_4bit": False,
@@ -104,7 +104,7 @@ TRAINING_CONFIG = {
     "packing": True,  # Pack multiple samples into one sequence
     
     # Checkpointing
-    "save_steps": 500,
+    "save_steps": 400,
     "eval_steps": 200,
     "logging_steps": 50,
     "save_total_limit": 3,
