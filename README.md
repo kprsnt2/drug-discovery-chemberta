@@ -1,117 +1,166 @@
-# Drug Discovery Model - ChemBERTa Finetuned
+# Drug Discovery Text Generation Model
 
-[![Hugging Face](https://img.shields.io/badge/🤗%20Model-Hugging%20Face-yellow)](https://huggingface.co/Prashantkadasi/drug-discovery-chemberta)
+[![Hugging Face](https://img.shields.io/badge/🤗%20Model-Hugging%20Face-yellow)](https://huggingface.co/kprsnt/drug-discovery-qwen-14b)
 [![Python](https://img.shields.io/badge/Python-3.9+-blue.svg)](https://python.org)
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-red.svg)](https://pytorch.org)
 [![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-A complete toolkit for **full finetuning** ChemBERTa for drug discovery on consumer GPUs (RTX 3050 6GB).
+An AI-powered drug discovery assistant using **Qwen2.5-14B** for generating explanatory drug analysis, failure predictions, and improvement suggestions.
 
-## 🎯 Results
+## 🎯 Features
 
-| Metric | Pretrained | Finetuned | Improvement |
-|--------|------------|-----------|-------------|
-| **Accuracy** | 44.2% | **69.6%** | +57.5% |
-| **F1 Score** | 40.8% | **48.8%** | +19.4% |
-| **ROC-AUC** | 42.9% | **70.8%** | +64.9% |
-| **PR-AUC** | 33.8% | **65.1%** | +92.5% |
+- **Drug Analysis**: Predict approval likelihood with detailed explanations
+- **Failure Analysis**: Understand why drugs fail with mechanistic insights
+- **Drug Comparison**: Compare safety profiles of two candidates
+- **Improvement Suggestions**: Get structural modification recommendations
+- **Chat Interface**: Open-ended drug discovery discussions
 
-![Benchmark Results](results/comparison_plot.png)
+## 🔬 Model
 
-## 🔬 Features
-
-- **Full Model Finetuning** - Not LoRA, trains all 44M parameters
-- **Memory Optimized** - Runs on 6GB VRAM with gradient checkpointing + FP16
-- **Comprehensive Datasets** - ChEMBL, DrugBank, FDA approved/failed drugs
-- **Benchmark Suite** - Compare pretrained vs finetuned performance
+| Property | Value |
+|----------|-------|
+| **Base Model** | Qwen2.5-14B-Instruct |
+| **Training** | Full fine-tuning on AMD MI300X 192GB |
+| **Task** | Text Generation (Causal LM) |
+| **Context** | 2048 tokens |
+| **Data** | ChEMBL, FDA, clinical trial failures |
 
 ## 📦 Installation
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/drug-discovery-chemberta.git
-cd drug-discovery-chemberta
+git clone https://github.com/YOUR_USERNAME/drug-discovery-llm.git
+cd drug-discovery-llm
 pip install -r requirements.txt
 ```
 
 ## 🚀 Quick Start
 
-### 1. Download Datasets
+### 1. Download Drug Data
 ```bash
+# Comprehensive drug data with failure reasons
+python scripts/download_comprehensive.py
+
+# Or existing data sources
 python scripts/download_all.py
 ```
-Downloads from ChEMBL, DrugBank, FDA APIs + curated failed drugs list.
 
-### 2. Train Model
+### 2. Prepare Instruction Dataset
 ```bash
-python train.py --epochs 10
+python scripts/prepare_instruct_dataset.py
 ```
 
-### 3. Evaluate & Benchmark
+### 3. Train Model
 ```bash
-python evaluate.py
-python benchmark.py --generate_report
+# Full fine-tuning on AMD MI300X
+python train.py --epochs 3
+
+# Test run with minimal data
+python train.py --test_run
+```
+
+### 4. Launch App
+```bash
+python app.py
 ```
 
 ## 🤗 Using the Pretrained Model
 
 ```python
-from transformers import AutoTokenizer, AutoModelForSequenceClassification
-import torch
+from src.model import DrugDiscoveryLLM
 
-# Load from Hugging Face
-tokenizer = AutoTokenizer.from_pretrained("Prashantkadasi/drug-discovery-chemberta")
-model = AutoModelForSequenceClassification.from_pretrained("Prashantkadasi/drug-discovery-chemberta")
+# Load model
+model = DrugDiscoveryLLM()
 
-# Predict for Aspirin
-smiles = "CC(=O)OC1=CC=CC=C1C(=O)O"
-inputs = tokenizer(smiles, return_tensors="pt", padding=True, truncation=True, max_length=128)
+# Analyze a drug
+result = model.analyze_drug(
+    smiles="CC(=O)OC1=CC=CC=C1C(=O)O",
+    name="Aspirin"
+)
+print(result)
 
-with torch.no_grad():
-    outputs = model(**inputs)
-    probs = torch.softmax(outputs.logits, dim=-1)
-    prediction = "Approved" if probs[0][1] > 0.5 else "Failed"
-    confidence = probs[0][1].item() if prediction == "Approved" else probs[0][0].item()
+# Explain a failure
+result = model.explain_failure(
+    smiles="CS(=O)(=O)C1=CC=C(C=C1)C2=C(C(=O)OC2)C3=CC=CC=C3",
+    name="Rofecoxib (Vioxx)",
+    failure_reason="Cardiovascular toxicity"
+)
+print(result)
 
-print(f"Prediction: {prediction} (confidence: {confidence:.2%})")
+# Compare drugs
+result = model.compare_drugs(
+    drug1_smiles="CC(=O)OC1=CC=CC=C1C(=O)O",
+    drug1_name="Aspirin",
+    drug2_smiles="CC(C)CC1=CC=C(C=C1)C(C)C(=O)O",
+    drug2_name="Ibuprofen"
+)
+print(result)
 ```
 
 ## 📁 Project Structure
 
 ```
-drug-discovery-chemberta/
-├── config.py              # Training configuration
-├── train.py               # Main training script
-├── evaluate.py            # Evaluation with metrics
-├── benchmark.py           # Pretrained vs finetuned comparison
-├── upload_to_hf.py        # Hugging Face upload script
+drug-discovery-llm/
+├── config.py                     # Model & training configuration
+├── train.py                      # Training script (SFTTrainer)
+├── app.py                        # Gradio web interface
+├── requirements.txt              # Dependencies
 ├── scripts/
-│   ├── download_chembl.py     # ChEMBL dataset downloader
-│   ├── download_drugbank.py   # DrugBank/PubChem downloader
-│   ├── download_fda.py        # FDA drugs + failed drugs
-│   ├── prepare_dataset.py     # Combine & split data
-│   └── download_all.py        # Master downloader
+│   ├── download_comprehensive.py # Enhanced data download
+│   ├── download_all.py           # Original data download
+│   └── prepare_instruct_dataset.py # Instruction-tuning format
 ├── src/
-│   ├── dataset.py         # PyTorch Dataset for SMILES
-│   ├── model.py           # ChemBERTa with gradient checkpointing
-│   └── trainer.py         # Training utilities
-├── results/               # Benchmark results and plots
-└── data/                  # Downloaded datasets
+│   ├── model.py                  # DrugDiscoveryLLM class
+│   ├── dataset.py                # Dataset utilities
+│   └── trainer.py                # Training utilities
+├── data/
+│   ├── raw/                      # Downloaded data
+│   └── processed/                # Processed datasets
+└── checkpoints/                  # Model checkpoints
 ```
 
-## 💾 Memory Optimization
+## 💾 Hardware Requirements
 
-Fits in 6GB VRAM using:
-- **Gradient Checkpointing** - Saves ~40% memory
-- **Mixed Precision (FP16)** - Saves ~50% memory
-- **Small Batch Size** - 8 with gradient accumulation
+| Configuration | VRAM Required | Notes |
+|--------------|---------------|-------|
+| Full Fine-tuning | ~50-80 GB | Recommended: MI300X 192GB |
+| LoRA Fine-tuning | ~20-30 GB | Use `--use_lora` flag |
+| Inference Only | ~28 GB | BF16 precision |
 
-## 📊 Datasets
+## 📊 Training Data
 
-| Category | Source | Description |
-|----------|--------|-------------|
-| **Approved Drugs** | ChEMBL, DrugBank, FDA | FDA/EMA approved medicines |
-| **Failed Drugs** | DrugBank, FDA | Withdrawn, clinical trial failures |
-| **Novel Alternatives** | ChEMBL | Experimental compounds |
+| Source | Records | Description |
+|--------|---------|-------------|
+| ChEMBL Compounds | 10,000+ | Approved & trial drugs with properties |
+| Drug Mechanisms | 5,000+ | Mechanisms of action |
+| Drug Warnings | 1,000+ | Safety warnings and alerts |
+| Clinical Failures | 50+ | Failures with detailed reasons |
+| Withdrawal Reasons | 20+ | Post-market withdrawals |
+
+## 🎓 Example Output
+
+**Input:**
+```
+Analyze this drug candidate: CC(=O)OC1=CC=CC=C1C(=O)O (Aspirin)
+```
+
+**Output:**
+```markdown
+## Drug Analysis Report
+
+### Prediction: ✅ APPROVED
+**Confidence Level:** High
+
+### Molecular Properties Analysis
+| Property | Value | Assessment |
+|----------|-------|------------|
+| Molecular Weight | 180.2 Da | ✓ Good (<500) |
+| LogP | 1.19 | ✓ Good (<5) |
+| H-Bond Acceptors | 4 | ✓ Good (≤10) |
+| Rule of 5 Violations | 0 | ✓ Compliant |
+
+### Drug-Likeness Assessment
+The compound shows excellent drug-like properties...
+```
 
 ## 📄 License
 
@@ -119,7 +168,7 @@ MIT License
 
 ## 🙏 Acknowledgments
 
-- [ChemBERTa](https://huggingface.co/seyonec/ChemBERTa-zinc-base-v1) - Base model
+- [Qwen2.5](https://huggingface.co/Qwen) - Base model
 - [ChEMBL](https://www.ebi.ac.uk/chembl/) - Bioactivity database
-- [DrugBank](https://go.drugbank.com/) - Drug database
 - [OpenFDA](https://open.fda.gov/) - FDA drug data
+- AMD - MI300X GPU credits for training

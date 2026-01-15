@@ -1,32 +1,36 @@
-# Core dependencies
-torch>=2.0.0
-transformers>=4.35.0
-datasets>=2.14.0
-tokenizers>=0.14.0
-accelerate>=0.24.0
+# Drug Discovery Text Generation Model Requirements
+# Optimized for AMD MI300X 192GB VRAM
+
+# Core ML
+torch>=2.1.0
+transformers>=4.36.0
+accelerate>=0.25.0
+
+# Training
+trl>=0.7.0
+peft>=0.7.0
+datasets>=2.16.0
 
 # Data processing
 pandas>=2.0.0
 numpy>=1.24.0
-scikit-learn>=1.3.0
-rdkit>=2023.9.1
 
-# Visualization
-matplotlib>=3.7.0
-seaborn>=0.12.0
-plotly>=5.18.0
+# Drug data APIs
+chembl-webresource-client>=0.10.0
+pubchempy>=1.0.4
+requests>=2.28.0
 
-# API clients for datasets
-chembl-webresource-client>=0.10.8
-requests>=2.31.0
-tqdm>=4.66.0
-
-# Metrics
-scipy>=1.11.0
-
-# Memory optimization
-bitsandbytes>=0.41.0
+# UI
+gradio>=4.0.0
 
 # Utilities
-pyyaml>=6.0
-python-dotenv>=1.0.0
+tqdm>=4.65.0
+
+# Optional: Quantization (not needed with 192GB VRAM)
+# bitsandbytes>=0.42.0  # For 4-bit/8-bit if needed
+
+# Optional: Experiment tracking
+# wandb>=0.16.0
+
+# Optional: Flash Attention (for AMD ROCm)
+# flash-attn>=2.3.0  # May need special installation for ROCm
