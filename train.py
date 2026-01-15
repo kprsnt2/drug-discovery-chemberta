@@ -166,8 +166,12 @@ def create_training_arguments(
         epochs = 1
         batch_size = 2
     
-    return TrainingArguments(
+    return SFTConfig(
         output_dir=str(output_dir),
+        
+        # SFT-specific settings
+        max_seq_length=TRAINING_CONFIG['max_seq_length'],
+        packing=TRAINING_CONFIG.get('packing', False),
         
         # Training settings
         num_train_epochs=epochs,
@@ -288,8 +292,6 @@ def main(args):
         train_dataset=train_dataset,
         eval_dataset=val_dataset,
         args=training_args,
-        max_seq_length=TRAINING_CONFIG['max_seq_length'],
-        packing=TRAINING_CONFIG.get('packing', False),
         callbacks=[
             EarlyStoppingCallback(
                 early_stopping_patience=TRAINING_CONFIG['early_stopping_patience'],
