@@ -1,7 +1,7 @@
 """
-Upload Model to Hugging Face Hub
+Upload Drug Discovery Text Generation Model to Hugging Face Hub
 
-Publishes the finetuned drug discovery model to Hugging Face.
+Publishes the finetuned Qwen2.5-14B model for drug discovery.
 """
 
 import os
@@ -9,208 +9,193 @@ import sys
 import argparse
 import json
 from pathlib import Path
-import torch
+from datetime import datetime
 
 sys.path.append(str(Path(__file__).parent))
 
 from config import MODEL_CONFIG, CHECKPOINT_DIR, RESULTS_DIR
-from src.model import DrugDiscoveryModel, get_tokenizer
 
 try:
-    from huggingface_hub import HfApi, create_repo, upload_folder
+    from huggingface_hub import HfApi, create_repo, upload_folder, login
     HF_AVAILABLE = True
 except ImportError:
-    HF_AVAILABLE = False
     print("Installing huggingface_hub...")
     os.system("pip install huggingface_hub")
-    from huggingface_hub import HfApi, create_repo, upload_folder
+    from huggingface_hub import HfApi, create_repo, upload_folder, login
+    HF_AVAILABLE = True
 
 
-def prepare_model_for_upload(checkpoint_path: str, output_dir: str):
-    """
-    Prepare model files for Hugging Face upload.
-    
-    Args:
-        checkpoint_path: Path to trained checkpoint
-        output_dir: Directory to save prepared files
-    """
-    output_dir = Path(output_dir)
-    output_dir.mkdir(parents=True, exist_ok=True)
-    
-    print("Loading trained model...")
-    model = DrugDiscoveryModel(use_gradient_checkpointing=False)
-    checkpoint = torch.load(checkpoint_path, map_location='cpu')
-    model.load_state_dict(checkpoint['model_state_dict'])
-    
-    # Save model in HuggingFace format
-    print("Saving model weights...")
-    torch.save(model.state_dict(), output_dir / "pytorch_model.bin")
-    
-    # Save config
-    print("Saving config...")
-    config_dict = {
-        "model_type": "roberta",
-        "base_model": MODEL_CONFIG['model_name'],
-        "num_labels": MODEL_CONFIG['num_labels'],
-        "max_length": MODEL_CONFIG['max_length'],
-        "task": "drug-success-prediction",
-        "labels": {
-            "0": "failed",
-            "1": "approved"
-        }
-    }
-    
-    with open(output_dir / "config.json", 'w') as f:
-        json.dump(config_dict, f, indent=2)
-    
-    # Copy tokenizer
-    print("Saving tokenizer...")
-    tokenizer = get_tokenizer()
-    tokenizer.save_pretrained(output_dir)
-    
-    # Copy benchmark results if available
-    benchmark_path = RESULTS_DIR / "benchmark_results.json"
-    if benchmark_path.exists():
-        import shutil
-        shutil.copy(benchmark_path, output_dir / "benchmark_results.json")
-    
-    print(f"Model prepared in: {output_dir}")
-    return output_dir
+def find_latest_checkpoint():
+    """Find the latest training checkpoint."""
+    checkpoints = list(CHECKPOINT_DIR.glob("run_*/final"))
+    if checkpoints:
+        return sorted(checkpoints)[-1]
+    return None
 
 
-def create_model_card(output_dir: str, metrics: dict = None):
+def create_model_card(output_dir: Path, metrics: dict = None):
     """Create README.md model card for Hugging Face."""
     
-    # Load metrics if available
+    # Default metrics
     if metrics is None:
-        benchmark_path = RESULTS_DIR / "benchmark_results.json"
-        if benchmark_path.exists():
-            with open(benchmark_path, 'r') as f:
-                all_metrics = json.load(f)
-                metrics = all_metrics.get('finetuned', {})
+        metrics_path = RESULTS_DIR / "generation_eval_metrics.json"
+        if metrics_path.exists():
+            with open(metrics_path, 'r') as f:
+                metrics = json.load(f)
+        else:
+            metrics = {}
     
-    accuracy = metrics.get('accuracy', 0) * 100 if metrics else 0
-    f1 = metrics.get('f1_score', 0) * 100 if metrics else 0
-    roc_auc = metrics.get('roc_auc', 0) * 100 if metrics else 0
-    pr_auc = metrics.get('pr_auc', 0) * 100 if metrics else 0
+    keyword_coverage = metrics.get('avg_keyword_coverage', 0) * 100
+    success_rate = metrics.get('success_rate', 0) * 100
+    avg_length = metrics.get('avg_response_length', 0)
     
     model_card = f'''---
 language: en
 license: mit
 tags:
   - drug-discovery
-  - chemberta
+  - qwen2
+  - text-generation
+  - pharmaceutical
+  - molecular-analysis
   - smiles
-  - molecular-property-prediction
-  - pharmaceuticals
   - chemistry
+  - healthcare
 datasets:
-  - custom
-metrics:
-  - accuracy
-  - f1
-  - roc_auc
-pipeline_tag: text-classification
+  - chembl
+  - fda
+pipeline_tag: text-generation
+base_model: Qwen/Qwen2.5-14B-Instruct
 ---
 
-# Drug Discovery Model - ChemBERTa Finetuned
+# Drug Discovery AI - Qwen2.5-14B Finetuned
 
-A ChemBERTa model finetuned for predicting drug approval success based on molecular SMILES representation.
+An AI-powered drug discovery assistant that provides detailed analysis, failure explanations, and improvement suggestions for pharmaceutical research.
 
 ## Model Description
 
-This model is a finetuned version of [seyonec/ChemBERTa-zinc-base-v1](https://huggingface.co/seyonec/ChemBERTa-zinc-base-v1) for drug success prediction.
-It classifies molecules as likely to be **approved** or **failed** based on their SMILES structure.
+This model is a finetuned version of [Qwen/Qwen2.5-14B-Instruct](https://huggingface.co/Qwen/Qwen2.5-14B-Instruct) for drug discovery assistance.
+
+### Capabilities
+
+- **Drug Analysis**: Predict approval likelihood with detailed explanations
+- **Failure Analysis**: Understand why drugs fail with mechanistic insights
+- **Drug Comparison**: Compare safety profiles of two candidates
+- **Improvement Suggestions**: Get structural modification recommendations
+- **Property Analysis**: Analyze molecular properties and drug-likeness
 
 ### Training Details
 
-- **Base Model**: ChemBERTa-zinc-base-v1 (~85M parameters)
-- **Training**: Full finetuning (not LoRA)
-- **Hardware**: NVIDIA RTX 3050 6GB
-- **Optimization**: Gradient checkpointing + FP16 mixed precision
-- **Dataset**: ChEMBL, DrugBank, FDA drugs (approved + withdrawn)
+| Property | Value |
+|----------|-------|
+| **Base Model** | Qwen2.5-14B-Instruct (14.7B parameters) |
+| **Training Type** | Full fine-tuning (SFTTrainer) |
+| **Hardware** | AMD MI300X 192GB |
+| **Precision** | BFloat16 |
+| **Dataset** | ChEMBL, FDA, clinical trial failures |
+| **Training Samples** | ~11,000 |
 
 ## Performance
 
 | Metric | Score |
 |--------|-------|
-| **Accuracy** | {accuracy:.1f}% |
-| **F1 Score** | {f1:.1f}% |
-| **ROC-AUC** | {roc_auc:.1f}% |
-| **PR-AUC** | {pr_auc:.1f}% |
-
-### Comparison with Pretrained
-
-| Model | Accuracy | ROC-AUC |
-|-------|----------|---------|
-| Pretrained (no finetuning) | 44.2% | 42.9% |
-| **Finetuned (this model)** | **{accuracy:.1f}%** | **{roc_auc:.1f}%** |
+| **Keyword Coverage** | {keyword_coverage:.1f}% |
+| **Success Rate** | {success_rate:.1f}% |
+| **Avg Response Length** | {avg_length:.0f} chars |
 
 ## Usage
 
 ```python
-from transformers import AutoTokenizer, AutoModelForSequenceClassification
-import torch
+from transformers import AutoModelForCausalLM, AutoTokenizer
 
-# Load model and tokenizer
-tokenizer = AutoTokenizer.from_pretrained("YOUR_USERNAME/drug-discovery-chemberta")
-model = AutoModelForSequenceClassification.from_pretrained("YOUR_USERNAME/drug-discovery-chemberta")
+# Load model
+model_name = "YOUR_USERNAME/drug-discovery-qwen-14b"
+tokenizer = AutoTokenizer.from_pretrained(model_name, trust_remote_code=True)
+model = AutoModelForCausalLM.from_pretrained(model_name, trust_remote_code=True)
 
-# Predict for a molecule (Aspirin)
-smiles = "CC(=O)OC1=CC=CC=C1C(=O)O"
-inputs = tokenizer(smiles, return_tensors="pt", padding=True, truncation=True, max_length=128)
+# Analyze a drug
+prompt = """<|im_start|>user
+Analyze this drug candidate and predict its approval likelihood:
+SMILES: CC(=O)OC1=CC=CC=C1C(=O)O
+Drug Name: Aspirin
+<|im_end|>
+<|im_start|>assistant
+"""
 
-with torch.no_grad():
-    outputs = model(**inputs)
-    probs = torch.softmax(outputs.logits, dim=-1)
-    prediction = "Approved" if probs[0][1] > 0.5 else "Failed"
-    confidence = probs[0][1].item() if prediction == "Approved" else probs[0][0].item()
-
-print(f"Prediction: {{prediction}} (confidence: {{confidence:.2%}})")
+inputs = tokenizer(prompt, return_tensors="pt")
+outputs = model.generate(**inputs, max_new_tokens=512, temperature=0.7)
+response = tokenizer.decode(outputs[0], skip_special_tokens=True)
+print(response)
 ```
 
-## Labels
+## Example Output
 
-- **0**: Failed/Withdrawn drug
-- **1**: Approved drug
+**Input:**
+```
+Analyze this drug candidate: CC(=O)OC1=CC=CC=C1C(=O)O (Aspirin)
+```
+
+**Output:**
+```markdown
+## Drug Analysis Report
+
+### Prediction: ✅ APPROVED
+**Confidence Level:** High
+
+### Molecular Properties Analysis
+| Property | Value | Assessment |
+|----------|-------|------------|
+| Molecular Weight | 180.2 Da | ✓ Good (<500) |
+| LogP | 1.19 | ✓ Good (<5) |
+| Rule of 5 Violations | 0 | ✓ Compliant |
+
+### Drug-Likeness Assessment
+The compound shows excellent drug-like properties with full Lipinski compliance...
+```
 
 ## Intended Use
 
-This model is intended for:
-- Drug discovery research
-- Virtual screening of candidate molecules
-- Prioritizing compounds for further development
+- Pharmaceutical research and development
+- Drug candidate screening
+- Understanding drug failures and safety issues
+- Educational purposes in medicinal chemistry
 
 ## Limitations
 
-- Trained on small molecule drugs only
 - Predictions are probabilistic and should not replace clinical trials
-- Performance may vary for novel chemical scaffolds
+- Trained primarily on small molecule drugs
+- May have reduced accuracy for novel chemical scaffolds
+- Should be used as a research tool, not for clinical decisions
 
 ## Citation
 
-If you use this model, please cite:
-
 ```bibtex
-@misc{{drug-discovery-chemberta-2024,
-  author = {{Your Name}},
-  title = {{Drug Discovery ChemBERTa: Finetuned for Drug Success Prediction}},
+@misc{{drug-discovery-qwen-2024,
+  author = {{Prashanth Kumar}},
+  title = {{Drug Discovery AI: Qwen2.5-14B Finetuned for Pharmaceutical Research}},
   year = {{2024}},
   publisher = {{Hugging Face}},
-  url = {{https://huggingface.co/YOUR_USERNAME/drug-discovery-chemberta}}
+  url = {{https://huggingface.co/YOUR_USERNAME/drug-discovery-qwen-14b}}
 }}
 ```
 
 ## License
 
 MIT License
+
+## Acknowledgments
+
+- [Qwen Team](https://github.com/QwenLM/Qwen) for the base model
+- [ChEMBL](https://www.ebi.ac.uk/chembl/) for bioactivity data
+- [FDA](https://open.fda.gov/) for drug approval data
+- AMD for MI300X GPU credits
 '''
     
-    output_path = Path(output_dir) / "README.md"
-    with open(output_path, 'w', encoding='utf-8') as f:
+    readme_path = output_dir / "README.md"
+    with open(readme_path, 'w', encoding='utf-8') as f:
         f.write(model_card)
     
-    print(f"Model card created: {output_path}")
+    print(f"Model card created: {readme_path}")
 
 
 def upload_to_huggingface(
@@ -219,15 +204,12 @@ def upload_to_huggingface(
     token: str = None,
     private: bool = False
 ):
-    """
-    Upload model to Hugging Face Hub.
+    """Upload model to Hugging Face Hub."""
     
-    Args:
-        model_dir: Directory containing model files
-        repo_name: Repository name (e.g., "username/model-name")
-        token: Hugging Face API token
-        private: Whether to make the repo private
-    """
+    # Login if token provided
+    if token:
+        login(token=token)
+    
     api = HfApi()
     
     # Create repo if doesn't exist
@@ -235,19 +217,20 @@ def upload_to_huggingface(
     try:
         create_repo(
             repo_id=repo_name,
-            token=token,
             private=private,
-            exist_ok=True
+            exist_ok=True,
+            repo_type="model"
         )
     except Exception as e:
         print(f"Note: {e}")
     
     # Upload all files
     print(f"Uploading files from {model_dir}...")
+    print("This may take a while for a 14B model...")
+    
     upload_folder(
         folder_path=model_dir,
         repo_id=repo_name,
-        token=token
     )
     
     print(f"\n✅ Model uploaded successfully!")
@@ -259,45 +242,54 @@ def main(args):
     print("="*60)
     print("Upload Drug Discovery Model to Hugging Face")
     print("="*60)
+    print(f"Time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     
-    # Check for trained model
-    checkpoint_path = CHECKPOINT_DIR / "best_model.pt"
-    if not checkpoint_path.exists():
-        print(f"Error: Trained model not found at {checkpoint_path}")
-        print("Please run 'python train.py' first.")
+    # Find model checkpoint
+    if args.model_path:
+        model_path = Path(args.model_path)
+    else:
+        model_path = find_latest_checkpoint()
+    
+    if model_path is None or not model_path.exists():
+        print(f"Error: Model not found!")
+        print("Please specify --model_path or ensure checkpoints exist.")
+        print("\nUsage:")
+        print("  python upload_to_hf.py --model_path checkpoints/run_XXXXXX/final --repo YOUR_USERNAME/drug-discovery-qwen-14b")
         return
     
-    # Prepare model files
-    upload_dir = Path("hf_upload")
-    print("\n[1/3] Preparing model files...")
-    prepare_model_for_upload(str(checkpoint_path), str(upload_dir))
+    print(f"Model path: {model_path}")
     
-    # Create model card
-    print("\n[2/3] Creating model card...")
-    create_model_card(str(upload_dir))
+    # Create model card in the model directory
+    print("\n[1/2] Creating model card...")
+    create_model_card(model_path)
     
     # Upload to Hugging Face
     if args.upload:
-        print("\n[3/3] Uploading to Hugging Face...")
+        print("\n[2/2] Uploading to Hugging Face...")
         
         if not args.token:
-            print("\nTo upload, you need a Hugging Face token.")
-            print("1. Go to https://huggingface.co/settings/tokens")
-            print("2. Create a new token with 'write' access")
-            print("3. Run: python upload_to_hf.py --upload --token YOUR_TOKEN --repo YOUR_USERNAME/drug-discovery-chemberta")
-            return
+            # Check for HF_TOKEN environment variable
+            token = os.environ.get("HF_TOKEN")
+            if not token:
+                print("\n⚠️ No token provided!")
+                print("Set HF_TOKEN environment variable or use --token flag:")
+                print("  export HF_TOKEN=your_token")
+                print("  python upload_to_hf.py --upload --repo YOUR_USERNAME/drug-discovery-qwen-14b")
+                return
+        else:
+            token = args.token
         
         upload_to_huggingface(
-            model_dir=str(upload_dir),
+            model_dir=str(model_path),
             repo_name=args.repo,
-            token=args.token,
+            token=token,
             private=args.private
         )
     else:
-        print("\n[3/3] Skipping upload (use --upload to push to Hub)")
-        print(f"\nModel files prepared in: {upload_dir.absolute()}")
+        print("\n[2/2] Skipping upload (use --upload to push to Hub)")
+        print(f"\nModel ready at: {model_path}")
         print("\nTo upload, run:")
-        print(f"  python upload_to_hf.py --upload --token YOUR_TOKEN --repo YOUR_USERNAME/drug-discovery-chemberta")
+        print(f"  python upload_to_hf.py --upload --model_path {model_path} --repo YOUR_USERNAME/drug-discovery-qwen-14b")
     
     print("\n" + "="*60)
     print("Done!")
@@ -306,7 +298,13 @@ def main(args):
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-        description="Upload model to Hugging Face Hub"
+        description="Upload drug discovery model to Hugging Face Hub"
+    )
+    parser.add_argument(
+        "--model_path",
+        type=str,
+        default=None,
+        help="Path to model checkpoint directory"
     )
     parser.add_argument(
         "--upload",
@@ -317,12 +315,12 @@ if __name__ == "__main__":
         "--token",
         type=str,
         default=None,
-        help="Hugging Face API token (get from https://huggingface.co/settings/tokens)"
+        help="Hugging Face API token (or set HF_TOKEN env variable)"
     )
     parser.add_argument(
         "--repo",
         type=str,
-        default="drug-discovery-chemberta",
+        default="drug-discovery-qwen-14b",
         help="Repository name (e.g., username/model-name)"
     )
     parser.add_argument(

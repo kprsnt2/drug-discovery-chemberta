@@ -1,11 +1,11 @@
 """
-Evaluation Script for Drug Discovery Model
+Evaluation Script for Drug Discovery Text Generation Model
 
-Computes comprehensive metrics on test set:
-- Accuracy, F1, Precision, Recall
-- ROC-AUC and PR-AUC
-- Confusion matrix
-- Per-class metrics
+Generates sample outputs and evaluates quality on test set.
+For text generation, we evaluate:
+- Perplexity (how well model predicts test set)
+- Sample generation quality (human review)
+- Response consistency
 """
 
 import os
@@ -13,343 +13,221 @@ import sys
 import argparse
 import json
 import torch
-import numpy as np
-import pandas as pd
 from pathlib import Path
-from sklearn.metrics import (
-    accuracy_score, f1_score, precision_score, recall_score,
-    roc_auc_score, average_precision_score, confusion_matrix,
-    classification_report, roc_curve, precision_recall_curve
-)
-import matplotlib.pyplot as plt
-import seaborn as sns
+from tqdm import tqdm
+from datetime import datetime
 
-# Add project root to path
 sys.path.append(str(Path(__file__).parent))
 
 from config import (
     MODEL_CONFIG, PROCESSED_DATA_DIR, CHECKPOINT_DIR, 
-    RESULTS_DIR, EVAL_CONFIG
+    RESULTS_DIR, GENERATION_CONFIG
 )
-from src.model import DrugDiscoveryModel, get_tokenizer
-from src.dataset import DrugDiscoveryDataset
-from torch.utils.data import DataLoader
+from src.model import DrugDiscoveryLLM, get_tokenizer
+
+# Sample prompts for evaluation
+EVAL_PROMPTS = [
+    {
+        "prompt": "Analyze this drug candidate and predict its approval likelihood:\nSMILES: CC(=O)OC1=CC=CC=C1C(=O)O\nDrug Name: Aspirin",
+        "type": "drug_analysis",
+        "expected_keywords": ["approved", "molecular", "properties", "safety"]
+    },
+    {
+        "prompt": "This drug failed in clinical development. Explain why:\nDrug: Rofecoxib (Vioxx)\nSMILES: CS(=O)(=O)C1=CC=C(C=C1)C2=C(C(=O)OC2)C3=CC=CC=C3\nKnown issue: Cardiovascular toxicity",
+        "type": "failure_analysis",
+        "expected_keywords": ["cardiovascular", "COX-2", "risk", "withdrawn"]
+    },
+    {
+        "prompt": "Compare the safety profiles of these two drugs:\nDrug 1: CC(=O)OC1=CC=CC=C1C(=O)O (Aspirin)\nDrug 2: CC(C)CC1=CC=C(C=C1)C(C)C(=O)O (Ibuprofen)",
+        "type": "comparison",
+        "expected_keywords": ["both", "NSAIDs", "difference", "safety"]
+    },
+    {
+        "prompt": "This drug failed due to hepatotoxicity. Suggest structural modifications to improve safety:\nCC1=C(C2=CC=CC=C2O1)CC(C)(C)COC3=CC=C(C=C3)CC4C(=O)NC(=O)S4\nName: Troglitazone",
+        "type": "improvement_suggestion",
+        "expected_keywords": ["modification", "hepato", "reduce", "safer"]
+    },
+    {
+        "prompt": "Describe the molecular properties and drug-likeness of:\nCC(C)CC1=CC=C(C=C1)C(C)C(=O)O",
+        "type": "property_analysis",
+        "expected_keywords": ["molecular weight", "LogP", "Lipinski", "oral"]
+    },
+]
 
 
-def load_model(model_path: str = None, device: torch.device = None):
-    """Load trained model.
-    
-    Supports both:
-    - PyTorch .pt format (from train.py)
-    - HuggingFace format (from train_cloud.py)
-    """
+def load_model(model_path: str = None, device: str = None):
+    """Load trained text generation model."""
     if model_path is None:
-        model_path = CHECKPOINT_DIR / "best_model.pt"
-    else:
-        model_path = Path(model_path)
+        # Find latest checkpoint
+        checkpoints = list(CHECKPOINT_DIR.glob("run_*/final"))
+        if checkpoints:
+            model_path = str(sorted(checkpoints)[-1])
+        else:
+            model_path = MODEL_CONFIG['model_name']
     
-    # Check if it's a HuggingFace format directory (from train_cloud.py)
-    # HF format: directory containing config.json and model files
-    is_hf_format = (
-        model_path.is_dir() and (model_path / "config.json").exists()
-    ) or (
-        model_path.suffix == "" and model_path.is_dir()  # Directory without extension
+    print(f"Loading model from: {model_path}")
+    model = DrugDiscoveryLLM(
+        model_name=model_path,
+        device=device,
+        use_flash_attention=False,
     )
-    
-    if is_hf_format:
-        # Load HuggingFace format model
-        from transformers import AutoModelForSequenceClassification
-        print(f"Loading HuggingFace format model from: {model_path}")
-        model = AutoModelForSequenceClassification.from_pretrained(
-            str(model_path),
-            trust_remote_code=True,
-        )
-        model = model.to(device)
-        model.eval()
-        print("Loaded HuggingFace format model (from train_cloud.py)")
-        return model
-    else:
-        # Load PyTorch .pt format
-        model = DrugDiscoveryModel(use_gradient_checkpointing=False)
-        
-        # Use weights_only=False to avoid security check (trusted local files)
-        checkpoint = torch.load(model_path, map_location=device, weights_only=False)
-        model.load_state_dict(checkpoint['model_state_dict'])
-        model = model.to(device)
-        model.eval()
-        
-        print(f"Loaded model from: {model_path}")
-        print(f"Trained for {checkpoint.get('epoch', 'unknown')} epochs")
-        
-        return model
+    return model
 
 
-@torch.no_grad()
-def get_predictions(model, dataloader, device):
-    """Get predictions and probabilities for all samples."""
-    all_labels = []
-    all_preds = []
-    all_probs = []
+def evaluate_generation_quality(model, prompts: list, max_new_tokens: int = 512):
+    """
+    Evaluate generation quality on sample prompts.
     
-    for batch in dataloader:
-        input_ids = batch['input_ids'].to(device)
-        attention_mask = batch['attention_mask'].to(device)
-        labels = batch['labels']
-        
-        outputs = model(input_ids, attention_mask)
-        # Handle both HuggingFace models and custom models
-        if hasattr(outputs, 'logits'):
-            logits = outputs.logits  # HuggingFace format
-        else:
-            logits = outputs['logits']  # Custom model format
-        
-        # Convert to float32 for numerical stability in softmax
-        logits = logits.float()
-        
-        # Handle NaN/Inf in logits
-        logits = torch.nan_to_num(logits, nan=0.0, posinf=100.0, neginf=-100.0)
-        
-        probs = torch.softmax(logits, dim=-1)
-        preds = torch.argmax(probs, dim=-1)
-        
-        # Get probability of positive class (handle different output sizes)
-        if probs.shape[-1] >= 2:
-            pos_probs = probs[:, 1].cpu().numpy()
-        else:
-            pos_probs = probs[:, 0].cpu().numpy()
-        
-        all_labels.extend(labels.cpu().numpy())
-        all_preds.extend(preds.cpu().numpy())
-        all_probs.extend(pos_probs)
+    Returns dict with:
+    - Generated responses
+    - Response lengths
+    - Keyword coverage
+    """
+    results = []
     
-    return np.array(all_labels), np.array(all_preds), np.array(all_probs)
+    print("\nGenerating responses for evaluation prompts...")
+    for item in tqdm(prompts, desc="Generating"):
+        prompt = item["prompt"]
+        expected_keywords = item.get("expected_keywords", [])
+        
+        output = model.generate(prompt, max_new_tokens=max_new_tokens)
+        response = output.generated_text
+        
+        # Check keyword coverage
+        response_lower = response.lower()
+        keywords_found = [kw for kw in expected_keywords if kw.lower() in response_lower]
+        keyword_coverage = len(keywords_found) / len(expected_keywords) if expected_keywords else 1.0
+        
+        results.append({
+            "prompt": prompt[:100] + "..." if len(prompt) > 100 else prompt,
+            "prompt_type": item.get("type", "unknown"),
+            "response": response,
+            "response_length": len(response),
+            "tokens_generated": output.generation_tokens,
+            "expected_keywords": expected_keywords,
+            "keywords_found": keywords_found,
+            "keyword_coverage": keyword_coverage,
+        })
+    
+    return results
 
 
-def compute_metrics(labels, preds, probs):
-    """Compute comprehensive evaluation metrics."""
-    # Handle NaN in probs
-    probs = np.nan_to_num(probs, nan=0.5)
+def compute_metrics(results: list):
+    """Compute aggregate metrics from evaluation results."""
+    if not results:
+        return {}
     
-    # Compute ROC-AUC with error handling
-    try:
-        roc_auc = roc_auc_score(labels, probs)
-    except ValueError:
-        roc_auc = 0.5  # Default if calculation fails
+    avg_response_length = sum(r["response_length"] for r in results) / len(results)
+    avg_tokens = sum(r["tokens_generated"] for r in results) / len(results)
+    avg_keyword_coverage = sum(r["keyword_coverage"] for r in results) / len(results)
     
-    try:
-        pr_auc = average_precision_score(labels, probs)
-    except ValueError:
-        pr_auc = 0.5
+    # Check for empty/failed responses
+    failed_responses = [r for r in results if r["response_length"] < 50]
     
     metrics = {
-        'accuracy': accuracy_score(labels, preds),
-        'f1_score': f1_score(labels, preds, average='binary', zero_division=0),
-        'f1_macro': f1_score(labels, preds, average='macro', zero_division=0),
-        'precision': precision_score(labels, preds, average='binary', zero_division=0),
-        'recall': recall_score(labels, preds, average='binary', zero_division=0),
-        'roc_auc': roc_auc,
-        'pr_auc': pr_auc,
+        "total_samples": len(results),
+        "avg_response_length": avg_response_length,
+        "avg_tokens_generated": avg_tokens,
+        "avg_keyword_coverage": avg_keyword_coverage,
+        "failed_responses": len(failed_responses),
+        "success_rate": (len(results) - len(failed_responses)) / len(results),
     }
     
-    # Confusion matrix
-    cm = confusion_matrix(labels, preds)
-    metrics['confusion_matrix'] = cm.tolist()
-    
-    # True/False positives/negatives
-    tn, fp, fn, tp = cm.ravel()
-    metrics['true_positives'] = int(tp)
-    metrics['true_negatives'] = int(tn)
-    metrics['false_positives'] = int(fp)
-    metrics['false_negatives'] = int(fn)
-    
-    # Specificity and sensitivity
-    metrics['sensitivity'] = tp / (tp + fn) if (tp + fn) > 0 else 0
-    metrics['specificity'] = tn / (tn + fp) if (tn + fp) > 0 else 0
+    # Per-type metrics
+    types = set(r["prompt_type"] for r in results)
+    for prompt_type in types:
+        type_results = [r for r in results if r["prompt_type"] == prompt_type]
+        metrics[f"{prompt_type}_count"] = len(type_results)
+        metrics[f"{prompt_type}_avg_length"] = sum(r["response_length"] for r in type_results) / len(type_results)
     
     return metrics
-
-
-def plot_confusion_matrix(cm, output_path):
-    """Plot confusion matrix."""
-    plt.figure(figsize=(8, 6))
-    sns.heatmap(
-        cm, 
-        annot=True, 
-        fmt='d', 
-        cmap='Blues',
-        xticklabels=['Failed', 'Approved'],
-        yticklabels=['Failed', 'Approved']
-    )
-    plt.xlabel('Predicted')
-    plt.ylabel('Actual')
-    plt.title('Confusion Matrix')
-    plt.tight_layout()
-    plt.savefig(output_path, dpi=150)
-    plt.close()
-    print(f"Saved confusion matrix to: {output_path}")
-
-
-def plot_roc_curve(labels, probs, output_path):
-    """Plot ROC curve."""
-    fpr, tpr, _ = roc_curve(labels, probs)
-    auc = roc_auc_score(labels, probs)
-    
-    plt.figure(figsize=(8, 6))
-    plt.plot(fpr, tpr, 'b-', label=f'ROC Curve (AUC = {auc:.3f})')
-    plt.plot([0, 1], [0, 1], 'k--', label='Random')
-    plt.xlabel('False Positive Rate')
-    plt.ylabel('True Positive Rate')
-    plt.title('ROC Curve')
-    plt.legend()
-    plt.grid(True, alpha=0.3)
-    plt.tight_layout()
-    plt.savefig(output_path, dpi=150)
-    plt.close()
-    print(f"Saved ROC curve to: {output_path}")
-
-
-def plot_precision_recall_curve(labels, probs, output_path):
-    """Plot precision-recall curve."""
-    precision, recall, _ = precision_recall_curve(labels, probs)
-    auc = average_precision_score(labels, probs)
-    
-    plt.figure(figsize=(8, 6))
-    plt.plot(recall, precision, 'b-', label=f'PR Curve (AUC = {auc:.3f})')
-    plt.xlabel('Recall')
-    plt.ylabel('Precision')
-    plt.title('Precision-Recall Curve')
-    plt.legend()
-    plt.grid(True, alpha=0.3)
-    plt.tight_layout()
-    plt.savefig(output_path, dpi=150)
-    plt.close()
-    print(f"Saved PR curve to: {output_path}")
 
 
 def main(args):
     """Main evaluation function."""
     print("="*60)
-    print("Drug Discovery Model Evaluation")
+    print("Drug Discovery Text Generation Model Evaluation")
     print("="*60)
+    print(f"Time: {datetime.now().strftime('%Y-%m-%d %H:%M:%S')}")
     
     # Setup device
-    device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-    print(f"Using device: {device}")
-    
-    # Check for model and data
-    test_path = PROCESSED_DATA_DIR / "test.csv"
-    if not test_path.exists():
-        print("\nError: Test data not found!")
-        print("Please run 'python scripts/download_all.py' first.")
-        return
-    
-    model_path = Path(args.model_path) if args.model_path else CHECKPOINT_DIR / "best_model.pt"
-    if not model_path.exists():
-        print(f"\nError: Model not found at {model_path}")
-        print("\nFor local training: run 'python train.py' first.")
-        print("For cloud training: use --model_path to specify the model location:")
-        print("  python evaluate.py --model_path checkpoints/cloud_<model_name>_<timestamp>/final_model")
-        print("\nList available cloud models with: ls checkpoints/cloud_*/final_model")
-        return
+    device = "cuda" if torch.cuda.is_available() else "cpu"
+    print(f"Device: {device}")
     
     # Load model
-    print("\n[1/4] Loading model...")
-    model = load_model(model_path, device)
+    print("\n[1/3] Loading model...")
+    model = load_model(args.model_path, device)
     
-    # Load test data
-    print("\n[2/4] Loading test data...")
-    tokenizer = get_tokenizer()
-    test_dataset = DrugDiscoveryDataset(str(test_path), tokenizer)
-    test_loader = DataLoader(
-        test_dataset,
-        batch_size=args.batch_size,
-        shuffle=False,
-        num_workers=2
+    # Evaluate generation quality
+    print("\n[2/3] Evaluating generation quality...")
+    results = evaluate_generation_quality(
+        model, 
+        EVAL_PROMPTS,
+        max_new_tokens=args.max_tokens
     )
-    print(f"Test samples: {len(test_dataset)}")
-    
-    # Get predictions
-    print("\n[3/4] Computing predictions...")
-    labels, preds, probs = get_predictions(model, test_loader, device)
     
     # Compute metrics
-    print("\n[4/4] Computing metrics...")
-    metrics = compute_metrics(labels, preds, probs)
+    print("\n[3/3] Computing metrics...")
+    metrics = compute_metrics(results)
     
     # Print results
     print("\n" + "="*60)
     print("EVALUATION RESULTS")
     print("="*60)
-    print(f"Accuracy:    {metrics['accuracy']:.4f}")
-    print(f"F1 Score:    {metrics['f1_score']:.4f}")
-    print(f"Precision:   {metrics['precision']:.4f}")
-    print(f"Recall:      {metrics['recall']:.4f}")
-    print(f"ROC-AUC:     {metrics['roc_auc']:.4f}")
-    print(f"PR-AUC:      {metrics['pr_auc']:.4f}")
-    print(f"Sensitivity: {metrics['sensitivity']:.4f}")
-    print(f"Specificity: {metrics['specificity']:.4f}")
+    print(f"Total samples evaluated: {metrics['total_samples']}")
+    print(f"Average response length: {metrics['avg_response_length']:.0f} chars")
+    print(f"Average tokens generated: {metrics['avg_tokens_generated']:.0f}")
+    print(f"Keyword coverage: {metrics['avg_keyword_coverage']*100:.1f}%")
+    print(f"Success rate: {metrics['success_rate']*100:.1f}%")
     
-    print("\nConfusion Matrix:")
-    cm = np.array(metrics['confusion_matrix'])
-    print(f"  TN: {metrics['true_negatives']:4d}  FP: {metrics['false_positives']:4d}")
-    print(f"  FN: {metrics['false_negatives']:4d}  TP: {metrics['true_positives']:4d}")
+    # Print sample outputs
+    print("\n" + "-"*60)
+    print("SAMPLE OUTPUTS")
+    print("-"*60)
+    for i, result in enumerate(results[:3], 1):
+        print(f"\n[Sample {i}] {result['prompt_type'].upper()}")
+        print(f"Prompt: {result['prompt']}")
+        print(f"Response ({result['response_length']} chars):")
+        print(result['response'][:500] + "..." if len(result['response']) > 500 else result['response'])
+        print(f"Keywords found: {result['keywords_found']}")
     
     # Save results
     RESULTS_DIR.mkdir(parents=True, exist_ok=True)
     
-    # Save metrics JSON
-    metrics_path = RESULTS_DIR / "evaluation_metrics.json"
+    # Save metrics
+    metrics_path = RESULTS_DIR / "generation_eval_metrics.json"
     with open(metrics_path, 'w') as f:
         json.dump(metrics, f, indent=2)
     print(f"\nMetrics saved to: {metrics_path}")
     
-    # Save predictions
-    predictions_df = pd.DataFrame({
-        'label': labels,
-        'prediction': preds,
-        'probability': probs
-    })
-    predictions_path = RESULTS_DIR / "predictions.csv"
-    predictions_df.to_csv(predictions_path, index=False)
-    
-    # Generate plots
-    if args.generate_plots:
-        print("\nGenerating plots...")
-        plot_confusion_matrix(cm, RESULTS_DIR / "confusion_matrix.png")
-        plot_roc_curve(labels, probs, RESULTS_DIR / "roc_curve.png")
-        plot_precision_recall_curve(labels, probs, RESULTS_DIR / "pr_curve.png")
-    
-    # Print classification report
-    print("\nClassification Report:")
-    print(classification_report(labels, preds, target_names=['Failed', 'Approved']))
+    # Save full results
+    results_path = RESULTS_DIR / "generation_eval_results.json"
+    with open(results_path, 'w') as f:
+        json.dump(results, f, indent=2, ensure_ascii=False)
+    print(f"Full results saved to: {results_path}")
     
     print("\n" + "="*60)
     print("Evaluation Complete!")
     print("="*60)
-    print(f"Results saved to: {RESULTS_DIR}")
+    
+    return metrics
 
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(
-        description="Evaluate drug discovery model"
+        description="Evaluate drug discovery text generation model"
     )
     parser.add_argument(
         "--model_path",
         type=str,
         default=None,
-        help="Path to model checkpoint"
+        help="Path to model checkpoint (default: latest in checkpoints/)"
     )
     parser.add_argument(
-        "--batch_size",
+        "--max_tokens",
         type=int,
-        default=16,
-        help="Evaluation batch size"
-    )
-    parser.add_argument(
-        "--generate_plots",
-        action="store_true",
-        default=True,
-        help="Generate evaluation plots"
+        default=512,
+        help="Maximum tokens to generate per response"
     )
     
     args = parser.parse_args()
