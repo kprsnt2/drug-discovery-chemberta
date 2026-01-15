@@ -81,7 +81,7 @@ TRAINING_CONFIG = {
     "warmup_steps": None,  # Calculated from warmup_ratio
     
     # Optimizer - AdamW with appropriate settings
-    "learning_rate": 2e-5,  # Lower LR for full fine-tuning
+    "learning_rate": 5e-6,  # Very low LR for stable 14B fine-tuning
     "weight_decay": 0.01,
     "adam_beta1": 0.9,
     "adam_beta2": 0.999,
@@ -101,7 +101,7 @@ TRAINING_CONFIG = {
     
     # Sequence settings
     "max_seq_length": 2048,
-    "packing": True,  # Pack multiple samples into one sequence
+    "packing": False,  # Disable packing for stability
     
     # Checkpointing
     "save_steps": 400,
